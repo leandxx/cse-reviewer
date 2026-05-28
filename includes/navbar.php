@@ -10,8 +10,8 @@
             <a href="#stats" class="text-slate-400 hover:text-white text-sm transition-colors">Stats</a>
         </div>
         <div class="flex items-center gap-3">
-            <a href="login.php" class="text-slate-300 hover:text-white text-sm font-medium transition-colors px-4 py-2">Log In</a>
-            <a href="register.php" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-xl">Get Started</a>
+            <a href="<?= $root ?>pages/login.php" class="text-slate-300 hover:text-white text-sm font-medium transition-colors px-4 py-2">Log In</a>
+            <a href="<?= $root ?>pages/register.php" class="btn-primary text-white text-sm font-semibold px-5 py-2.5 rounded-xl">Get Started</a>
         </div>
     </div>
 </nav>

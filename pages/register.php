@@ -1,12 +1,12 @@
 <?php
 $pageTitle = 'Create Account — CSEReviewer';
 $extraCss  = ['assets/css/auth.css'];
-$root      = '';
+$root      = '../';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 <body class="min-h-screen flex items-center justify-center p-4 py-10">
 
@@ -15,8 +15,8 @@ $root      = '';
     <div class="auth-content w-full max-w-md">
 
         <div class="text-center mb-8">
-            <a href="index.php" class="inline-flex items-center gap-3 mb-4">
-                <img src="assets/img/logo.png" alt="CSE Reviewer Logo" class="w-11 h-11 rounded-2xl object-contain">
+            <a href="../index.php" class="inline-flex items-center gap-3 mb-4">
+                <img src="../assets/img/logo.png" alt="CSE Reviewer Logo" class="w-11 h-11 rounded-2xl object-contain">
                 <span class="text-white font-black text-2xl">CSE<span class="gradient-text">Reviewer</span></span>
             </a>
             <h1 class="text-white text-2xl font-bold mt-2">Create your account</h1>
@@ -100,10 +100,10 @@ $root      = '';
         </div>
 
         <p class="text-center text-slate-600 text-xs mt-6">
-            <a href="index.php" class="hover:text-slate-400 transition-colors"><i class="fas fa-arrow-left mr-1"></i> Back to Home</a>
+            <a href="../index.php" class="hover:text-slate-400 transition-colors"><i class="fas fa-arrow-left mr-1"></i> Back to Home</a>
         </p>
     </div>
 
-    <script src="assets/js/register.js"></script>
+    <script src="../assets/js/register.js"></script>
 </body>
 </html>

@@ -73,7 +73,7 @@ document.getElementById('registerForm').addEventListener('submit', async functio
     btn.disabled = true;
 
     try {
-        const res = await fetch('auth/register.php', { method: 'POST', body: new FormData(this) });
+        const res = await fetch('../auth/register.php', { method: 'POST', body: new FormData(this) });
         const data = await res.json();
 
         if (data.success) {

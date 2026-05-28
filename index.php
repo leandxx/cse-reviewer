@@ -34,10 +34,10 @@ $root      = '';
                 </p>
 
                 <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-                    <a href="register.php" class="btn-primary text-white font-bold px-8 py-4 rounded-2xl text-base flex items-center justify-center gap-2">
+                    <a href="pages/register.php" class="btn-primary text-white font-bold px-8 py-4 rounded-2xl text-base flex items-center justify-center gap-2">
                         <i class="fas fa-rocket"></i> Start Reviewing Free
                     </a>
-                    <a href="login.php" class="glass-card text-white font-semibold px-8 py-4 rounded-2xl text-base flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
+                    <a href="pages/login.php" class="glass-card text-white font-semibold px-8 py-4 rounded-2xl text-base flex items-center justify-center gap-2 hover:bg-white/10 transition-all">
                         <i class="fas fa-sign-in-alt"></i> Log In
                     </a>
                 </div>
@@ -186,7 +186,7 @@ $root      = '';
             <div class="glass-card rounded-3xl p-12 text-center" style="background:linear-gradient(135deg,rgba(79,70,229,0.15),rgba(124,58,237,0.1));border-color:rgba(129,140,248,0.2);">
                 <h2 class="text-4xl font-black text-white mb-4">Ready to <span class="gradient-text">Pass the CSE?</span></h2>
                 <p class="text-slate-400 mb-8 max-w-lg mx-auto">Join thousands of Filipinos who used CSEReviewer to pass the Civil Service Examination.</p>
-                <a href="register.php" class="btn-primary text-white font-bold px-10 py-4 rounded-2xl text-base inline-flex items-center gap-2">
+                <a href="pages/register.php" class="btn-primary text-white font-bold px-10 py-4 rounded-2xl text-base inline-flex items-center gap-2">
                     <i class="fas fa-rocket"></i> Create Free Account
                 </a>
             </div>

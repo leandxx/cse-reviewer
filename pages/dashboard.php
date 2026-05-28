@@ -6,30 +6,30 @@ if (!isset($_SESSION['user_id'])) {
 }
 $pageTitle = 'Dashboard — CSEReviewer';
 $extraCss  = ['assets/css/dashboard.css', 'assets/css/left-sidebar.css'];
-$root      = '';
+$root      = '../';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <?php include 'includes/head.php'; ?>
+    <?php include '../includes/head.php'; ?>
 </head>
 <body class="bg-slate-950 min-h-screen">
 
     <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between" style="position:relative;z-index:1;">
         <div class="flex items-center gap-3">
-            <img src="assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
+            <img src="../assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
             <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>
         </div>
         <div class="flex items-center gap-4">
             <span class="text-slate-400 text-sm">Hello, <span class="text-white font-semibold"><?= htmlspecialchars($_SESSION['user_name']) ?></span></span>
-            <a href="auth/logout.php" class="text-slate-400 hover:text-red-400 text-sm transition-colors flex items-center gap-1">
+            <a href="../auth/logout.php" class="text-slate-400 hover:text-red-400 text-sm transition-colors flex items-center gap-1">
                 <i class="fas fa-sign-out-alt"></i> Logout
             </a>
         </div>
     </nav>
 
     <!-- Left sidebar -->
-    <?php include 'includes/left-sidebar.php'; ?>
+    <?php include '../includes/left-sidebar.php'; ?>
 
     <div class="dashboard-main">
         <div class="max-w-5xl mx-auto px-6 py-12">
@@ -59,6 +59,6 @@ $root      = '';
         </div>
     </div>
 
-    <script src="assets/js/left-sidebar.js"></script>
+    <script src="../assets/js/left-sidebar.js"></script>
 </body>
 </html>

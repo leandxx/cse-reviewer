@@ -29,7 +29,7 @@ document.getElementById('loginForm').addEventListener('submit', async function (
     btn.disabled = true;
 
     try {
-        const res = await fetch('auth/login.php', { method: 'POST', body: new FormData(this) });
+        const res = await fetch('../auth/login.php', { method: 'POST', body: new FormData(this) });
         const data = await res.json();
 
         if (data.success) {
