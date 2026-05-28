@@ -11,7 +11,25 @@ body::before {
     background: rgba(2, 6, 23, 0.88);
     z-index: 0;
 }
-nav, .max-w-5xl { position: relative; z-index: 1; }
+
+/* Nav sits above sidebar (z-index 30) */
+nav {
+    position: relative;
+    z-index: 35;
+}
+
+/* Main content: pushed right by sidebar, pushed down by nav */
+.dashboard-main {
+    position: relative;
+    z-index: 1;
+    margin-right: var(--sb-full, 280px);
+    padding-top: 0;
+    transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+body:has(#rightSidebar[data-collapsed="true"]) .dashboard-main {
+    margin-right: var(--sb-icon, 52px);
+}
 
 .card {
     background: rgba(255,255,255,0.04);

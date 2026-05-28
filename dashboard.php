@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 $pageTitle = 'Dashboard — CSEReviewer';
-$extraCss  = ['assets/css/dashboard.css'];
+$extraCss  = ['assets/css/dashboard.css', 'assets/css/right-sidebar.css'];
 $root      = '';
 ?>
 <!DOCTYPE html>
@@ -15,7 +15,7 @@ $root      = '';
 </head>
 <body class="bg-slate-950 min-h-screen">
 
-    <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
+    <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between" style="position:relative;z-index:1;">
         <div class="flex items-center gap-3">
             <img src="assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
             <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>
@@ -28,31 +28,37 @@ $root      = '';
         </div>
     </nav>
 
-    <div class="max-w-5xl mx-auto px-6 py-12">
-        <div class="text-center mb-12">
-            <h1 class="text-4xl font-black text-white mb-3">Your <span class="gradient-text">Dashboard</span></h1>
-            <p class="text-slate-400">The full reviewer system is coming soon. You're all set up!</p>
-        </div>
+    <!-- Right sidebar -->
+    <?php include 'includes/right-sidebar.php'; ?>
 
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <?php
-            $cards = [
-                ['fas fa-book-open', 'from-indigo-500 to-purple-500', 'Start Reviewing', 'Practice questions across all CSE subjects.', 'Coming Soon'],
-                ['fas fa-chart-bar', 'from-blue-500 to-cyan-500', 'My Progress', 'Track your scores and improvement over time.', 'Coming Soon'],
-                ['fas fa-clock', 'from-purple-500 to-pink-500', 'Mock Exams', 'Timed full-length practice exams.', 'Coming Soon'],
-            ];
-            foreach ($cards as $c): ?>
-            <div class="card rounded-2xl p-6 text-center">
-                <div class="w-14 h-14 bg-gradient-to-br <?= $c[1] ?> rounded-2xl flex items-center justify-center mx-auto mb-4">
-                    <i class="<?= $c[0] ?> text-white text-xl"></i>
-                </div>
-                <h3 class="text-white font-bold text-lg mb-2"><?= $c[2] ?></h3>
-                <p class="text-slate-400 text-sm mb-4"><?= $c[3] ?></p>
-                <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full"><?= $c[4] ?></span>
+    <div class="dashboard-main">
+        <div class="max-w-5xl mx-auto px-6 py-12">
+            <div class="text-center mb-12">
+                <h1 class="text-4xl font-black text-white mb-3">Your <span class="gradient-text">Dashboard</span></h1>
+                <p class="text-slate-400">The full reviewer system is coming soon. You're all set up!</p>
             </div>
-            <?php endforeach; ?>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <?php
+                $cards = [
+                    ['fas fa-book-open', 'from-indigo-500 to-purple-500', 'Start Reviewing', 'Practice questions across all CSE subjects.', 'Coming Soon'],
+                    ['fas fa-chart-bar', 'from-blue-500 to-cyan-500', 'My Progress', 'Track your scores and improvement over time.', 'Coming Soon'],
+                    ['fas fa-clock', 'from-purple-500 to-pink-500', 'Mock Exams', 'Timed full-length practice exams.', 'Coming Soon'],
+                ];
+                foreach ($cards as $c): ?>
+                <div class="card rounded-2xl p-6 text-center">
+                    <div class="w-14 h-14 bg-gradient-to-br <?= $c[1] ?> rounded-2xl flex items-center justify-center mx-auto mb-4">
+                        <i class="<?= $c[0] ?> text-white text-xl"></i>
+                    </div>
+                    <h3 class="text-white font-bold text-lg mb-2"><?= $c[2] ?></h3>
+                    <p class="text-slate-400 text-sm mb-4"><?= $c[3] ?></p>
+                    <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full"><?= $c[4] ?></span>
+                </div>
+                <?php endforeach; ?>
+            </div>
         </div>
     </div>
 
+    <script src="assets/js/right-sidebar.js"></script>
 </body>
 </html>
