@@ -1,0 +1,73 @@
+<?php
+session_start();
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    exit;
+}
+?>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard — CSEReviewer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <style>
+        * { font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(135deg, #818cf8, #c084fc);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
+    </style>
+</head>
+<body class="bg-slate-950 min-h-screen">
+
+    <!-- Navbar -->
+    <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
+                <i class="fas fa-graduation-cap text-white text-sm"></i>
+            </div>
+            <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>
+        </div>
+        <div class="flex items-center gap-4">
+            <span class="text-slate-400 text-sm">Hello, <span class="text-white font-semibold"><?= htmlspecialchars($_SESSION['user_name']) ?></span></span>
+            <a href="auth/logout.php" class="text-slate-400 hover:text-red-400 text-sm transition-colors flex items-center gap-1">
+                <i class="fas fa-sign-out-alt"></i> Logout
+            </a>
+        </div>
+    </nav>
+
+    <div class="max-w-5xl mx-auto px-6 py-12">
+        <div class="text-center mb-12">
+            <h1 class="text-4xl font-black text-white mb-3">Your <span class="gradient-text">Dashboard</span></h1>
+            <p class="text-slate-400">The full reviewer system is coming soon. You're all set up!</p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+            <?php
+            $cards = [
+                ['fas fa-book-open', 'from-indigo-500 to-purple-500', 'Start Reviewing', 'Practice questions across all CSE subjects.', 'Coming Soon'],
+                ['fas fa-chart-bar', 'from-blue-500 to-cyan-500', 'My Progress', 'Track your scores and improvement over time.', 'Coming Soon'],
+                ['fas fa-clock', 'from-purple-500 to-pink-500', 'Mock Exams', 'Timed full-length practice exams.', 'Coming Soon'],
+            ];
+            foreach ($cards as $c): ?>
+            <div class="card rounded-2xl p-6 text-center">
+                <div class="w-14 h-14 bg-gradient-to-br <?= $c[1] ?> rounded-2xl flex items-center justify-center mx-auto mb-4">
+                    <i class="<?= $c[0] ?> text-white text-xl"></i>
+                </div>
+                <h3 class="text-white font-bold text-lg mb-2"><?= $c[2] ?></h3>
+                <p class="text-slate-400 text-sm mb-4"><?= $c[3] ?></p>
+                <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full"><?= $c[4] ?></span>
+            </div>
+            <?php endforeach; ?>
+        </div>
+    </div>
+
+</body>
+</html>
