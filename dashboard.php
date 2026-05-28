@@ -4,30 +4,17 @@ if (!isset($_SESSION['user_id'])) {
     header('Location: login.php');
     exit;
 }
+$pageTitle = 'Dashboard — CSEReviewer';
+$extraCss  = ['assets/css/dashboard.css'];
+$root      = '';
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dashboard — CSEReviewer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    <style>
-        * { font-family: 'Inter', sans-serif; }
-        .gradient-text {
-            background: linear-gradient(135deg, #818cf8, #c084fc);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,255,255,0.08); }
-    </style>
+    <?php include 'includes/head.php'; ?>
 </head>
 <body class="bg-slate-950 min-h-screen">
 
-    <!-- Navbar -->
     <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
             <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
