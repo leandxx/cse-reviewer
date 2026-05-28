@@ -111,14 +111,17 @@ $root      = '';
     </section>
 
     <!-- Features -->
-    <section id="features" class="bg-slate-950 py-24">
+    <section id="features" class="features-bg py-24 overflow-hidden">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16">
                 <h2 class="text-4xl font-black text-white mb-4">Everything You Need to <span class="gradient-text">Pass</span></h2>
                 <p class="text-slate-400 max-w-xl mx-auto">Designed specifically for the Philippine Civil Service Examination — Professional and Subprofessional levels.</p>
             </div>
+        </div>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Marquee -->
+        <div class="marquee-wrapper">
+            <div class="marquee-track" id="marqueeTrack">
                 <?php
                 $features = [
                     ['fas fa-brain',      'from-indigo-500 to-purple-500', 'Smart Practice',    'Adaptive questions that focus on your weak areas for faster improvement.'],
@@ -127,16 +130,20 @@ $root      = '';
                     ['fas fa-book-open',  'from-emerald-500 to-teal-500',  'Full Coverage',     'All CSE topics: Verbal, Numerical, Analytical, and General Information.'],
                     ['fas fa-mobile-alt', 'from-orange-500 to-red-500',    'Mobile Friendly',   'Review anytime, anywhere on any device — fully responsive design.'],
                     ['fas fa-trophy',     'from-yellow-500 to-orange-500', 'Leaderboards',      'Compete with other reviewees and stay motivated to reach the top.'],
+                    ['fas fa-shield-alt', 'from-teal-500 to-emerald-500',  'Secure & Private',  'Your data and progress are safe, private, and always accessible.'],
+                    ['fas fa-bolt',       'from-pink-500 to-rose-500',     'Instant Feedback',  'Get immediate explanations after every answer to learn faster.'],
                 ];
+                // render twice for seamless loop
+                for ($r = 0; $r < 2; $r++):
                 foreach ($features as $f): ?>
-                <div class="feature-card rounded-2xl p-6">
-                    <div class="w-12 h-12 bg-gradient-to-br <?= $f[1] ?> rounded-xl flex items-center justify-center mb-4">
+                <div class="marquee-card">
+                    <div class="marquee-icon bg-gradient-to-br <?= $f[1] ?>">
                         <i class="<?= $f[0] ?> text-white"></i>
                     </div>
-                    <h3 class="text-white font-bold text-lg mb-2"><?= $f[2] ?></h3>
-                    <p class="text-slate-400 text-sm leading-relaxed"><?= $f[3] ?></p>
+                    <h3><?= $f[2] ?></h3>
+                    <p><?= $f[3] ?></p>
                 </div>
-                <?php endforeach; ?>
+                <?php endforeach; endfor; ?>
             </div>
         </div>
     </section>
@@ -199,5 +206,12 @@ $root      = '';
         </div>
     </footer>
 
+    <script>
+        document.querySelectorAll('.marquee-card').forEach(card => {
+            const track = document.getElementById('marqueeTrack');
+            card.addEventListener('mouseenter', () => track.style.animationPlayState = 'paused');
+            card.addEventListener('mouseleave', () => track.style.animationPlayState = 'running');
+        });
+    </script>
 </body>
 </html>

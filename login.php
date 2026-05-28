@@ -10,15 +10,17 @@ $root      = '';
 </head>
 <body class="min-h-screen flex items-center justify-center p-4">
 
-    <div class="auth-bg"></div>
+    <div class="auth-bg">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
 
     <div class="auth-content w-full max-w-md">
 
         <div class="text-center mb-8">
             <a href="index.php" class="inline-flex items-center gap-3 mb-4">
-                <div class="w-11 h-11 rounded-2xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                    <i class="fas fa-graduation-cap text-white"></i>
-                </div>
+                <img src="assets/img/logo.png" alt="CSE Reviewer Logo" class="w-11 h-11 rounded-2xl object-contain">
                 <span class="text-white font-black text-2xl">CSE<span class="gradient-text">Reviewer</span></span>
             </a>
             <h1 class="text-white text-2xl font-bold mt-2">Welcome back</h1>

@@ -1,3 +1,18 @@
+body {
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.88);
+    z-index: 0;
+}
+nav, .max-w-5xl { position: relative; z-index: 1; }
+
 .card {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);

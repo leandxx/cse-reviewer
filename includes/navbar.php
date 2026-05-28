@@ -1,9 +1,7 @@
 <nav class="nav-blur fixed top-0 left-0 right-0 z-50">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                <i class="fas fa-graduation-cap text-white text-sm"></i>
-            </div>
+            <img src="<?= $root ?>assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
             <span class="text-white font-bold text-lg tracking-tight">CSE<span class="gradient-text">Reviewer</span></span>
         </div>
         <div class="hidden md:flex items-center gap-8">

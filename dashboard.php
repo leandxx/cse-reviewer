@@ -17,9 +17,7 @@ $root      = '';
 
     <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
-            <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 to-purple-600 flex items-center justify-center">
-                <i class="fas fa-graduation-cap text-white text-sm"></i>
-            </div>
+            <img src="assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
             <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>
         </div>
         <div class="flex items-center gap-4">
