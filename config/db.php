@@ -1,9 +1,9 @@
 <?php
-$host = getenv('DB_HOST') ?: 'zephyr.proxy.rlwy.net';
-$port = getenv('DB_PORT') ?: 24968;
-$db   = getenv('DB_NAME') ?: 'csedb';
-$user = getenv('DB_USER') ?: 'root';
-$pass = getenv('DB_PASS') ?: 'hSpMjlKfRCQDvwfFieogbvMljypcIxvp';
+$host = '127.0.0.1';
+$port = 3308;
+$db   = 'csedb';
+$user = 'root';
+$pass = '';
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8", $user, $pass);
