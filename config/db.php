@@ -1,9 +1,9 @@
 <?php
-$host = getenv('DB_HOST') ?: 'mysql.railway.internal';
-$port = getenv('DB_PORT') ?: 3308;
-$db   = getenv('DB_NAME') ?: 'railway';
+$host = getenv('DB_HOST') ?: 'zephyr.proxy.rlwy.net';
+$port = getenv('DB_PORT') ?: 24968;
+$db   = getenv('DB_NAME') ?: 'csedb';
 $user = getenv('DB_USER') ?: 'root';
-$pass = getenv('DB_PASS') ?: 'qjpEqXyOhsopBMQQcFANMSzhEPPjbGQj';
+$pass = getenv('DB_PASS') ?: 'hSpMjlKfRCQDvwfFieogbvMljypcIxvp';
 
 try {
     $pdo = new PDO("mysql:host=$host;port=$port;dbname=$db;charset=utf8", $user, $pass);
