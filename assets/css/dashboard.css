@@ -22,13 +22,14 @@ nav {
 .dashboard-main {
     position: relative;
     z-index: 1;
-    margin-right: var(--sb-full, 280px);
+    margin-left: var(--sb-full, 280px);
+    margin-right: 0;
     padding-top: 0;
-    transition: margin-right 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-body:has(#rightSidebar[data-collapsed="true"]) .dashboard-main {
-    margin-right: var(--sb-icon, 52px);
+body:has(#leftSidebar[data-collapsed="true"]) .dashboard-main {
+    margin-left: var(--sb-icon, 52px);
 }
 
 .card {

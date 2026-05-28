@@ -1,32 +1,11 @@
-<aside id="rightSidebar" class="right-sidebar" data-collapsed="false">
+<aside id="leftSidebar" class="left-sidebar" data-collapsed="false" style="position:fixed;top:65px;left:0;right:auto;height:calc(100vh - 65px);width:280px;display:flex;flex-direction:row-reverse;z-index:30;">
 
     <!-- Toggle -->
     <button id="sbToggle" class="sb-toggle" title="Toggle sidebar">
         <i class="fas fa-chevron-right"></i>
     </button>
 
-    <!-- ── Icon strip (always visible) ── -->
-    <div class="sb-icon-strip">
-        <!-- Friends -->
-        <button class="sb-tab-icon active" data-tab="friends" title="Friends">
-            <i class="fas fa-user-friends"></i>
-            <span class="sb-badge hidden" id="pendingBadgeIcon">0</span>
-        </button>
-
-        <div class="sb-strip-divider"></div>
-
-        <!-- Activity -->
-        <button class="sb-tab-icon" data-tab="activity" title="Activity">
-            <i class="fas fa-bell"></i>
-        </button>
-
-        <!-- Leaderboard -->
-        <button class="sb-tab-icon" data-tab="leaderboard" title="Leaderboard">
-            <i class="fas fa-trophy"></i>
-        </button>
-    </div>
-
-    <!-- ── Full panel ── -->
+    <!-- ── Full panel (left part, hidden when collapsed) ── -->
     <div class="sb-panel">
 
         <!-- Tab bar -->
@@ -43,15 +22,12 @@
             </button>
         </div>
 
-        <!-- ── Friends pane ── -->
+        <!-- Friends pane -->
         <div class="sb-pane active" id="pane-friends">
-
             <div class="sb-pane-header">
                 <span class="text-white text-xs font-semibold">Friends</span>
                 <span class="online-badge" id="onlineCountBadge">0 online</span>
             </div>
-
-            <!-- Search -->
             <div class="sb-search-wrap">
                 <div class="relative">
                     <i class="fas fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-600" style="font-size:10px;"></i>
@@ -59,8 +35,6 @@
                 </div>
                 <div id="searchResults" class="search-dropdown hidden"></div>
             </div>
-
-            <!-- Pending requests -->
             <div id="pendingSection" class="pending-section hidden">
                 <div class="sb-section-label">
                     <i class="fas fa-user-clock" style="color:#fbbf24;"></i>
@@ -68,8 +42,6 @@
                 </div>
                 <div id="pendingList" class="friends-list" style="flex:none;max-height:140px;"></div>
             </div>
-
-            <!-- Friends list -->
             <div class="sb-section-label">
                 <i class="fas fa-users" style="color:#818cf8;"></i>
                 Friends <span id="friendCount" class="sb-count">0</span>
@@ -81,9 +53,19 @@
                 </div>
             </div>
 
+            <!-- Suggestions -->
+            <div class="sb-section-label" style="margin-top:4px;">
+                <i class="fas fa-user-plus" style="color:#34d399;"></i>
+                People You May Know <span id="suggestCount" class="sb-count">0</span>
+            </div>
+            <div id="suggestionsList" class="friends-list">
+                <div class="sb-empty" id="suggestionsEmpty">
+                    <p>No suggestions available.</p>
+                </div>
+            </div>
         </div>
 
-        <!-- ── Activity pane ── -->
+        <!-- Activity pane -->
         <div class="sb-pane" id="pane-activity">
             <div class="sb-coming-soon">
                 <i class="fas fa-bell"></i>
@@ -91,7 +73,7 @@
             </div>
         </div>
 
-        <!-- ── Leaderboard pane ── -->
+        <!-- Leaderboard pane -->
         <div class="sb-pane" id="pane-leaderboard">
             <div class="sb-coming-soon">
                 <i class="fas fa-trophy"></i>
@@ -100,4 +82,20 @@
         </div>
 
     </div>
+
+    <!-- ── Icon strip (always visible, flush to right edge) ── -->
+    <div class="sb-icon-strip">
+        <button class="sb-tab-icon active" data-tab="friends" title="Friends">
+            <i class="fas fa-user-friends"></i>
+            <span class="sb-badge hidden" id="pendingBadgeIcon">0</span>
+        </button>
+        <div class="sb-strip-divider"></div>
+        <button class="sb-tab-icon" data-tab="activity" title="Activity">
+            <i class="fas fa-bell"></i>
+        </button>
+        <button class="sb-tab-icon" data-tab="leaderboard" title="Leaderboard">
+            <i class="fas fa-trophy"></i>
+        </button>
+    </div>
+
 </aside>

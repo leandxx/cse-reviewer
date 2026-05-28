@@ -11,28 +11,26 @@ require_once '../config/db.php';
 $me     = (int) $_SESSION['user_id'];
 $action = $_GET['action'] ?? ($_POST['action'] ?? '');
 
-// ── Heartbeat ────────────────────────────────────────────────────────────────
+// ── Heartbeat ─────────────────────────────────────────────────────────────────
 if ($action === 'ping') {
     $pdo->prepare("UPDATE users SET is_online=1, last_seen=NOW() WHERE id=?")
         ->execute([$me]);
     echo json_encode(['ok' => true]); exit;
 }
 
-// ── List friends + their online status ───────────────────────────────────────
+// ── List friends ──────────────────────────────────────────────────────────────
 if ($action === 'list') {
-    // Mark stale (>90 s) as offline
     $pdo->exec("UPDATE users SET is_online=0 WHERE is_online=1 AND last_seen < DATE_SUB(NOW(), INTERVAL 90 SECOND)");
 
+    // Only WHERE user_id=me — avoids duplicates from bidirectional rows
     $rows = $pdo->prepare("
-        SELECT u.id, u.full_name,
-               u.is_online,
-               u.last_seen
+        SELECT u.id, u.full_name, u.is_online, u.last_seen
         FROM friends f
-        JOIN users u ON u.id = IF(f.user_id=?, f.friend_id, f.user_id)
-        WHERE f.user_id=? OR f.friend_id=?
+        JOIN users u ON u.id = f.friend_id
+        WHERE f.user_id = ?
         ORDER BY u.is_online DESC, u.full_name ASC
     ");
-    $rows->execute([$me, $me, $me]);
+    $rows->execute([$me]);
     echo json_encode($rows->fetchAll()); exit;
 }
 
@@ -61,7 +59,7 @@ if ($action === 'search') {
             END AS rel
         FROM users u
         LEFT JOIN friends f
-            ON (f.user_id=? AND f.friend_id=u.id) OR (f.friend_id=? AND f.user_id=u.id)
+            ON f.user_id=? AND f.friend_id=u.id
         LEFT JOIN friend_requests fr_sent
             ON fr_sent.sender_id=? AND fr_sent.receiver_id=u.id AND fr_sent.status='pending'
         LEFT JOIN friend_requests fr_recv
@@ -69,7 +67,28 @@ if ($action === 'search') {
         WHERE u.id != ? AND u.full_name LIKE ?
         LIMIT 10
     ");
-    $rows->execute([$me, $me, $me, $me, $me, $q]);
+    $rows->execute([$me, $me, $me, $me, $q]);
+    echo json_encode($rows->fetchAll()); exit;
+}
+
+// ── Suggestions (users not yet friends or pending) ──────────────────────────
+if ($action === 'suggestions') {
+    $rows = $pdo->prepare("
+        SELECT u.id, u.full_name, u.is_online
+        FROM users u
+        WHERE u.id != ?
+          AND u.id NOT IN (
+              SELECT friend_id FROM friends WHERE user_id = ?
+          )
+          AND u.id NOT IN (
+              SELECT receiver_id FROM friend_requests WHERE sender_id = ? AND status = 'pending'
+          )
+          AND u.id NOT IN (
+              SELECT sender_id FROM friend_requests WHERE receiver_id = ? AND status = 'pending'
+          )
+        ORDER BY u.full_name ASC
+    ");
+    $rows->execute([$me, $me, $me, $me]);
     echo json_encode($rows->fetchAll()); exit;
 }
 
@@ -90,17 +109,32 @@ if ($action === 'add') {
 // ── Accept request ────────────────────────────────────────────────────────────
 if ($action === 'accept') {
     $reqId = (int) ($_POST['request_id'] ?? 0);
-    $row = $pdo->prepare("SELECT * FROM friend_requests WHERE id=? AND receiver_id=? AND status='pending'");
-    $row->execute([$reqId, $me]);
-    $req = $row->fetch();
-    if (!$req) { echo json_encode(['error' => 'Not found']); exit; }
+    try {
+        $pdo->beginTransaction();
 
-    $pdo->prepare("UPDATE friend_requests SET status='accepted' WHERE id=?")->execute([$reqId]);
-    // Insert both directions
-    $ins = $pdo->prepare("INSERT IGNORE INTO friends (user_id, friend_id) VALUES (?,?)");
-    $ins->execute([$me, $req['sender_id']]);
-    $ins->execute([$req['sender_id'], $me]);
-    echo json_encode(['ok' => true]); exit;
+        $row = $pdo->prepare("SELECT * FROM friend_requests WHERE id=? AND receiver_id=? AND status='pending' FOR UPDATE");
+        $row->execute([$reqId, $me]);
+        $req = $row->fetch();
+
+        if (!$req) {
+            $pdo->rollBack();
+            echo json_encode(['ok' => true]); exit; // already accepted
+        }
+
+        $pdo->prepare("UPDATE friend_requests SET status='accepted' WHERE id=?")->execute([$reqId]);
+
+        // Insert only one direction each — INSERT IGNORE handles any race
+        $ins = $pdo->prepare("INSERT IGNORE INTO friends (user_id, friend_id) VALUES (?,?)");
+        $ins->execute([$me, $req['sender_id']]);
+        $ins->execute([$req['sender_id'], $me]);
+
+        $pdo->commit();
+        echo json_encode(['ok' => true]);
+    } catch (PDOException $e) {
+        $pdo->rollBack();
+        echo json_encode(['error' => $e->getMessage()]);
+    }
+    exit;
 }
 
 // ── Decline request ───────────────────────────────────────────────────────────
@@ -114,8 +148,8 @@ if ($action === 'decline') {
 // ── Remove friend ─────────────────────────────────────────────────────────────
 if ($action === 'remove') {
     $fid = (int) ($_POST['friend_id'] ?? 0);
-    $del = $pdo->prepare("DELETE FROM friends WHERE (user_id=? AND friend_id=?) OR (user_id=? AND friend_id=?)");
-    $del->execute([$me, $fid, $fid, $me]);
+    $pdo->prepare("DELETE FROM friends WHERE (user_id=? AND friend_id=?) OR (user_id=? AND friend_id=?)")
+        ->execute([$me, $fid, $fid, $me]);
     echo json_encode(['ok' => true]); exit;
 }
 

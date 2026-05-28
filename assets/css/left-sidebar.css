@@ -9,26 +9,28 @@
 }
 
 /* ── Shell ────────────────────────────────────────────────── */
-.right-sidebar {
-    position: fixed;
+.left-sidebar {
+    position: fixed !important;
     top: var(--nav-h);
-    right: 0;
+    left: 0 !important;
+    right: auto !important;
     height: calc(100vh - var(--nav-h));
     z-index: 30;
-    display: flex;
-    flex-direction: row;    /* [toggle-btn] [icon-strip] [panel] */
+    display: flex !important;
+    flex-direction: row-reverse; /* icon-strip on far left, panel expands right */
     width: var(--sb-full);
     transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.right-sidebar[data-collapsed="true"] {
+.left-sidebar[data-collapsed="true"] {
     width: var(--sb-icon);
 }
 
 /* ── Toggle button ────────────────────────────────────────── */
 .sb-toggle {
     position: absolute;
-    left: -13px;
+    right: -13px;         /* peeks out to the right of the sidebar */
+    left: auto;
     top: 24px;
     width: 26px;
     height: 26px;
@@ -50,16 +52,17 @@
     transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 .sb-toggle:hover { background: #334155; color: #fff; }
-.right-sidebar[data-collapsed="true"] .sb-toggle i {
-    transform: rotate(180deg);
-}
+/* expanded → chevron points right (close); collapsed → points left (open) */
+.left-sidebar[data-collapsed="false"] .sb-toggle i { transform: rotate(0deg); }
+.left-sidebar[data-collapsed="true"]  .sb-toggle i { transform: rotate(180deg); }
 
 /* ── Icon strip ───────────────────────────────────────────── */
 .sb-icon-strip {
     width: var(--sb-icon);
     height: 100%;
     background: rgba(10, 18, 38, 0.97);
-    border-left: 1px solid rgba(255,255,255,0.07);
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-left: none;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -124,19 +127,21 @@
     background: rgba(10, 18, 38, 0.97);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border-left: 1px solid rgba(255,255,255,0.07);
+    border-right: 1px solid rgba(255,255,255,0.07);
+    border-left: none;
     display: flex;
     flex-direction: column;
     overflow: hidden;
     transition: opacity 0.2s, transform 0.25s;
-    box-shadow: -4px 0 24px rgba(0,0,0,0.3);
+    box-shadow: 4px 0 24px rgba(0,0,0,0.3);
 }
-.right-sidebar[data-collapsed="true"] .sb-panel {
+.left-sidebar[data-collapsed="true"] .sb-panel {
     opacity: 0;
     pointer-events: none;
-    transform: translateX(8px);
+    transform: translateX(-8px);
     flex: 0;
     width: 0;
+    overflow: hidden;
 }
 
 /* ── Tab bar (inside panel) ───────────────────────────────── */
@@ -408,3 +413,119 @@
 /* ── Scrollbar for search dropdown ───────────────────────── */
 .search-dropdown::-webkit-scrollbar { width: 3px; }
 .search-dropdown::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.07); border-radius: 3px; }
+
+/* ── Confirmation Modal ───────────────────────────────────── */
+#sbModal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+}
+#sbModal.active { display: flex; }
+
+.sb-modal-backdrop {
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+}
+
+.sb-modal-box {
+    position: relative;
+    background: #1e293b;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 16px;
+    padding: 28px 24px 20px;
+    width: 280px;
+    text-align: center;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    animation: modalPop 0.2s cubic-bezier(0.34,1.56,0.64,1) both;
+}
+
+@keyframes modalPop {
+    from { opacity: 0; transform: scale(0.88); }
+    to   { opacity: 1; transform: scale(1); }
+}
+
+.sb-modal-icon {
+    font-size: 28px;
+    color: #6366f1;
+    margin-bottom: 12px;
+}
+
+.sb-modal-msg {
+    font-size: 13px;
+    color: #cbd5e1;
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.sb-modal-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+}
+
+.sb-modal-cancel,
+.sb-modal-confirm {
+    flex: 1;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.2s;
+}
+
+.sb-modal-cancel {
+    background: rgba(255,255,255,0.07);
+    color: #94a3b8;
+}
+.sb-modal-cancel:hover { background: rgba(255,255,255,0.12); }
+
+.sb-modal-confirm {
+    background: linear-gradient(135deg, #4f46e5, #7c3aed);
+    color: #fff;
+}
+.sb-modal-confirm.danger {
+    background: linear-gradient(135deg, #dc2626, #b91c1c);
+}
+.sb-modal-confirm:hover { opacity: 0.88; }
+
+/* ── Suggestion row ───────────────────────────────────────── */
+.suggest-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 6px 12px;
+    transition: background 0.15s;
+}
+.suggest-row:hover { background: rgba(255,255,255,0.03); }
+
+.suggest-row .f-avatar {
+    background: linear-gradient(135deg, #0ea5e9, #6366f1);
+}
+
+.btn-add-suggest {
+    font-size: 10px;
+    padding: 3px 9px;
+    border-radius: 6px;
+    background: rgba(99,102,241,0.15);
+    border: 1px solid rgba(99,102,241,0.3);
+    color: #818cf8;
+    cursor: pointer;
+    transition: background 0.2s, color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+}
+.btn-add-suggest:hover {
+    background: rgba(99,102,241,0.3);
+    color: #fff;
+}
+.btn-add-suggest:disabled {
+    opacity: 0.4;
+    cursor: default;
+}

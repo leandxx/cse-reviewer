@@ -5,7 +5,7 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 $pageTitle = 'Dashboard — CSEReviewer';
-$extraCss  = ['assets/css/dashboard.css', 'assets/css/right-sidebar.css'];
+$extraCss  = ['assets/css/dashboard.css', 'assets/css/left-sidebar.css'];
 $root      = '';
 ?>
 <!DOCTYPE html>
@@ -28,8 +28,8 @@ $root      = '';
         </div>
     </nav>
 
-    <!-- Right sidebar -->
-    <?php include 'includes/right-sidebar.php'; ?>
+    <!-- Left sidebar -->
+    <?php include 'includes/left-sidebar.php'; ?>
 
     <div class="dashboard-main">
         <div class="max-w-5xl mx-auto px-6 py-12">
@@ -59,6 +59,6 @@ $root      = '';
         </div>
     </div>
 
-    <script src="assets/js/right-sidebar.js"></script>
+    <script src="assets/js/left-sidebar.js"></script>
 </body>
 </html>
