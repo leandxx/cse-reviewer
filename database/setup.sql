@@ -1,4 +1,6 @@
--- Run this on csedb
+CREATE DATABASE IF NOT EXISTS csedb;
+USE csedb;
+
 CREATE TABLE IF NOT EXISTS users (
     id INT AUTO_INCREMENT PRIMARY KEY,
     full_name VARCHAR(100) NOT NULL,
