@@ -1,0 +1,8 @@
+[phases.setup]
+nixPkgs = ["php82", "php82Extensions.pdo", "php82Extensions.pdo_mysql", "php82Extensions.mysqli", "php82Extensions.mysqlnd"]
+
+[phases.build]
+cmds = ["php -m | grep pdo"]
+
+[deploy]
+cmd = "mysql -h $MYSQLHOST -P $MYSQLPORT -u $MYSQLUSER -p$MYSQLPASSWORD $MYSQLDATABASE < database/setup.sql && php -S 0.0.0.0:$PORT -t ."
