@@ -1,14 +1,10 @@
-FROM php:8.2-fpm-alpine
+FROM php:8.2-cli
 
 RUN docker-php-ext-install pdo pdo_mysql mysqli
 
-RUN apk add --no-cache nginx
-
-WORKDIR /var/www/html
+WORKDIR /app
 COPY . .
 
-COPY nginx.conf /etc/nginx/http.d/default.conf
+EXPOSE 8080
 
-EXPOSE 80
-
-CMD sh -c "php-fpm -D && nginx -g 'daemon off;'"
+CMD ["sh", "-c", "php -S 0.0.0.0:${PORT:-8080} -t /app"]
