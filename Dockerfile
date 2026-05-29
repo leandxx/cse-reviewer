@@ -1,10 +1,12 @@
-FROM php:8.2-apache
+FROM php:8.2-fpm-alpine
 
 RUN docker-php-ext-install pdo pdo_mysql mysqli
+
+RUN apk add --no-cache nginx
 
 WORKDIR /var/www/html
 COPY . .
 
 EXPOSE 80
 
-CMD ["apache2-foreground"]
+CMD sh -c "php-fpm -D && nginx -g 'daemon off;'"
