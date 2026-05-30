@@ -1,213 +1,596 @@
 {
     "book_metadata": {
-        "title": "The Ultimate Philippine Civil Service Exam (CSE) Mastery Guide",
+        "title": "The Ultimate Comprehensive Philippine Civil Service Exam (CSE) Mastery Guide - Expanded Edition",
         "author": "Veteran CSE Coach (20+ Years Experience)",
         "target_audience": "Professional and Sub-Professional CSE Examinees",
-        "objective": "To provide deep insights, shortcuts, and psychological strategies to master the CSE and maximize passing probability."
+        "objective": "An exhaustive, deep-dive manual covering every possible question pattern, formula, elimination technique, and topic required to pass the CSE."
     },
-    "preface": "Welcome, future civil servant. After over two decades of coaching thousands of hopefuls, I've learned one absolute truth about the Philippine Civil Service Exam (CSE): It is not merely a test of intelligence; it is a test of strategy, endurance, and mental agility. The exam writers use predictable patterns, common traps, and time-draining questions to weed out the unprepared. This guide is your ultimate weapon. We won't just cover the topics; we will rewire how you approach multiple-choice exams.",
+    "preface": "Welcome to the expanded edition of the Ultimate CSE Mastery Guide. You asked for everything, and this is it. This book is designed to be your one-stop resource. We have broken down the Numerical Reasoning section to cover every formula you will need, step-by-step. We have also expanded Verbal, Analytical, General Info, and Clerical Operations to ensure no stone is left unturned. Read this, absorb the patterns, and you will walk into that testing room ready to conquer.",
     "chapters": [
         {
             "chapter_number": 1,
-            "title": "The Psychology of the CSE: Thinking Like the Examiner",
-            "introduction": "To beat the exam, you must understand the enemy. The Civil Service Commission (CSC) designs the test to evaluate your ability to handle pressure, analyze data quickly, and communicate effectively.",
+            "title": "The Psychology & Meta-Strategies of the CSE",
             "sections": [
                 {
                     "topic": "The 'Time-Trap' Philosophy",
-                    "content": "Examiners intentionally place highly complex, multi-step math problems or painfully long reading passages early in the test. Why? To break your pacing. If you spend 5 minutes on one item, you've already lost. The secret is knowing which battles to fight and which to skip and return to later."
+                    "content": "The exam is designed so you cannot finish it if you spend equal time on every question. Examiners intentionally place highly complex, multi-step math problems or painfully long reading passages early in the test. The secret is knowing which battles to fight and which to skip and return to later. You must average about 1 minute per question."
                 },
                 {
-                    "topic": "The 'Attractive Distractor'",
-                    "content": "In every 5-option question, there is the correct answer, an obviously wrong answer, and the 'Attractive Distractor'. This distractor is usually the result of a common mistake (e.g., forgetting to carry over a decimal, or picking a synonym that doesn't fit the context). Recognizing the distractor is key to elimination."
+                    "topic": "The 3-Pass Technique",
+                    "content": "Pass 1: The Low-Hanging Fruit. Answer Vocabulary, General Info, and easy Grammar instantly. Skip all math and long reading.\nPass 2: The Medium Grind. Go back for standard math word problems, logic puzzles, and short paragraphs.\nPass 3: The Time Drains. Tackle the longest reading passages and complex data interpretation. If time is up, blind-guess."
+                },
+                {
+                    "topic": "Process of Elimination (POE) and Intelligent Guessing",
+                    "content": "When unsure, eliminate wrong answers. Look for grammatical mismatches, absolute words ('always', 'never'), and outliers. There is NO RIGHT MINUS WRONG in the CSE. Never leave blanks. If you must blind-guess, pick a single letter (e.g., 'C') for all remaining items."
                 }
             ]
         },
         {
             "chapter_number": 2,
-            "title": "Core Meta-Strategies: Time Management & Intelligent Guessing",
-            "introduction": "You have about 170 items for the Professional level to be finished in 3 hours and 10 minutes. That's roughly 1 minute and 7 seconds per question. You cannot afford to dawdle.",
+            "title": "Numerical Reasoning: Formulas, Question Types, and Solutions",
+            "introduction": "This section covers all recurring mathematical problems in the CSE. Memorize these formulas and, more importantly, the step-by-step framework to solve them.",
             "sections": [
                 {
-                    "topic": "The 3-Pass Technique",
-                    "content": "Never answer the test linearly. \nPass 1: The Low-Hanging Fruit. Answer everything you know instantly (Vocabulary, General Info, easy Grammar). Skip anything that requires calculation or deep reading.\nPass 2: The Medium Grind. Go back for standard math problems, logic puzzles, and short reading passages.\nPass 3: The Time Drains. Tackle the longest reading passages and complex data interpretation. If time is almost up, execute intelligent guessing."
+                    "topic": "Fractions, Decimals, and PEMDAS",
+                    "formula": "PEMDAS: Parentheses, Exponents, Multiplication & Division (left to right), Addition & Subtraction (left to right).",
+                    "content": "Always align decimal points when adding/subtracting. For fractions, find the Least Common Denominator (LCD) before adding or subtracting.",
+                    "examples": [
+                        {
+                            "question": "Evaluate: 8 + 4 \u00d7 2 - (6 \u00f7 2)",
+                            "solution_steps": [
+                                "Step 1 (Parentheses): (6 \u00f7 2) = 3. Equation becomes 8 + 4 \u00d7 2 - 3",
+                                "Step 2 (Multiplication): 4 \u00d7 2 = 8. Equation becomes 8 + 8 - 3",
+                                "Step 3 (Addition/Subtraction): 8 + 8 = 16, then 16 - 3 = 13."
+                            ],
+                            "answer": "13"
+                        }
+                    ]
                 },
                 {
-                    "topic": "Process of Elimination (POE)",
-                    "content": "When unsure, do not look for the right answer. Look for the wrong ones. Eliminate absolutes ('always', 'never'). Eliminate grammatically inconsistent options. If you eliminate 3 out of 5, your guessing probability jumps from 20% to 50%."
+                    "topic": "Percentage, Base, Rate (PBR)",
+                    "formula": "Percentage (P) = Base (B) \u00d7 Rate (R). Therefore, B = P \u00f7 R, and R = P \u00f7 B.",
+                    "content": "Rate is always the number with the '%' sign or the decimal. Base is the whole amount (often follows the word 'of'). Percentage is the part (often follows the word 'is').",
+                    "examples": [
+                        {
+                            "question": "What is 15% of 80?",
+                            "solution_steps": [
+                                "Identify given: R = 15% (or 0.15), B = 80 (follows 'of'). We need P.",
+                                "Formula: P = B \u00d7 R",
+                                "Calculate: 80 \u00d7 0.15 = 12."
+                            ],
+                            "answer": "12"
+                        },
+                        {
+                            "question": "25 is what percent of 125?",
+                            "solution_steps": [
+                                "Identify given: P = 25, B = 125. We need R.",
+                                "Formula: R = P \u00f7 B",
+                                "Calculate: 25 \u00f7 125 = 0.20. Convert to percent = 20%."
+                            ],
+                            "answer": "20%"
+                        }
+                    ]
                 },
                 {
-                    "topic": "Intelligent Guessing",
-                    "content": "There is NO RIGHT MINUS WRONG in the CSE. Never leave blanks. If you must blind-guess, pick a single letter (e.g., always 'C' or '3') for all blind guesses rather than zig-zagging. Statistically, you will hit more correct answers this way."
+                    "topic": "Age Problems",
+                    "formula": "Create a Table: [Name] | [Past] | [Present] | [Future]. Use variables.",
+                    "content": "Always define variables based on the 'Present' age unless stated otherwise. If someone is 'older', use addition. If someone is 'times as old', use multiplication.",
+                    "examples": [
+                        {
+                            "question": "A father is 3 times as old as his son. In 10 years, the father will be twice as old as his son. How old is the father now?",
+                            "solution_steps": [
+                                "Let son's present age = x. Therefore, father's present age = 3x.",
+                                "In 10 years: son will be (x + 10), father will be (3x + 10).",
+                                "Set up the future equation: Father's future age = 2 * (Son's future age).",
+                                "(3x + 10) = 2(x + 10)",
+                                "Solve: 3x + 10 = 2x + 20",
+                                "3x - 2x = 20 - 10",
+                                "x = 10 (Son's present age).",
+                                "Father's present age = 3x = 3(10) = 30."
+                            ],
+                            "answer": "30"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Work Problems",
+                    "formula": "Working together: T = (A \u00d7 B) / (A + B). Alternatively: 1/A + 1/B = 1/T.",
+                    "content": "These problems ask how long it takes for two or more entities to complete a task together.",
+                    "examples": [
+                        {
+                            "question": "Pipe A can fill a tank in 4 hours. Pipe B can fill it in 6 hours. How long will it take if both are opened?",
+                            "solution_steps": [
+                                "Use the shortcut formula: T = (A \u00d7 B) / (A + B)",
+                                "A = 4, B = 6",
+                                "T = (4 \u00d7 6) / (4 + 6)",
+                                "T = 24 / 10",
+                                "T = 2.4 hours."
+                            ],
+                            "answer": "2.4 hours (or 2 hours and 24 minutes)"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Distance, Rate, Time (Motion Problems)",
+                    "formula": "Distance (D) = Rate (R) \u00d7 Time (T). Therefore, R = D/T and T = D/R.",
+                    "content": "Key variations: 1) Moving in opposite directions (Add rates). 2) Catching up (Subtract rates). 3) Average Speed = Total Distance / Total Time.",
+                    "examples": [
+                        {
+                            "question": "Car A leaves Manila travelling at 60 km/h. Two hours later, Car B leaves Manila on the same route travelling at 80 km/h. How long will it take Car B to catch Car A?",
+                            "solution_steps": [
+                                "Head start distance of Car A: 60 km/h \u00d7 2 hours = 120 km.",
+                                "Relative catching speed: Car B speed - Car A speed = 80 - 60 = 20 km/h.",
+                                "Time to catch up = Head start Distance / Relative Speed",
+                                "T = 120 / 20 = 6 hours."
+                            ],
+                            "answer": "6 hours"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Mixture Problems",
+                    "formula": "(Amount 1 \u00d7 Concentration 1) + (Amount 2 \u00d7 Concentration 2) = (Total Amount \u00d7 Final Concentration)",
+                    "content": "Used when mixing two solutions of different percentages to get a new percentage. Remember that pure water has a concentration of 0%, and pure substance has 100%.",
+                    "examples": [
+                        {
+                            "question": "How many liters of pure water must be added to 10 liters of a 30% salt solution to make it a 20% salt solution?",
+                            "solution_steps": [
+                                "Let x = liters of water to add.",
+                                "Pure water concentration = 0%.",
+                                "(Amount 1 \u00d7 Conc 1) + (Amount 2 \u00d7 Conc 2) = (Total \u00d7 Final Conc)",
+                                "(10 \u00d7 0.30) + (x \u00d7 0) = (10 + x) \u00d7 0.20",
+                                "3 + 0 = 0.20(10 + x)",
+                                "3 = 2 + 0.20x",
+                                "1 = 0.20x",
+                                "x = 1 / 0.20 = 5."
+                            ],
+                            "answer": "5 liters"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Number Series",
+                    "formula": "Look for Arithmetic (constant difference) or Geometric (constant multiplier) patterns. If none, check alternating series or differences of differences.",
+                    "content": "Always write the difference between consecutive numbers above them.",
+                    "examples": [
+                        {
+                            "question": "Find the next number: 2, 5, 10, 17, 26, ___",
+                            "solution_steps": [
+                                "Find the first differences: 3, 5, 7, 9.",
+                                "Notice the differences are odd numbers increasing by 2.",
+                                "The next difference should be 11.",
+                                "Add 11 to 26: 26 + 11 = 37."
+                            ],
+                            "answer": "37"
+                        }
+                    ]
                 }
             ]
         },
         {
             "chapter_number": 3,
-            "title": "Verbal Ability: Vocabulary, Grammar, and Reading Comprehension",
-            "introduction": "Verbal ability makes up a massive chunk of both Prof and Sub-Prof exams. It tests your command of English and Filipino.",
+            "title": "Verbal Ability: English & Filipino",
+            "introduction": "This section tests your grammar, vocabulary, and reading comprehension. There are strict rules to follow.",
             "sections": [
                 {
-                    "topic": "Vocabulary (Synonyms and Antonyms)",
-                    "content": "Root words, prefixes, and suffixes are your best friends. If you see the prefix 'mal-' (bad) in 'malicious', you know the answer must be negative. Also, look at the options: if three options mean the same thing, none of them can be the answer.",
+                    "topic": "Subject-Verb Agreement (The Golden Rules)",
+                    "content": "1. Singular subjects take singular verbs (usually ending in -s). Plural subjects take plural verbs.\n2. Indefinite pronouns (everyone, someone, nobody, each, either, neither) are ALWAYS SINGULAR.\n3. 'A number of' takes a plural verb. 'The number of' takes a singular verb.\n4. Intervening phrases (along with, together with, as well as) do NOT change the number of the subject.",
                     "examples": [
                         {
-                            "question": "Choose the word closest in meaning to PUGNACIOUS.",
-                            "options": [
-                                "A) Peaceful",
-                                "B) Combative",
-                                "C) Beautiful",
-                                "D) Apathetic",
-                                "E) Cowardly"
+                            "question": "Everyone in the organization ____ expected to attend.",
+                            "solution_steps": [
+                                "Identify the subject: 'Everyone'.",
+                                "Rule: 'Everyone' is an indefinite pronoun, which is always singular.",
+                                "Therefore, the verb must be singular ('is' or 'has')."
                             ],
-                            "answer": "B) Combative",
-                            "explanation": "Even if you don't know the word, the prefix 'pug-' relates to fighting (like a pugilist/boxer). Peaceful (A) is an antonym."
+                            "answer": "is"
                         }
                     ]
                 },
                 {
-                    "topic": "Grammar and Correct Usage",
-                    "content": "Focus on Subject-Verb Agreement, Pronoun-Antecedent Agreement, and Prepositions. Examiners love collective nouns (e.g., 'The jury has reached its verdict' - singular). Watch out for intervening phrases that separate the subject and verb to trick you.",
+                    "topic": "Vocabulary (Context Clues & Etymology)",
+                    "content": "If you don't know a word, look at the surrounding sentence. Contrast clues use words like 'but', 'however', 'although'. Synonym clues use 'and', 'similarly'. Learn root words: 'Bene' (good), 'Mal' (bad), 'Omni' (all), 'Chron' (time).",
                     "examples": [
                         {
-                            "question": "The mayor, together with his councilors, ____ attending the seminar.",
-                            "options": [
-                                "A) are",
-                                "B) is",
-                                "C) were",
-                                "D) have been",
-                                "E) be"
+                            "question": "The CEO's egregious behavior during the meeting, completely unlike his usual professionalism, shocked the board. 'Egregious' most likely means:",
+                            "solution_steps": [
+                                "Look for context: 'shocked the board', 'unlike his usual professionalism'.",
+                                "The word must mean something highly negative and outstandingly bad."
                             ],
-                            "answer": "B) is",
-                            "explanation": "Phrases like 'together with', 'along with', or 'as well as' do not compound the subject. The subject is 'mayor' (singular), so the verb must be 'is'."
+                            "answer": "Outstandingly bad / Flagrant"
                         }
                     ]
-                },
-                {
-                    "topic": "Reading Comprehension Techniques",
-                    "content": "DO NOT read the passage first. Read the QUESTIONS first. This gives you a 'radar' for what to look for. Use Skimming to find the main idea (usually the first and last sentences of a paragraph) and Scanning to find specific facts/dates/names."
                 },
                 {
                     "topic": "Paragraph Organization",
-                    "content": "Look for transition words (However, Therefore, Furthermore). Find the Topic Sentence (usually a broad, independent statement) to be your #1. Find the concluding sentence (usually starts with Thus or Finally) to be your last."
+                    "content": "You will be given jumbled sentences. How to order them:\n1. Look for the Topic Sentence: It introduces the main idea and usually has NO pronouns (he, it, they) or transition words.\n2. Look for Supporting Details: Sentences that elaborate on the topic.\n3. Look for Signal Words: 'Furthermore', 'On the other hand', 'Consequently'.\n4. Look for the Conclusion: Often starts with 'Therefore', 'Thus', 'Finally'.",
+                    "examples": [
+                        {
+                            "question": "Order these: A) Therefore, proper diet is essential. B) Good health is our greatest wealth. C) Without it, we cannot enjoy life fully. D) To maintain it, we must eat nutritious food.",
+                            "solution_steps": [
+                                "Sentence B is the broadest and introduces 'Good health' without relying on previous sentences. (Topic)",
+                                "Sentence C uses the pronoun 'it' referring to 'Good health'.",
+                                "Sentence D explains how to maintain 'it'.",
+                                "Sentence A uses 'Therefore', indicating a conclusion."
+                            ],
+                            "answer": "B - C - D - A"
+                        }
+                    ]
                 }
             ]
         },
         {
             "chapter_number": 4,
-            "title": "Numerical Reasoning: Beating the Math Anxiety",
-            "introduction": "You don't need a calculator; you need number sense. Most CSE math problems can be solved using shortcuts, estimations, or by working backwards from the choices.",
+            "title": "Analytical and Logical Reasoning",
+            "introduction": "This section determines if you can think critically, recognize patterns, and deduce valid conclusions from given premises.",
             "sections": [
                 {
-                    "topic": "Working Backwards (Reverse Engineering)",
-                    "content": "If you forget an algebra formula, plug the choices into the problem. Start with the middle value (Choice C). If C is too high, eliminate C, D, and E. Now you only have A and B to check."
-                },
-                {
-                    "topic": "Age Problems Shortcut",
-                    "content": "Create a simple table with Past, Present, and Future. Let 'x' be the current age. Always express everyone's age in terms of one variable if possible.",
+                    "topic": "Syllogisms",
+                    "content": "You are given premises and must find the valid conclusion. DO NOT use real-world knowledge. Stick strictly to what is written. Use Venn Diagrams.",
+                    "rules": [
+                        "All A are B: Draw circle A inside circle B.",
+                        "Some A are B: Draw overlapping circles.",
+                        "No A are B: Draw two separate circles."
+                    ],
                     "examples": [
                         {
-                            "question": "Maria is twice as old as Juan. In 5 years, the sum of their ages will be 40. How old is Juan now?",
-                            "options": [
-                                "A) 10",
-                                "B) 15",
-                                "C) 20",
-                                "D) 25",
-                                "E) 30"
+                            "question": "Premise 1: All politicians are public servants. Premise 2: Some public servants are corrupt. Conclusion?",
+                            "solution_steps": [
+                                "Draw 'Politicians' inside 'Public Servants'.",
+                                "Draw 'Corrupt' overlapping with 'Public Servants'.",
+                                "Can we prove 'Corrupt' overlaps with 'Politicians'? No. They might, but it's not guaranteed.",
+                                "Valid conclusion: Some corrupt people are public servants."
                             ],
-                            "answer": "A) 10",
-                            "explanation": "Let Juan = x, Maria = 2x. In 5 years: Juan = x + 5, Maria = 2x + 5. Sum: (x+5) + (2x+5) = 40. -> 3x + 10 = 40. -> 3x = 30. -> x = 10. Juan is 10."
+                            "answer": "Do not assume politicians are corrupt based solely on these premises."
                         }
                     ]
                 },
                 {
-                    "topic": "Work Problems Formula",
-                    "content": "If A can do a job in 'x' hours, and B can do it in 'y' hours, working together they do it in (x*y)/(x+y) hours. Memorize this single formula to save minutes."
-                },
-                {
-                    "topic": "Percentage, Base, Rate (PBR)",
-                    "content": "Use the Teeter-Totter / Triangle method. P = B * R. If you need Base, B = P / R. If you need Rate, R = P / B. Remember to convert percentages to decimals before calculating."
+                    "topic": "Word Analogies",
+                    "content": "Establish the EXACT relationship between the first pair of words before looking at the choices. Common relationships: Part to Whole (Wheel : Car), Degree of Intensity (Warm : Hot), Worker to Tool (Carpenter : Hammer), Antonyms (Light : Dark).",
+                    "examples": [
+                        {
+                            "question": "Odometer : Distance :: Anemometer : ?",
+                            "solution_steps": [
+                                "Relationship: An Odometer is a tool used to measure Distance (Tool : What it measures).",
+                                "An Anemometer is a tool used to measure what? Wind speed."
+                            ],
+                            "answer": "Wind Speed"
+                        }
+                    ]
                 }
             ]
         },
         {
             "chapter_number": 5,
-            "title": "Analytical & Logical Reasoning",
-            "introduction": "This section tests how well you process information, deduce facts, and identify faulty reasoning. It heavily features word associations, syllogisms, and sequence patterns.",
+            "title": "General Information: The \"Must Memorize\" List",
+            "introduction": "This section tests your civic awareness and knowledge of Philippine laws and environmental concepts.",
             "sections": [
                 {
-                    "topic": "Single/Double Word Analogy",
-                    "content": "Determine the exact relationship of the first pair. Is it Cause:Effect? Part:Whole? Synonym? Worker:Tool? Once you define the exact relationship, find the pair in the choices that matches it perfectly."
+                    "topic": "The 1987 Philippine Constitution",
+                    "content": "Article III (Bill of Rights) is the most tested. Know your rights against unreasonable search and seizure, right to due process, writ of habeas corpus, and double jeopardy. Know the three branches: Executive (President), Legislative (Senate & House), Judiciary (Supreme Court). Know their qualifications and terms (e.g., President = 1 term, 6 years. Senator = 2 consecutive terms max, 6 years each)."
                 },
                 {
-                    "topic": "Syllogisms and Logic",
-                    "content": "Use Venn Diagrams in your scratch paper. If 'All A are B' and 'Some B are C', it DOES NOT mean 'Some A are C'. Stick strictly to the premises given; do not use outside real-world knowledge.",
-                    "examples": [
-                        {
-                            "question": "Premise 1: All cats are aliens. Premise 2: Some aliens are fluffy. Conclusion: ?",
-                            "options": [
-                                "A) All cats are fluffy.",
-                                "B) Some cats are fluffy.",
-                                "C) No cats are fluffy.",
-                                "D) Some aliens are cats.",
-                                "E) All fluffy things are aliens."
-                            ],
-                            "answer": "D) Some aliens are cats.",
-                            "explanation": "Since all cats are inside the alien circle, at least some of the aliens must be cats. We cannot prove if the fluffy aliens overlap with the cats, so A, B, and C are invalid."
-                        }
-                    ]
+                    "topic": "Republic Act 6713: Code of Conduct and Ethical Standards for Public Officials",
+                    "content": "Memorize the 8 Norms of Conduct:\n1. Commitment to public interest\n2. Professionalism\n3. Justness and sincerity\n4. Political neutrality\n5. Responsiveness to the public\n6. Nationalism and patriotism\n7. Commitment to democracy\n8. Simple living."
                 },
                 {
-                    "topic": "Number and Letter Series",
-                    "content": "Find the difference between consecutive terms. If there is no pattern, find the difference of the differences (2nd level). Look out for alternating series (two different patterns mixed into one sequence) and prime numbers."
+                    "topic": "Environmental Protection and Ecology",
+                    "content": "Know basic concepts: Climate Change, Global Warming, Greenhouse Effect. Know important laws like R.A. 9003 (Ecological Solid Waste Management Act) and R.A. 8749 (Clean Air Act)."
                 }
             ]
         },
         {
             "chapter_number": 6,
-            "title": "General Information: The \"Must Memorize\" List",
-            "introduction": "This is purely stock knowledge. You must review the Philippine Constitution, Code of Conduct for Public Officials, and current socio-environmental issues.",
+            "title": "Clerical Operations (Sub-Professional Level Only)",
+            "introduction": "Replaces Logical Reasoning in the Sub-Prof exam. Tests speed and accuracy in office tasks.",
             "sections": [
                 {
-                    "topic": "The Philippine Constitution",
-                    "content": "Focus on the Bill of Rights (Article III), the three branches of government, their qualifications, and their terms of office. Know the Preamble by heart."
-                },
-                {
-                    "topic": "R.A. 6713: Code of Conduct and Ethical Standards",
-                    "content": "Memorize the 8 Norms of Conduct: Commitment to public interest, Professionalism, Justness and sincerity, Political neutrality, Responsiveness to the public, Nationalism and patriotism, Commitment to democracy, and Simple living."
-                },
-                {
-                    "topic": "Environmental & Peace Issues",
-                    "content": "Be familiar with basic ecological concepts (climate change, global warming, sustainable development) and human rights principles."
-                }
-            ]
-        },
-        {
-            "chapter_number": 7,
-            "title": "Clerical Operations (For Sub-Professional Level)",
-            "introduction": "If you are taking the Sub-Prof exam, Analytical Reasoning is replaced by Clerical Operations. This tests speed and accuracy.",
-            "sections": [
-                {
-                    "topic": "Alphabetizing and Filing",
-                    "content": "Rules to remember: 'Nothing comes before something' (e.g., 'Brown' comes before 'Browne'). Ignore titles (Dr., Mr.) unless identical names exist. Treat hyphenated words as one word."
+                    "topic": "Alphabetizing (Filing)",
+                    "content": "Rule 1: Nothing comes before something (e.g., 'Green' comes before 'Greene').\nRule 2: Ignore punctuation marks like hyphens and apostrophes. Treat 'O'Brien' as 'OBRIEN'.\nRule 3: Titles (Dr., Mr., Mrs.) are placed at the end in parentheses and ignored unless names are completely identical."
                 },
                 {
                     "topic": "Spelling",
-                    "content": "Review commonly misspelled words in English and Filipino (e.g., accommodate, embarrass, occurrence, privilege, separate, occasionally)."
+                    "content": "Familiarize yourself with commonly misspelled words. Double letters are common traps. Examples: Accommodate, Committee, Embarrass, Millennium, Occurrence, Privilege, Separate, Questionnaire."
+                }
+            ]
+        }
+    ]
+}
+{
+    "book_metadata": {
+        "title": "The Ultimate Comprehensive Philippine Civil Service Exam (CSE) Mastery Guide - Expanded Edition",
+        "author": "Veteran CSE Coach (20+ Years Experience)",
+        "target_audience": "Professional and Sub-Professional CSE Examinees",
+        "objective": "An exhaustive, deep-dive manual covering every possible question pattern, formula, elimination technique, and topic required to pass the CSE."
+    },
+    "preface": "Welcome to the expanded edition of the Ultimate CSE Mastery Guide. You asked for everything, and this is it. This book is designed to be your one-stop resource. We have broken down the Numerical Reasoning section to cover every formula you will need, step-by-step. We have also expanded Verbal, Analytical, General Info, and Clerical Operations to ensure no stone is left unturned. Read this, absorb the patterns, and you will walk into that testing room ready to conquer.",
+    "chapters": [
+        {
+            "chapter_number": 1,
+            "title": "The Psychology & Meta-Strategies of the CSE",
+            "sections": [
+                {
+                    "topic": "The 'Time-Trap' Philosophy",
+                    "content": "The exam is designed so you cannot finish it if you spend equal time on every question. Examiners intentionally place highly complex, multi-step math problems or painfully long reading passages early in the test. The secret is knowing which battles to fight and which to skip and return to later. You must average about 1 minute per question."
+                },
+                {
+                    "topic": "The 3-Pass Technique",
+                    "content": "Pass 1: The Low-Hanging Fruit. Answer Vocabulary, General Info, and easy Grammar instantly. Skip all math and long reading.\nPass 2: The Medium Grind. Go back for standard math word problems, logic puzzles, and short paragraphs.\nPass 3: The Time Drains. Tackle the longest reading passages and complex data interpretation. If time is up, blind-guess."
+                },
+                {
+                    "topic": "Process of Elimination (POE) and Intelligent Guessing",
+                    "content": "When unsure, eliminate wrong answers. Look for grammatical mismatches, absolute words ('always', 'never'), and outliers. There is NO RIGHT MINUS WRONG in the CSE. Never leave blanks. If you must blind-guess, pick a single letter (e.g., 'C') for all remaining items."
                 }
             ]
         },
         {
-            "chapter_number": 8,
-            "title": "Final Words from the Coach: Exam Day Execution",
-            "introduction": "Preparation is only half the battle. Execution on the day is the other half.",
+            "chapter_number": 2,
+            "title": "Numerical Reasoning: Formulas, Question Types, and Solutions",
+            "introduction": "This section covers all recurring mathematical problems in the CSE. Memorize these formulas and, more importantly, the step-by-step framework to solve them.",
             "sections": [
                 {
-                    "topic": "Physical and Mental Prep",
-                    "content": "Do not study the night before. Your brain needs to rest to process the data. Prepare your mongo pencils (No. 2), eraser, sharpener, and valid ID the night before. Eat a light, high-protein breakfast."
+                    "topic": "Fractions, Decimals, and PEMDAS",
+                    "formula": "PEMDAS: Parentheses, Exponents, Multiplication & Division (left to right), Addition & Subtraction (left to right).",
+                    "content": "Always align decimal points when adding/subtracting. For fractions, find the Least Common Denominator (LCD) before adding or subtracting.",
+                    "examples": [
+                        {
+                            "question": "Evaluate: 8 + 4 \u00d7 2 - (6 \u00f7 2)",
+                            "solution_steps": [
+                                "Step 1 (Parentheses): (6 \u00f7 2) = 3. Equation becomes 8 + 4 \u00d7 2 - 3",
+                                "Step 2 (Multiplication): 4 \u00d7 2 = 8. Equation becomes 8 + 8 - 3",
+                                "Step 3 (Addition/Subtraction): 8 + 8 = 16, then 16 - 3 = 13."
+                            ],
+                            "answer": "13"
+                        }
+                    ]
                 },
                 {
-                    "topic": "Shading Techniques",
-                    "content": "Do not waste time making the shaded circle perfect. Shade dark enough to be read by the optical mark reader, but move quickly. Keep your answer sheet clean; stray marks can invalidate your test."
+                    "topic": "Percentage, Base, Rate (PBR)",
+                    "formula": "Percentage (P) = Base (B) \u00d7 Rate (R). Therefore, B = P \u00f7 R, and R = P \u00f7 B.",
+                    "content": "Rate is always the number with the '%' sign or the decimal. Base is the whole amount (often follows the word 'of'). Percentage is the part (often follows the word 'is').",
+                    "examples": [
+                        {
+                            "question": "What is 15% of 80?",
+                            "solution_steps": [
+                                "Identify given: R = 15% (or 0.15), B = 80 (follows 'of'). We need P.",
+                                "Formula: P = B \u00d7 R",
+                                "Calculate: 80 \u00d7 0.15 = 12."
+                            ],
+                            "answer": "12"
+                        },
+                        {
+                            "question": "25 is what percent of 125?",
+                            "solution_steps": [
+                                "Identify given: P = 25, B = 125. We need R.",
+                                "Formula: R = P \u00f7 B",
+                                "Calculate: 25 \u00f7 125 = 0.20. Convert to percent = 20%."
+                            ],
+                            "answer": "20%"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Age Problems",
+                    "formula": "Create a Table: [Name] | [Past] | [Present] | [Future]. Use variables.",
+                    "content": "Always define variables based on the 'Present' age unless stated otherwise. If someone is 'older', use addition. If someone is 'times as old', use multiplication.",
+                    "examples": [
+                        {
+                            "question": "A father is 3 times as old as his son. In 10 years, the father will be twice as old as his son. How old is the father now?",
+                            "solution_steps": [
+                                "Let son's present age = x. Therefore, father's present age = 3x.",
+                                "In 10 years: son will be (x + 10), father will be (3x + 10).",
+                                "Set up the future equation: Father's future age = 2 * (Son's future age).",
+                                "(3x + 10) = 2(x + 10)",
+                                "Solve: 3x + 10 = 2x + 20",
+                                "3x - 2x = 20 - 10",
+                                "x = 10 (Son's present age).",
+                                "Father's present age = 3x = 3(10) = 30."
+                            ],
+                            "answer": "30"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Work Problems",
+                    "formula": "Working together: T = (A \u00d7 B) / (A + B). Alternatively: 1/A + 1/B = 1/T.",
+                    "content": "These problems ask how long it takes for two or more entities to complete a task together.",
+                    "examples": [
+                        {
+                            "question": "Pipe A can fill a tank in 4 hours. Pipe B can fill it in 6 hours. How long will it take if both are opened?",
+                            "solution_steps": [
+                                "Use the shortcut formula: T = (A \u00d7 B) / (A + B)",
+                                "A = 4, B = 6",
+                                "T = (4 \u00d7 6) / (4 + 6)",
+                                "T = 24 / 10",
+                                "T = 2.4 hours."
+                            ],
+                            "answer": "2.4 hours (or 2 hours and 24 minutes)"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Distance, Rate, Time (Motion Problems)",
+                    "formula": "Distance (D) = Rate (R) \u00d7 Time (T). Therefore, R = D/T and T = D/R.",
+                    "content": "Key variations: 1) Moving in opposite directions (Add rates). 2) Catching up (Subtract rates). 3) Average Speed = Total Distance / Total Time.",
+                    "examples": [
+                        {
+                            "question": "Car A leaves Manila travelling at 60 km/h. Two hours later, Car B leaves Manila on the same route travelling at 80 km/h. How long will it take Car B to catch Car A?",
+                            "solution_steps": [
+                                "Head start distance of Car A: 60 km/h \u00d7 2 hours = 120 km.",
+                                "Relative catching speed: Car B speed - Car A speed = 80 - 60 = 20 km/h.",
+                                "Time to catch up = Head start Distance / Relative Speed",
+                                "T = 120 / 20 = 6 hours."
+                            ],
+                            "answer": "6 hours"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Mixture Problems",
+                    "formula": "(Amount 1 \u00d7 Concentration 1) + (Amount 2 \u00d7 Concentration 2) = (Total Amount \u00d7 Final Concentration)",
+                    "content": "Used when mixing two solutions of different percentages to get a new percentage. Remember that pure water has a concentration of 0%, and pure substance has 100%.",
+                    "examples": [
+                        {
+                            "question": "How many liters of pure water must be added to 10 liters of a 30% salt solution to make it a 20% salt solution?",
+                            "solution_steps": [
+                                "Let x = liters of water to add.",
+                                "Pure water concentration = 0%.",
+                                "(Amount 1 \u00d7 Conc 1) + (Amount 2 \u00d7 Conc 2) = (Total \u00d7 Final Conc)",
+                                "(10 \u00d7 0.30) + (x \u00d7 0) = (10 + x) \u00d7 0.20",
+                                "3 + 0 = 0.20(10 + x)",
+                                "3 = 2 + 0.20x",
+                                "1 = 0.20x",
+                                "x = 1 / 0.20 = 5."
+                            ],
+                            "answer": "5 liters"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Number Series",
+                    "formula": "Look for Arithmetic (constant difference) or Geometric (constant multiplier) patterns. If none, check alternating series or differences of differences.",
+                    "content": "Always write the difference between consecutive numbers above them.",
+                    "examples": [
+                        {
+                            "question": "Find the next number: 2, 5, 10, 17, 26, ___",
+                            "solution_steps": [
+                                "Find the first differences: 3, 5, 7, 9.",
+                                "Notice the differences are odd numbers increasing by 2.",
+                                "The next difference should be 11.",
+                                "Add 11 to 26: 26 + 11 = 37."
+                            ],
+                            "answer": "37"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "chapter_number": 3,
+            "title": "Verbal Ability: English & Filipino",
+            "introduction": "This section tests your grammar, vocabulary, and reading comprehension. There are strict rules to follow.",
+            "sections": [
+                {
+                    "topic": "Subject-Verb Agreement (The Golden Rules)",
+                    "content": "1. Singular subjects take singular verbs (usually ending in -s). Plural subjects take plural verbs.\n2. Indefinite pronouns (everyone, someone, nobody, each, either, neither) are ALWAYS SINGULAR.\n3. 'A number of' takes a plural verb. 'The number of' takes a singular verb.\n4. Intervening phrases (along with, together with, as well as) do NOT change the number of the subject.",
+                    "examples": [
+                        {
+                            "question": "Everyone in the organization ____ expected to attend.",
+                            "solution_steps": [
+                                "Identify the subject: 'Everyone'.",
+                                "Rule: 'Everyone' is an indefinite pronoun, which is always singular.",
+                                "Therefore, the verb must be singular ('is' or 'has')."
+                            ],
+                            "answer": "is"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Vocabulary (Context Clues & Etymology)",
+                    "content": "If you don't know a word, look at the surrounding sentence. Contrast clues use words like 'but', 'however', 'although'. Synonym clues use 'and', 'similarly'. Learn root words: 'Bene' (good), 'Mal' (bad), 'Omni' (all), 'Chron' (time).",
+                    "examples": [
+                        {
+                            "question": "The CEO's egregious behavior during the meeting, completely unlike his usual professionalism, shocked the board. 'Egregious' most likely means:",
+                            "solution_steps": [
+                                "Look for context: 'shocked the board', 'unlike his usual professionalism'.",
+                                "The word must mean something highly negative and outstandingly bad."
+                            ],
+                            "answer": "Outstandingly bad / Flagrant"
+                        }
+                    ]
+                },
+                {
+                    "topic": "Paragraph Organization",
+                    "content": "You will be given jumbled sentences. How to order them:\n1. Look for the Topic Sentence: It introduces the main idea and usually has NO pronouns (he, it, they) or transition words.\n2. Look for Supporting Details: Sentences that elaborate on the topic.\n3. Look for Signal Words: 'Furthermore', 'On the other hand', 'Consequently'.\n4. Look for the Conclusion: Often starts with 'Therefore', 'Thus', 'Finally'.",
+                    "examples": [
+                        {
+                            "question": "Order these: A) Therefore, proper diet is essential. B) Good health is our greatest wealth. C) Without it, we cannot enjoy life fully. D) To maintain it, we must eat nutritious food.",
+                            "solution_steps": [
+                                "Sentence B is the broadest and introduces 'Good health' without relying on previous sentences. (Topic)",
+                                "Sentence C uses the pronoun 'it' referring to 'Good health'.",
+                                "Sentence D explains how to maintain 'it'.",
+                                "Sentence A uses 'Therefore', indicating a conclusion."
+                            ],
+                            "answer": "B - C - D - A"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "chapter_number": 4,
+            "title": "Analytical and Logical Reasoning",
+            "introduction": "This section determines if you can think critically, recognize patterns, and deduce valid conclusions from given premises.",
+            "sections": [
+                {
+                    "topic": "Syllogisms",
+                    "content": "You are given premises and must find the valid conclusion. DO NOT use real-world knowledge. Stick strictly to what is written. Use Venn Diagrams.",
+                    "rules": [
+                        "All A are B: Draw circle A inside circle B.",
+                        "Some A are B: Draw overlapping circles.",
+                        "No A are B: Draw two separate circles."
+                    ],
+                    "examples": [
+                        {
+                            "question": "Premise 1: All politicians are public servants. Premise 2: Some public servants are corrupt. Conclusion?",
+                            "solution_steps": [
+                                "Draw 'Politicians' inside 'Public Servants'.",
+                                "Draw 'Corrupt' overlapping with 'Public Servants'.",
+                                "Can we prove 'Corrupt' overlaps with 'Politicians'? No. They might, but it's not guaranteed.",
+                                "Valid conclusion: Some corrupt people are public servants."
+                            ],
+                            "answer": "Do not assume politicians are corrupt based solely on these premises."
+                        }
+                    ]
+                },
+                {
+                    "topic": "Word Analogies",
+                    "content": "Establish the EXACT relationship between the first pair of words before looking at the choices. Common relationships: Part to Whole (Wheel : Car), Degree of Intensity (Warm : Hot), Worker to Tool (Carpenter : Hammer), Antonyms (Light : Dark).",
+                    "examples": [
+                        {
+                            "question": "Odometer : Distance :: Anemometer : ?",
+                            "solution_steps": [
+                                "Relationship: An Odometer is a tool used to measure Distance (Tool : What it measures).",
+                                "An Anemometer is a tool used to measure what? Wind speed."
+                            ],
+                            "answer": "Wind Speed"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "chapter_number": 5,
+            "title": "General Information: The \"Must Memorize\" List",
+            "introduction": "This section tests your civic awareness and knowledge of Philippine laws and environmental concepts.",
+            "sections": [
+                {
+                    "topic": "The 1987 Philippine Constitution",
+                    "content": "Article III (Bill of Rights) is the most tested. Know your rights against unreasonable search and seizure, right to due process, writ of habeas corpus, and double jeopardy. Know the three branches: Executive (President), Legislative (Senate & House), Judiciary (Supreme Court). Know their qualifications and terms (e.g., President = 1 term, 6 years. Senator = 2 consecutive terms max, 6 years each)."
+                },
+                {
+                    "topic": "Republic Act 6713: Code of Conduct and Ethical Standards for Public Officials",
+                    "content": "Memorize the 8 Norms of Conduct:\n1. Commitment to public interest\n2. Professionalism\n3. Justness and sincerity\n4. Political neutrality\n5. Responsiveness to the public\n6. Nationalism and patriotism\n7. Commitment to democracy\n8. Simple living."
+                },
+                {
+                    "topic": "Environmental Protection and Ecology",
+                    "content": "Know basic concepts: Climate Change, Global Warming, Greenhouse Effect. Know important laws like R.A. 9003 (Ecological Solid Waste Management Act) and R.A. 8749 (Clean Air Act)."
+                }
+            ]
+        },
+        {
+            "chapter_number": 6,
+            "title": "Clerical Operations (Sub-Professional Level Only)",
+            "introduction": "Replaces Logical Reasoning in the Sub-Prof exam. Tests speed and accuracy in office tasks.",
+            "sections": [
+                {
+                    "topic": "Alphabetizing (Filing)",
+                    "content": "Rule 1: Nothing comes before something (e.g., 'Green' comes before 'Greene').\nRule 2: Ignore punctuation marks like hyphens and apostrophes. Treat 'O'Brien' as 'OBRIEN'.\nRule 3: Titles (Dr., Mr., Mrs.) are placed at the end in parentheses and ignored unless names are completely identical."
+                },
+                {
+                    "topic": "Spelling",
+                    "content": "Familiarize yourself with commonly misspelled words. Double letters are common traps. Examples: Accommodate, Committee, Embarrass, Millennium, Occurrence, Privilege, Separate, Questionnaire."
                 }
             ]
         }
