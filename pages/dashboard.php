@@ -41,9 +41,9 @@ $root      = '../';
             <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <?php
                 $cards = [
-                    ['fas fa-book-open', 'from-indigo-500 to-purple-500', 'Start Reviewing', 'Practice questions across all CSE subjects.', 'Coming Soon'],
-                    ['fas fa-chart-bar', 'from-blue-500 to-cyan-500', 'My Progress', 'Track your scores and improvement over time.', 'Coming Soon'],
-                    ['fas fa-clock', 'from-purple-500 to-pink-500', 'Mock Exams', 'Timed full-length practice exams.', 'Coming Soon'],
+                    ['fas fa-book-open', 'from-indigo-500 to-purple-500', 'Start Reviewing', 'Practice questions across all CSE subjects.', 'Practice Now', 'practice.php'],
+                    ['fas fa-file-import', 'from-blue-500 to-cyan-500', 'Import Questions', 'Upload a PDF reviewer and let AI extract the questions.', 'Import PDF', 'import.php'],
+                    ['fas fa-clock', 'from-purple-500 to-pink-500', 'Mock Exams', 'Timed full-length practice exams.', 'Coming Soon', '#'],
                 ];
                 foreach ($cards as $c): ?>
                 <div class="card rounded-2xl p-6 text-center">
@@ -52,7 +52,7 @@ $root      = '../';
                     </div>
                     <h3 class="text-white font-bold text-lg mb-2"><?= $c[2] ?></h3>
                     <p class="text-slate-400 text-sm mb-4"><?= $c[3] ?></p>
-                    <span class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full"><?= $c[4] ?></span>
+                    <a href="<?= $c[5] ?>" class="text-xs font-semibold text-indigo-400 bg-indigo-500/10 px-3 py-1 rounded-full hover:bg-indigo-500/20 transition-all"><?= $c[4] ?></a>
                 </div>
                 <?php endforeach; ?>
             </div>
