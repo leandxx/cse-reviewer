@@ -16,12 +16,17 @@ if ($action === 'start') {
     $subject = $_POST['subject'] ?? 'verbal';
     $limit   = min((int) ($_POST['limit'] ?? 10), 50);
 
-    $valid = ['verbal', 'numerical', 'analytical', 'general'];
+    $valid = ['verbal', 'numerical', 'analytical', 'general', 'all'];
     if (!in_array($subject, $valid)) { echo json_encode(['error' => 'Invalid subject']); exit; }
 
-    // Pick random questions for this subject
-    $q = $pdo->prepare("SELECT id FROM questions WHERE subject = ? ORDER BY RAND() LIMIT $limit");
-    $q->execute([$subject]);
+    // Pick random questions — all subjects if mock exam
+    if ($subject === 'all') {
+        $q = $pdo->prepare("SELECT id FROM questions ORDER BY RAND() LIMIT $limit");
+        $q->execute();
+    } else {
+        $q = $pdo->prepare("SELECT id FROM questions WHERE subject = ? ORDER BY RAND() LIMIT $limit");
+        $q->execute([$subject]);
+    }
     $ids = $q->fetchAll(PDO::FETCH_COLUMN);
 
     if (!$ids) { echo json_encode(['error' => 'No questions available for this subject yet.']); exit; }

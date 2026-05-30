@@ -62,33 +62,6 @@ CREATE TABLE IF NOT EXISTS quiz_answers (
     FOREIGN KEY (question_id) REFERENCES questions(id)     ON DELETE CASCADE
 );
 
--- Sample questions (remove or expand as needed)
-INSERT IGNORE INTO questions (subject, difficulty, question, choice_a, choice_b, choice_c, choice_d, answer, hint, explanation) VALUES
-('verbal', 'easy',
- 'Which word is closest in meaning to "BENEVOLENT"?',
- 'Cruel', 'Kind', 'Lazy', 'Angry',
- 'b',
- 'Think about someone who does good deeds for others.',
- 'Benevolent means well-meaning and kindly. It comes from Latin "bene" (well) + "volent" (wishing).'),
-('verbal', 'medium',
- 'Choose the word that best completes the sentence: "The scientist\'s ______ research led to a major breakthrough."',
- 'careless', 'hasty', 'meticulous', 'vague',
- 'c',
- 'The sentence implies the research was done with great care.',
- 'Meticulous means showing great attention to detail. A breakthrough typically results from careful, thorough work.'),
-('numerical', 'easy',
- 'If a shirt costs PHP 450 and is on sale for 20% off, what is the sale price?',
- 'PHP 360', 'PHP 380', 'PHP 400', 'PHP 420',
- 'a',
- '20% of 450 = ?',
- '20% of 450 = 90. Sale price = 450 - 90 = PHP 360.'),
-('analytical', 'medium',
- 'All managers are leaders. Some leaders are visionaries. Which conclusion is definitely true?',
- 'All managers are visionaries.', 'Some managers may be visionaries.', 'No managers are visionaries.', 'All visionaries are managers.',
- 'b',
- 'Think about what "some" means in logic.',
- 'Since only SOME leaders are visionaries, and all managers are leaders, it is possible (but not certain) that some managers are visionaries. Only option B is definitely supportable.');
-
 CREATE TABLE IF NOT EXISTS friends (
     id         INT AUTO_INCREMENT PRIMARY KEY,
     user_id    INT NOT NULL,
