@@ -11,6 +11,7 @@ $root      = '../';
 <body class="min-h-screen flex items-center justify-center p-4">
 
     <div class="auth-bg">
+        <div class="logo-bg"></div>
         <div class="orb orb-1"></div>
         <div class="orb orb-2"></div>
         <div class="orb orb-3"></div>
