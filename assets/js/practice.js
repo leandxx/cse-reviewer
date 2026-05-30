@@ -114,6 +114,12 @@
 
         const data = await get({ action: 'question', session_id: sessionId, index: currentIndex });
 
+        if (data.error) {
+            choicesWrap.innerHTML = `<div class="text-red-400 text-sm text-center py-4">Error: ${data.error}</div>`;
+            console.error('Question load error:', data.error);
+            return;
+        }
+
         if (data.done) { finishQuiz(); return; }
 
         currentAnswerId = data.answer_id;
@@ -241,17 +247,29 @@
 
     // ── Helpers ───────────────────────────────────────────────────────────────
     async function get(params) {
-        const r = await fetch(API + '?' + new URLSearchParams(params));
-        return r.json();
+        try {
+            const r = await fetch(API + '?' + new URLSearchParams(params));
+            const text = await r.text();
+            return JSON.parse(text);
+        } catch (e) {
+            console.error('GET error:', e);
+            return { error: 'Request failed' };
+        }
     }
 
     async function post(params, body) {
-        const r = await fetch(API + '?' + new URLSearchParams(params), {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(body),
-        });
-        return r.json();
+        try {
+            const r = await fetch(API + '?' + new URLSearchParams(params), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(body),
+            });
+            const text = await r.text();
+            return JSON.parse(text);
+        } catch (e) {
+            console.error('POST error:', e);
+            return { error: 'Request failed' };
+        }
     }
 
     const escHtml = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');

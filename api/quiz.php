@@ -15,7 +15,7 @@ $action = $_GET['action'] ?? ($_POST['action'] ?? '');
 // ── Start session ─────────────────────────────────────────────────────────────
 if ($action === 'start') {
     $subject = $_POST['subject'] ?? 'verbal';
-    $limit   = min((int) ($_POST['limit'] ?? 10), 50);
+    $limit   = min((int) ($_POST['limit'] ?? 10), 100);
 
     $valid = ['verbal', 'numerical', 'analytical', 'general', 'all'];
     if (!in_array($subject, $valid)) { echo json_encode(['error' => 'Invalid subject']); exit; }

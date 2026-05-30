@@ -134,7 +134,13 @@
         examChoicesWrap.innerHTML = '<div class="text-slate-500 text-sm text-center py-4"><i class="fas fa-spinner fa-spin mr-2"></i>Loading…</div>';
 
         const data = await get({ action: 'question', session_id: sessionId, index });
-        if (data.done || data.error) return;
+        if (data.done || data.error) {
+            if (data.error) {
+                examChoicesWrap.innerHTML = `<div class="text-red-400 text-sm text-center py-4">Error: ${data.error}</div>`;
+                console.error('Question load error:', data.error);
+            }
+            return;
+        }
 
         qCache[index] = { data, chosen: null, hintUsed: false, answered: false };
         renderQuestion(qCache[index]);
@@ -351,16 +357,28 @@
 
     // ── Helpers ───────────────────────────────────────────────────────────────
     async function get(params) {
-        const r = await fetch(API + '?' + new URLSearchParams(params));
-        return r.json();
+        try {
+            const r = await fetch(API + '?' + new URLSearchParams(params));
+            const text = await r.text();
+            return JSON.parse(text);
+        } catch (e) {
+            console.error('GET error:', e);
+            return { error: 'Request failed' };
+        }
     }
     async function post(params, body) {
-        const r = await fetch(API + '?' + new URLSearchParams(params), {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-            body: new URLSearchParams(body),
-        });
-        return r.json();
+        try {
+            const r = await fetch(API + '?' + new URLSearchParams(params), {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: new URLSearchParams(body),
+            });
+            const text = await r.text();
+            return JSON.parse(text);
+        } catch (e) {
+            console.error('POST error:', e);
+            return { error: 'Request failed' };
+        }
     }
     const escHtml = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
 })();
