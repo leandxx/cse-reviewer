@@ -1,4 +1,7 @@
 <?php
+ini_set('session.cookie_path', '/');
+ini_set('session.gc_maxlifetime', 86400);   // 24 hours
+ini_set('session.cookie_lifetime', 86400);  // 24 hours
 session_start();
 header('Content-Type: application/json');
 

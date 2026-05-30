@@ -1,5 +1,7 @@
 <?php
 ini_set('session.cookie_path', '/');
+ini_set('session.gc_maxlifetime', 86400);
+ini_set('session.cookie_lifetime', 86400);
 session_start();
 if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
 
