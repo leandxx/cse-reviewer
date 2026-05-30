@@ -29,7 +29,7 @@ $root      = '../';
 
 <?php include '../includes/left-sidebar.php'; ?>
 
-<div class="dashboard-main">
+<div class="dashboard-main flex flex-col min-h-screen">
     <div class="max-w-5xl mx-auto px-6 py-12">
 
         <!-- XP / Level card -->
@@ -88,7 +88,7 @@ $root      = '../';
     </div>
 </div>
 
-<footer class="relative z-10 text-center py-6 mt-2 border-t border-slate-800 bg-slate-800/30">
+<footer class="relative z-10 text-center py-6 mt-auto border-t border-slate-800 bg-slate-800/30">
     <p class="text-slate-600 text-xs">
         Made by <span class="text-slate-400 font-semibold">Leandro Lojero</span>
         &nbsp;·&nbsp;
