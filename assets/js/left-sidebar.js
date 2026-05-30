@@ -57,12 +57,12 @@
     function syncNavHeight() {
         const h = nav ? nav.offsetHeight : 65;
         document.documentElement.style.setProperty('--nav-h', h + 'px');
-        if (window.innerWidth >= 768) {
+        if (!isMobile()) {
             sidebar.style.top    = h + 'px';
             sidebar.style.height = 'calc(100vh - ' + h + 'px)';
         } else {
-            sidebar.style.top    = '0';
-            sidebar.style.height = '100vh';
+            sidebar.style.top    = '';
+            sidebar.style.height = '';
         }
     }
     syncNavHeight();
@@ -76,7 +76,8 @@
     function applyLayout() {
         const main = document.querySelector('.dashboard-main');
         if (isMobile()) {
-            sidebar.style.width = '280px';
+            sidebar.style.width = '';
+            sidebar.style.zIndex = '';
             if (main) main.style.marginLeft = '0';
         } else {
             applySidebarWidth();

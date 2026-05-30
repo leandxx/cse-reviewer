@@ -1,5 +1,5 @@
 <div id="sbOverlay"></div>
-<aside id="leftSidebar" class="left-sidebar" data-collapsed="false" style="position:fixed;top:65px;left:0;right:auto;height:calc(100vh - 65px);width:280px;display:flex;flex-direction:row-reverse;z-index:30;">
+<aside id="leftSidebar" class="left-sidebar" data-collapsed="false">
 
     <!-- Toggle -->
     <button id="sbToggle" class="sb-toggle" title="Toggle sidebar">
