@@ -167,7 +167,7 @@ $root      = '../';
                             <span><span class="inline-block w-3 h-3 rounded bg-slate-700 mr-1"></span>Unanswered</span>
                         </div>
                     </div>
-                    <div id="qNavGrid" class="grid grid-cols-10 gap-1.5"></div>
+                    <div id="qNavGrid" class="grid grid-cols-8 sm:grid-cols-10 gap-1.5"></div>
                 </div>
             </div>
 
@@ -181,7 +181,7 @@ $root      = '../';
                         <i class="fas fa-star mr-1"></i>
                     </span>
 
-                    <div class="grid grid-cols-3 gap-4 mb-6">
+                    <div class="grid grid-cols-3 gap-3 mb-6">
                         <div class="bg-slate-800/50 rounded-2xl p-4">
                             <div class="text-3xl font-black gradient-text" id="mockScore"></div>
                             <div class="text-slate-500 text-xs mt-1">Score</div>
