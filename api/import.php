@@ -110,7 +110,9 @@ PROMPT;
     curl_close($ch);
 
     if (!$response || $httpCode !== 200) {
-        echo json_encode(['error' => 'Gemini API error. HTTP ' . $httpCode . '. Check your API key.']); exit;
+        $errDetail = json_decode($response, true);
+        $errMsg = $errDetail['error']['message'] ?? ('HTTP ' . $httpCode);
+        echo json_encode(['error' => 'Gemini API error: ' . $errMsg]); exit;
     }
 
     $gemini = json_decode($response, true);
