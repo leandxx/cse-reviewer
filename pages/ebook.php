@@ -44,6 +44,10 @@ $chapterIcons = [
         <span class="hidden sm:inline text-slate-600 text-sm ml-1">/ Study Ebook</span>
     </div>
     <div class="flex items-center gap-3">
+        <button class="theme-toggle-btn" id="themeToggle" title="Toggle light/dark mode">
+            <i class="fas fa-sun" id="themeIcon"></i>
+            <span id="themeLabel" class="hidden sm:inline">Day Mode</span>
+        </button>
         <span class="hidden sm:inline text-slate-400 text-sm">Hello, <span class="text-white font-semibold"><?= htmlspecialchars($_SESSION['user_name']) ?></span></span>
         <a href="../auth/logout.php" class="text-slate-400 hover:text-red-400 text-sm transition-colors flex items-center gap-1">
             <i class="fas fa-sign-out-alt"></i><span class="hidden sm:inline"> Logout</span>
@@ -166,6 +170,30 @@ $chapterIcons = [
 </footer>
 
 <script>
+// Theme toggle
+(function() {
+    const saved = localStorage.getItem('ebook-theme');
+    if (saved === 'light') applyLight();
+
+    document.getElementById('themeToggle').addEventListener('click', () => {
+        if (document.body.classList.contains('light-mode')) {
+            document.body.classList.remove('light-mode');
+            localStorage.setItem('ebook-theme', 'dark');
+            document.getElementById('themeIcon').className = 'fas fa-sun';
+            document.getElementById('themeLabel').textContent = 'Day Mode';
+        } else {
+            applyLight();
+            localStorage.setItem('ebook-theme', 'light');
+        }
+    });
+
+    function applyLight() {
+        document.body.classList.add('light-mode');
+        document.getElementById('themeIcon').className = 'fas fa-moon';
+        document.getElementById('themeLabel').textContent = 'Night Mode';
+    }
+})();
+
 function toggleSection(btn) {
     btn.closest('.section-card').classList.toggle('open');
 }
