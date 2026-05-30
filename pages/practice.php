@@ -23,13 +23,13 @@ $root      = '../';
             <img src="../assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
             <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>
         </div>
-        <div class="flex items-center gap-4">
+        <div class="flex items-center gap-3">
             <a href="dashboard.php" class="text-slate-400 hover:text-white text-sm transition-colors flex items-center gap-1">
-                <i class="fas fa-home"></i> Dashboard
+                <i class="fas fa-home"></i><span class="hidden sm:inline"> Dashboard</span>
             </a>
-            <span class="text-slate-400 text-sm">Hello, <span class="text-white font-semibold"><?= htmlspecialchars($_SESSION['user_name']) ?></span></span>
+            <span class="hidden sm:inline text-slate-400 text-sm">Hello, <span class="text-white font-semibold"><?= htmlspecialchars($_SESSION['user_name']) ?></span></span>
             <a href="../auth/logout.php" class="text-slate-400 hover:text-red-400 text-sm transition-colors flex items-center gap-1">
-                <i class="fas fa-sign-out-alt"></i> Logout
+                <i class="fas fa-sign-out-alt"></i><span class="hidden sm:inline"> Logout</span>
             </a>
         </div>
     </nav>

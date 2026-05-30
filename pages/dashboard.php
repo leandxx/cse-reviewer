@@ -19,10 +19,10 @@ $root      = '../';
         <img src="../assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
         <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>
     </div>
-    <div class="flex items-center gap-4">
-        <span class="text-slate-400 text-sm">Hello, <span class="text-white font-semibold"><?= htmlspecialchars($_SESSION['user_name']) ?></span></span>
+    <div class="flex items-center gap-3">
+        <span class="hidden sm:inline text-slate-400 text-sm">Hello, <span class="text-white font-semibold"><?= htmlspecialchars($_SESSION['user_name']) ?></span></span>
         <a href="../auth/logout.php" class="text-slate-400 hover:text-red-400 text-sm transition-colors flex items-center gap-1">
-            <i class="fas fa-sign-out-alt"></i> Logout
+            <i class="fas fa-sign-out-alt"></i><span class="hidden sm:inline"> Logout</span>
         </a>
     </div>
 </nav>
@@ -122,24 +122,22 @@ $root      = '../';
                 const subCls = subjectColors[s.subject] ?? 'text-slate-400 bg-slate-700';
                 const date  = new Date(s.created_at).toLocaleDateString('en-US', {month:'short', day:'numeric', year:'numeric'});
                 return `
-                <div class="flex items-center gap-4 py-3 border-b border-slate-800 last:border-0">
-                    <span class="text-xs font-semibold px-2 py-1 rounded-full ${subCls} flex-shrink-0">
-                        ${subjectLabels[s.subject] ?? s.subject}
-                    </span>
-                    <div class="flex-1 min-w-0">
-                        <div class="flex items-center justify-between mb-1">
-                            <span class="text-slate-300 text-sm">${s.correct}/${s.total} correct</span>
-                            <span class="font-bold text-sm ${color}">${pct}%</span>
-                        </div>
-                        <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
-                            <div class="h-full ${bar} rounded-full" style="width:${pct}%"></div>
-                        </div>
-                    </div>
-                    <div class="flex items-center gap-3 flex-shrink-0">
-                        <span class="text-slate-500 text-xs">${date}</span>
-                        <a href="review.php?session_id=${s.id}" class="text-xs text-indigo-400 hover:text-indigo-300 bg-indigo-500/10 px-2 py-1 rounded-lg transition-colors">
+                <div class="py-3 border-b border-slate-800 last:border-0">
+                    <div class="flex items-center gap-3 mb-2">
+                        <span class="text-xs font-semibold px-2 py-1 rounded-full ${subCls} flex-shrink-0">
+                            ${subjectLabels[s.subject] ?? s.subject}
+                        </span>
+                        <span class="text-slate-500 text-xs ml-auto">${date}</span>
+                        <a href="review.php?session_id=${s.id}" class="text-xs text-indigo-400 hover:text-indigo-300 bg-indigo-500/10 px-2 py-1 rounded-lg transition-colors flex-shrink-0">
                             <i class="fas fa-eye mr-1"></i>Review
                         </a>
+                    </div>
+                    <div class="flex items-center justify-between mb-1">
+                        <span class="text-slate-300 text-sm">${s.correct}/${s.total} correct</span>
+                        <span class="font-bold text-sm ${color}">${pct}%</span>
+                    </div>
+                    <div class="h-1.5 bg-slate-800 rounded-full overflow-hidden">
+                        <div class="h-full ${bar} rounded-full" style="width:${pct}%"></div>
                     </div>
                 </div>`;
             }).join('');
