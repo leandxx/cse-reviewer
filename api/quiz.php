@@ -80,9 +80,10 @@ if ($action === 'question') {
 }
 
 if ($action === 'answer') {
-    $answerId = (int) ($_POST['answer_id'] ?? 0);
-    $chosen   = strtolower(trim($_POST['chosen'] ?? ''));
-    $hintUsed = (int) ($_POST['hint_used'] ?? 0);
+    $answerId  = (int) ($_POST['answer_id'] ?? 0);
+    $chosen    = strtolower(trim($_POST['chosen'] ?? ''));
+    $hintUsed  = (int) ($_POST['hint_used'] ?? 0);
+    $timeSpent = isset($_POST['time_spent']) ? (int) $_POST['time_spent'] : null;
 
     if (!in_array($chosen, ['a','b','c','d'])) send(['error' => 'Invalid choice']);
 
@@ -101,8 +102,8 @@ if ($action === 'answer') {
 
     $correct = ($chosen === $data['answer']);
 
-    $pdo->prepare("UPDATE quiz_answers SET chosen=?, is_correct=?, hint_used=? WHERE id=?")
-        ->execute([$chosen, $correct ? 1 : 0, $hintUsed, $answerId]);
+    $pdo->prepare("UPDATE quiz_answers SET chosen=?, is_correct=?, hint_used=?, time_spent=? WHERE id=?")
+        ->execute([$chosen, $correct ? 1 : 0, $hintUsed, $timeSpent, $answerId]);
 
     if ($correct) {
         $pdo->prepare("UPDATE quiz_sessions SET correct = correct + 1 WHERE id=?")

@@ -39,6 +39,7 @@
     let totalQuestions  = 0;
     let currentAnswerId = null;
     let hintUsed        = false;
+    let questionStartTime = null;
 
     const subjectLabels = {
         verbal: 'Verbal Ability', numerical: 'Numerical Ability',
@@ -123,6 +124,7 @@
         if (data.done) { finishQuiz(); return; }
 
         currentAnswerId = data.answer_id;
+        questionStartTime = Date.now();
 
         // Progress
         qProgress.textContent = `Question ${currentIndex + 1} of ${totalQuestions}`;
@@ -172,8 +174,11 @@
         // Disable all choices
         choicesWrap.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
 
+        const timeSpent = questionStartTime ? Math.round((Date.now() - questionStartTime) / 1000) : null;
+
         const res = await post({ action: 'answer' }, {
-            action: 'answer', answer_id: currentAnswerId, chosen, hint_used: hintUsed ? 1 : 0
+            action: 'answer', answer_id: currentAnswerId, chosen, hint_used: hintUsed ? 1 : 0,
+            ...(timeSpent !== null && { time_spent: timeSpent })
         });
 
         // Highlight correct / wrong

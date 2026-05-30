@@ -45,6 +45,7 @@
     let timeLeft     = TOTAL_TIME;
     let timerInterval= null;
     let hintUsed     = false;
+    let questionStartTime = null;
 
     // Per-question state cache
     let qCache = {}; // index -> { data, chosen, hintUsed, answered }
@@ -143,6 +144,7 @@
         }
 
         qCache[index] = { data, chosen: null, hintUsed: false, answered: false };
+        questionStartTime = Date.now();
         renderQuestion(qCache[index]);
     }
 
@@ -225,11 +227,14 @@
         examChoicesWrap.querySelectorAll('.choice-btn').forEach(b => b.disabled = true);
         state.chosen = chosen;
 
+        const timeSpent = questionStartTime ? Math.round((Date.now() - questionStartTime) / 1000) : null;
+
         const res = await post({ action: 'answer' }, {
             action: 'answer',
             answer_id: state.data.answer_id,
             chosen,
             hint_used: state.hintUsed ? 1 : 0,
+            ...(timeSpent !== null && { time_spent: timeSpent }),
         });
 
         state.answered   = true;

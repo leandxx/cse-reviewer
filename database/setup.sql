@@ -58,9 +58,12 @@ CREATE TABLE IF NOT EXISTS quiz_answers (
     chosen      ENUM('a','b','c','d') NULL,
     is_correct  TINYINT(1) NOT NULL DEFAULT 0,
     hint_used   TINYINT(1) NOT NULL DEFAULT 0,
+    time_spent  INT NULL COMMENT 'seconds spent on this question',
     FOREIGN KEY (session_id)  REFERENCES quiz_sessions(id) ON DELETE CASCADE,
     FOREIGN KEY (question_id) REFERENCES questions(id)     ON DELETE CASCADE
 );
+
+ALTER TABLE quiz_answers ADD COLUMN IF NOT EXISTS time_spent INT NULL COMMENT 'seconds spent on this question';
 
 CREATE TABLE IF NOT EXISTS friends (
     id         INT AUTO_INCREMENT PRIMARY KEY,

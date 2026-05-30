@@ -64,6 +64,7 @@ $root      = '../';
                 ['fas fa-clock',      'from-purple-500 to-pink-500', 'Mock Exams',        'Timed full-length practice exams.', 'Start Exam', 'mock.php'],
                 ['fas fa-graduation-cap', 'from-emerald-500 to-teal-500', 'Study Ebook', 'Tips, shortcuts, and strategies to pass the CSE.', 'Read Now', 'ebook.php'],
                 ['fas fa-layer-group', 'from-violet-500 to-fuchsia-500', 'Flashcards', 'Flip through key concepts by category.', 'Study Now', 'flashcard.php'],
+                ['fas fa-chart-bar', 'from-rose-500 to-orange-500', 'Analytics', 'See your weaknesses, strengths, and accuracy by topic.', 'View Stats', 'analytics.php'],
             ];
             foreach ($cards as $c): ?>
             <div class="card rounded-2xl p-6 text-center">
