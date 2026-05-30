@@ -5,4 +5,4 @@ nixPkgs = ["php83", "php83Extensions.pdo_mysql", "php83Extensions.mysqli", "php8
 cmds = ["php -m"]
 
 [deploy]
-cmd = "mysql -h $MYSQLHOST -P $MYSQLPORT -u $MYSQLUSER -p$MYSQLPASSWORD $MYSQLDATABASE < database/setup.sql && php -S 0.0.0.0:$PORT -t ."
+cmd = "mysql -h $MYSQLHOST -P $MYSQLPORT -u $MYSQLUSER -p$MYSQLPASSWORD $MYSQLDATABASE < database/setup.sql && php database/seed.php && php -S 0.0.0.0:$PORT -t ."
