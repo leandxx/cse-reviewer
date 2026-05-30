@@ -46,13 +46,16 @@
     }
     .sb-icon-strip { display: none !important; }
     .sb-toggle { display: none !important; }
-    .sb-panel {
+    .sb-panel,
+    .left-sidebar[data-collapsed="true"] .sb-panel {
         opacity: 1 !important;
         pointer-events: auto !important;
         transform: none !important;
         flex: 1 !important;
         width: auto !important;
         overflow: hidden !important;
+        backdrop-filter: none !important;
+        -webkit-backdrop-filter: none !important;
     }
     #sbOverlay {
         display: none;
@@ -60,7 +63,6 @@
         inset: 0;
         background: rgba(0,0,0,0.55);
         z-index: 49;
-        backdrop-filter: blur(2px);
     }
     #sbOverlay.active { display: block; }
 }
