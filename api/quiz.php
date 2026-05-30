@@ -70,9 +70,9 @@ if ($action === 'question') {
         JOIN questions q ON q.id = qa.question_id
         WHERE qa.session_id = ?
         ORDER BY qa.id ASC
-        LIMIT 1 OFFSET ?
+        LIMIT 1 OFFSET $index
     ");
-    $row->execute([$sessionId, $index]);
+    $row->execute([$sessionId]);
     $data = $row->fetch();
 
     if (!$data) send(['done' => true]);
