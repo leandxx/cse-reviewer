@@ -24,7 +24,6 @@ require_once '../config/db.php';
 $me     = (int) $_SESSION['user_id'];
 $action = $_GET['action'] ?? ($_POST['action'] ?? '');
 
-// ── Start session ─────────────────────────────────────────────────────────────
 if ($action === 'start') {
     $subject = $_POST['subject'] ?? 'verbal';
     $limit   = min((int) ($_POST['limit'] ?? 10), 100);
@@ -53,7 +52,6 @@ if ($action === 'start') {
     send(['session_id' => $sessionId, 'total' => count($ids)]);
 }
 
-// ── Get question ──────────────────────────────────────────────────────────────
 if ($action === 'question') {
     $sessionId = (int) ($_GET['session_id'] ?? 0);
     $index     = (int) ($_GET['index'] ?? 0);
@@ -62,7 +60,7 @@ if ($action === 'question') {
     $sess->execute([$sessionId, $me]);
     if (!$sess->fetch()) send(['error' => 'Invalid session']);
 
-    $row = $pdo->prepare("
+    $sql = "
         SELECT qa.id AS answer_id, qa.chosen, qa.hint_used,
                q.id, q.question, q.choice_a, q.choice_b, q.choice_c, q.choice_d,
                q.hint, q.subject, q.difficulty
@@ -71,7 +69,8 @@ if ($action === 'question') {
         WHERE qa.session_id = ?
         ORDER BY qa.id ASC
         LIMIT 1 OFFSET $index
-    ");
+    ";
+    $row = $pdo->prepare($sql);
     $row->execute([$sessionId]);
     $data = $row->fetch();
 
@@ -80,7 +79,6 @@ if ($action === 'question') {
     send($data);
 }
 
-// ── Submit answer ─────────────────────────────────────────────────────────────
 if ($action === 'answer') {
     $answerId = (int) ($_POST['answer_id'] ?? 0);
     $chosen   = strtolower(trim($_POST['chosen'] ?? ''));
@@ -118,7 +116,6 @@ if ($action === 'answer') {
     ]);
 }
 
-// ── Finish session ────────────────────────────────────────────────────────────
 if ($action === 'finish') {
     $sessionId = (int) ($_POST['session_id'] ?? 0);
     $pdo->prepare("UPDATE quiz_sessions SET finished=1 WHERE id=? AND user_id=?")
@@ -129,7 +126,6 @@ if ($action === 'finish') {
     send($sess->fetch());
 }
 
-// ── History ───────────────────────────────────────────────────────────────────
 if ($action === 'history') {
     $rows = $pdo->prepare("
         SELECT id, subject, total, correct, created_at
