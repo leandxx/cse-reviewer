@@ -96,12 +96,16 @@
     }
 
     if (hamburger) {
-        hamburger.addEventListener('click', () => {
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
             if (sidebar.classList.contains('mobile-open')) closeMobileSidebar();
             else openMobileSidebar();
         });
     }
     if (overlay) overlay.addEventListener('click', closeMobileSidebar);
+
+    // Prevent clicks inside sidebar from closing it
+    sidebar.addEventListener('click', (e) => e.stopPropagation());
 
     function applySidebarWidth() {
         if (isMobile()) return;
