@@ -51,6 +51,7 @@ if ($action === 'analyze') {
 
     $apiKey = getenv('GEMINI_API_KEY');
     if (!$apiKey || $apiKey === 'your_gemini_api_key_here') {
+        // Fallback: try reading .env directly
         $envFile = __DIR__ . '/../.env';
         if (file_exists($envFile)) {
             foreach (file($envFile, FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES) as $line) {
@@ -65,22 +66,33 @@ if ($action === 'analyze') {
     }
 
     $prompt = <<<PROMPT
-You are a Philippine Civil Service Exam (CSE) question extractor.
+You are a Philippine Civil Service Exam (CSE) question analyzer.
 
-Extract all multiple-choice questions from the text below (up to 30).
-For each question return EXACTLY this JSON structure:
-- question: the question text
-- choice_a, choice_b, choice_c, choice_d: the 4 answer choices (text only, no letter prefix)
-- answer: the correct answer as a single lowercase letter: a, b, c, or d
-- hint: one sentence hint that does not give away the answer
-- explanation: 2-3 sentences explaining why the answer is correct
-- subject: one of: verbal, numerical, analytical, general
-- difficulty: one of: easy, medium, hard
+From the text below, extract as many multiple-choice questions as you can find (up to 30).
+For each question:
+1. Identify the question text
+2. Identify the 4 choices (A, B, C, D)
+3. Determine the correct answer
+4. Write a short hint (one sentence, does not give away the answer)
+5. Write a clear explanation of why the answer is correct (2-3 sentences)
+6. Classify the subject as one of: verbal, numerical, analytical, general
+7. Classify difficulty as: easy, medium, hard
 
-Rules:
-- Return ONLY a raw JSON array, no markdown, no code fences, no extra text
-- Every question MUST have all 4 choices and a valid answer (a/b/c/d)
-- If you cannot find real questions, return an empty array []
+Return ONLY a valid JSON array. No markdown, no extra text. Format:
+[
+  {
+    "question": "...",
+    "choice_a": "...",
+    "choice_b": "...",
+    "choice_c": "...",
+    "choice_d": "...",
+    "answer": "a",
+    "hint": "...",
+    "explanation": "...",
+    "subject": "verbal",
+    "difficulty": "medium"
+  }
+]
 
 TEXT:
 $text
@@ -94,7 +106,7 @@ PROMPT;
         ]
     ]);
 
-    $url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=' . $apiKey;
+    $url = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=' . $apiKey;
 
     $ch = curl_init($url);
     curl_setopt_array($ch, [
@@ -117,12 +129,9 @@ PROMPT;
     $gemini = json_decode($response, true);
     $raw    = $gemini['candidates'][0]['content']['parts'][0]['text'] ?? '';
 
-    // Strip markdown code fences and any leading/trailing non-JSON text
+    // Strip markdown code fences if present
     $raw = preg_replace('/^```json\s*/i', '', trim($raw));
-    $raw = preg_replace('/^```\s*/i', '', $raw);
     $raw = preg_replace('/\s*```$/', '', $raw);
-    // Extract JSON array if wrapped in extra text
-    if (preg_match('/\[.*\]/s', $raw, $m)) $raw = $m[0];
 
     $questions = json_decode($raw, true);
     if (!is_array($questions)) {
