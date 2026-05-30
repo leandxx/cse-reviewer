@@ -15,7 +15,7 @@ $root      = '../';
 </head>
 <body class="bg-slate-950 min-h-screen">
 
-    <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between" style="position:relative;z-index:1;">
+    <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
         <div class="flex items-center gap-3">
             <img src="../assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
             <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>

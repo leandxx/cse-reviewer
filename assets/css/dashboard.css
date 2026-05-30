@@ -12,19 +12,25 @@ body::before {
     z-index: 0;
 }
 
-/* Nav sits above sidebar (z-index 30) */
+/* Nav fixed at top above everything */
 nav {
-    position: relative;
-    z-index: 35;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 40;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
 }
 
-/* Main content: pushed right by sidebar, pushed down by nav */
+/* Main content: pushed right by sidebar, pushed down by fixed nav */
 .dashboard-main {
     position: relative;
     z-index: 1;
     margin-left: var(--sb-full, 280px);
     margin-right: 0;
-    padding-top: 0;
+    padding-top: 73px;
     transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
