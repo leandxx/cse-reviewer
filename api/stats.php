@@ -52,4 +52,25 @@ if ($action === 'stats') {
     ]);
 }
 
+if ($action === 'leaderboard') {
+    $rows = $pdo->query("
+        SELECT id, full_name, xp
+        FROM users
+        ORDER BY xp DESC
+        LIMIT 20
+    ")->fetchAll();
+
+    $board = array_map(function($r) use ($me) {
+        return [
+            'id'        => (int) $r['id'],
+            'full_name' => $r['full_name'],
+            'xp'        => (int) $r['xp'],
+            'level'     => xpToLevel((int) $r['xp']),
+            'is_me'     => (int) $r['id'] === $me,
+        ];
+    }, $rows);
+
+    send($board);
+}
+
 send(['error' => 'Unknown action']);

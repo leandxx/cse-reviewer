@@ -315,47 +315,50 @@
     refresh();
     setInterval(refresh, 30_000);
 
-    // ── Load XP / progress stats into leaderboard pane ────────────────────────
+    // ── Load leaderboard ────────────────────────────────────────────────────────
     const STATS_API = (typeof ROOT !== 'undefined' ? ROOT : '') + 'api/stats.php';
-    const subjectLabels = { verbal:'Verbal', numerical:'Numerical', analytical:'Analytical', general:'General Info', all:'Mock Exam' };
-    const subjectColors = { verbal:'#818cf8', numerical:'#38bdf8', analytical:'#c084fc', general:'#34d399', all:'#f472b6' };
 
-    async function loadStats() {
+    async function loadLeaderboard() {
         try {
-            const r = await fetch(STATS_API + '?action=stats');
-            const d = await r.json();
-            if (d.error) return;
+            const r = await fetch(STATS_API + '?action=leaderboard');
+            const data = await r.json();
+            if (!Array.isArray(data)) return;
 
-            document.getElementById('sb-level').textContent   = d.level;
-            document.getElementById('sb-xp').textContent      = d.xp.toLocaleString();
-            document.getElementById('sb-xp-next').textContent = d.xp_in_level;
-            document.getElementById('sb-xp-bar').style.width  = (d.xp_in_level / d.xp_for_next * 100) + '%';
+            const el = document.getElementById('sb-leaderboard');
+            if (!el) return;
 
-            const hist = document.getElementById('sb-history');
-            if (!d.history.length) {
-                hist.innerHTML = '<div class="sb-empty" style="padding:16px;"><p>No sessions yet.</p></div>';
-                return;
-            }
-            hist.innerHTML = d.history.map(s => {
-                const pct   = Math.round(s.correct / s.total * 100);
-                const color = pct >= 80 ? '#4ade80' : pct >= 60 ? '#facc15' : '#f87171';
-                const bar   = pct >= 80 ? '#22c55e' : pct >= 60 ? '#eab308' : '#ef4444';
+            const medals = ['🥇','🥈','🥉'];
+            el.innerHTML = data.map((u, i) => {
+                const rank = i + 1;
+                const pct  = u.xp % 100;
+                const isMe = u.is_me;
                 return `
-                <a href="review.php?session_id=${s.id}" style="display:flex;align-items:center;gap:8px;padding:6px 4px;border-radius:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
-                    <span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:20px;background:rgba(255,255,255,0.06);color:${subjectColors[s.subject] ?? '#94a3b8'};flex-shrink:0;">${subjectLabels[s.subject] ?? s.subject}</span>
+                <div style="display:flex;align-items:center;gap:8px;padding:7px 4px;border-radius:10px;${isMe ? 'background:rgba(99,102,241,0.12);' : ''}">
+                    <div style="width:22px;text-align:center;font-size:${rank <= 3 ? '16px' : '11px'};font-weight:700;color:#475569;flex-shrink:0;">
+                        ${rank <= 3 ? medals[rank-1] : rank}
+                    </div>
+                    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#4f46e5,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;">
+                        ${u.full_name.trim().split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
+                    </div>
                     <div style="flex:1;min-width:0;">
-                        <div style="height:4px;background:#1e293b;border-radius:99px;overflow:hidden;">
-                            <div style="height:100%;background:${bar};border-radius:99px;width:${pct}%;"></div>
+                        <div style="font-size:11px;font-weight:${isMe ? '700' : '600'};color:${isMe ? '#818cf8' : '#e2e8f0'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
+                            ${escHtml(u.full_name)}${isMe ? ' (you)' : ''}
+                        </div>
+                        <div style="height:3px;background:#0f172a;border-radius:99px;overflow:hidden;margin-top:3px;">
+                            <div style="height:100%;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:99px;width:${pct}%;"></div>
                         </div>
                     </div>
-                    <span style="font-size:11px;font-weight:700;color:${color};flex-shrink:0;">${pct}%</span>
-                </a>`;
+                    <div style="text-align:right;flex-shrink:0;">
+                        <div style="font-size:11px;font-weight:700;color:#f59e0b;">Lv.${u.level}</div>
+                        <div style="font-size:9px;color:#475569;">${u.xp} XP</div>
+                    </div>
+                </div>`;
             }).join('');
         } catch(e) {}
     }
 
-    loadStats();
-    setInterval(loadStats, 60_000);
+    loadLeaderboard();
+    setInterval(loadLeaderboard, 60_000);
 
     // ── Search ────────────────────────────────────────────────────────────────
     let searchTimer;
