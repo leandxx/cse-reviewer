@@ -1,4 +1,5 @@
 <?php
+ini_set('session.cookie_path', '/');
 session_start();
 require_once '../config/db.php';
 
