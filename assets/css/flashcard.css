@@ -1,0 +1,81 @@
+body {
+    background-image: url('../img/bg.png');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+}
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background: rgba(2, 6, 23, 0.88);
+    z-index: 0;
+}
+nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 40;
+    background: rgba(15, 23, 42, 0.85);
+    backdrop-filter: blur(16px);
+}
+.flashcard-main {
+    position: relative;
+    z-index: 1;
+    margin-left: var(--sb-full, 280px);
+    padding-top: 73px;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+body:has(#leftSidebar[data-collapsed="true"]) .flashcard-main {
+    margin-left: var(--sb-icon, 52px);
+}
+@media (max-width: 767px) {
+    .flashcard-main { margin-left: 0 !important; }
+}
+
+.card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+
+/* Flip card */
+.fc-scene {
+    perspective: 1000px;
+    width: 100%;
+    max-width: 640px;
+    margin: 0 auto;
+    height: 260px;
+}
+.fc-card {
+    width: 100%; height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+}
+.fc-card.flipped { transform: rotateY(180deg); }
+.fc-face {
+    position: absolute;
+    inset: 0;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border-radius: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(255,255,255,0.08);
+}
+.fc-face.back {
+    transform: rotateY(180deg);
+    background: rgba(99,102,241,0.08);
+    border-color: rgba(99,102,241,0.25);
+}
+
+@keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(8px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeSlideIn .3s ease forwards; }

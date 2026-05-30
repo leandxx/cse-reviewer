@@ -56,13 +56,14 @@ $root      = '../';
         </div>
 
         <!-- Quick actions -->
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-10">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6 mb-10">
             <?php
             $cards = [
                 ['fas fa-book-open', 'from-indigo-500 to-purple-500', 'Start Reviewing',  'Practice questions across all CSE subjects.', 'Practice Now', 'practice.php'],
                 ['fas fa-file-import','from-blue-500 to-cyan-500',   'Import Questions', 'Upload a PDF reviewer and let AI extract the questions.', 'Import PDF', 'import.php'],
                 ['fas fa-clock',      'from-purple-500 to-pink-500', 'Mock Exams',        'Timed full-length practice exams.', 'Start Exam', 'mock.php'],
                 ['fas fa-graduation-cap', 'from-emerald-500 to-teal-500', 'Study Ebook', 'Tips, shortcuts, and strategies to pass the CSE.', 'Read Now', 'ebook.php'],
+                ['fas fa-layer-group', 'from-violet-500 to-fuchsia-500', 'Flashcards', 'Flip through key concepts by category.', 'Study Now', 'flashcard.php'],
             ];
             foreach ($cards as $c): ?>
             <div class="card rounded-2xl p-6 text-center">

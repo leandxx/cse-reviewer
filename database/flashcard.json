@@ -1,0 +1,2435 @@
+{
+  "exam": "Civil Service Exam (CSE)",
+  "metadata": {
+    "description": "Master flashcard dataset for CSE preparation.",
+    "total_target": 400,
+    "current_inserted_count": 200
+  },
+  "categories": [
+    {
+      "category_name": "Verbal Ability",
+      "total_count": 100,
+      "flashcards": [
+        {
+      "id": "VER-001",
+      "question": "Choose the correct verb: Neither the manager nor the employees (is / are) aware of the changes.",
+      "answer": "are",
+      "explanation": "In 'neither/nor' constructions, the verb agrees with the subject closest to it. 'Employees' is plural, so use 'are'."
+    },
+    {
+      "id": "VER-002",
+      "question": "Choose the correct verb: The committee (has / have) submitted its final report.",
+      "answer": "has",
+      "explanation": "The pronoun 'its' indicates the committee is acting as a single unit, requiring the singular verb 'has'."
+    },
+    {
+      "id": "VER-003",
+      "question": "Choose the correct word: The new policy will (affect / effect) everyone in the department.",
+      "answer": "affect",
+      "explanation": "'Affect' is typically a verb meaning to influence, while 'effect' is a noun meaning the result."
+    },
+    {
+      "id": "VER-004",
+      "question": "Choose the correct pronoun: Please keep this secret between you and (I / me).",
+      "answer": "me",
+      "explanation": "The preposition 'between' requires an object pronoun. 'Me' is an object pronoun; 'I' is a subject pronoun."
+    },
+    {
+      "id": "VER-005",
+      "question": "Identify the synonym for 'PRAGMATIC'.",
+      "answer": "Practical",
+      "explanation": "Pragmatic means dealing with things sensibly and realistically in a way that is based on practical rather than theoretical considerations."
+    },
+    {
+      "id": "VER-006",
+      "question": "Identify the antonym for 'CANDID'.",
+      "answer": "Deceitful or secretive",
+      "explanation": "Candid means truthful and straightforward. Its opposite would be deceitful or hiding the truth."
+    },
+    {
+      "id": "VER-007",
+      "question": "Choose the correct spelling: (Accomodate / Accommodate / Acommodate)",
+      "answer": "Accommodate",
+      "explanation": "The word 'accommodate' is spelled with two 'c's and two 'm's."
+    },
+    {
+      "id": "VER-008",
+      "question": "Identify the error: 'One of the boxes are open.'",
+      "answer": "Change 'are' to 'is'.",
+      "explanation": "The subject of the sentence is 'One', which is singular. 'Of the boxes' is a prepositional phrase."
+    },
+    {
+      "id": "VER-009",
+      "question": "Choose the correct word: The cake was divided (among / between) the five children.",
+      "answer": "among",
+      "explanation": "Use 'between' for two items or people, and 'among' for three or more."
+    },
+    {
+      "id": "VER-010",
+      "question": "Identify the synonym for 'LOQUACIOUS'.",
+      "answer": "Talkative",
+      "explanation": "Loquacious describes someone who talks a great deal."
+    },
+    {
+      "id": "VER-011",
+      "question": "Choose the correct verb: Each of the students (was / were) given a certificate.",
+      "answer": "was",
+      "explanation": "The indefinite pronoun 'Each' is always singular and requires a singular verb."
+    },
+    {
+      "id": "VER-012",
+      "question": "Choose the correct word: We need to go (to / too / two) the store.",
+      "answer": "to",
+      "explanation": "'To' is a preposition indicating direction. 'Too' means also or excessively. 'Two' is a number."
+    },
+    {
+      "id": "VER-013",
+      "question": "Identify the antonym for 'OBSOLETE'.",
+      "answer": "Current or modern",
+      "explanation": "Obsolete means no longer produced or used; out of date."
+    },
+    {
+      "id": "VER-014",
+      "question": "Choose the correct spelling: (Privilege / Priviledge / Privelige)",
+      "answer": "Privilege",
+      "explanation": "There is no 'd' in privilege, and it is spelled with two 'i's followed by an 'e'."
+    },
+    {
+      "id": "VER-015",
+      "question": "Choose the correct preposition: She is good (in / at) mathematics.",
+      "answer": "at",
+      "explanation": "The correct idiom for expressing skill in a subject or activity is 'good at'."
+    },
+    {
+      "id": "VER-016",
+      "question": "Identify the error: 'If I was you, I would study harder.'",
+      "answer": "Change 'was' to 'were'.",
+      "explanation": "This is the subjunctive mood used for hypothetical situations. 'Were' is used for all subjects."
+    },
+    {
+      "id": "VER-017",
+      "question": "Identify the synonym for 'EPHEMERAL'.",
+      "answer": "Fleeting or short-lived",
+      "explanation": "Ephemeral refers to things that exist or are enjoyed for only a very short time."
+    },
+    {
+      "id": "VER-018",
+      "question": "Choose the correct word: The principal gave us a (complement / compliment) on our hard work.",
+      "answer": "compliment",
+      "explanation": "A 'compliment' is an expression of praise. A 'complement' is something that completes or makes perfect."
+    },
+    {
+      "id": "VER-019",
+      "question": "Choose the correct verb: A bouquet of roses (was / were) delivered today.",
+      "answer": "was",
+      "explanation": "The subject is 'bouquet' (singular). 'Of roses' is a prepositional phrase."
+    },
+    {
+      "id": "VER-020",
+      "question": "Identify the antonym for 'MITIGATE'.",
+      "answer": "Aggravate or exacerbate",
+      "explanation": "Mitigate means to make less severe or painful. Aggravate means to make worse."
+    },
+    {
+      "id": "VER-021",
+      "question": "Choose the correct word: The team (loose / lose) their first game.",
+      "answer": "lose",
+      "explanation": "'Lose' is a verb meaning to be deprived of or fail to win. 'Loose' is an adjective meaning not tight."
+    },
+    {
+      "id": "VER-022",
+      "question": "Choose the correct spelling: (Embarass / Embarrass / Embaress)",
+      "answer": "Embarrass",
+      "explanation": "Embarrass is spelled with two 'r's and two 's's."
+    },
+    {
+      "id": "VER-023",
+      "question": "Choose the correct pronoun: (Who / Whom) should I invite to the party?",
+      "answer": "Whom",
+      "explanation": "'Whom' is the object of the verb 'invite' (I should invite him/her)."
+    },
+    {
+      "id": "VER-024",
+      "question": "Identify the synonym for 'LUCID'.",
+      "answer": "Clear or understandable",
+      "explanation": "Lucid means expressed clearly or easy to understand."
+    },
+    {
+      "id": "VER-025",
+      "question": "Identify the error: 'He enjoys to swim in the ocean.'",
+      "answer": "Change 'to swim' to 'swimming'.",
+      "explanation": "The verb 'enjoy' must be followed by a gerund (-ing form), not an infinitive."
+    },
+    {
+      "id": "VER-026",
+      "question": "Choose the correct word: Their house is (farther / further) down the road.",
+      "answer": "farther",
+      "explanation": "'Farther' refers to physical distance, while 'further' refers to metaphorical or figurative distance."
+    },
+    {
+      "id": "VER-027",
+      "question": "Identify the antonym for 'ARROGANT'.",
+      "answer": "Humble or modest",
+      "explanation": "Arrogant means having an exaggerated sense of one's own importance. Humble is the opposite."
+    },
+    {
+      "id": "VER-028",
+      "question": "Choose the correct verb: The jury (has / have) reached a verdict.",
+      "answer": "has",
+      "explanation": "The jury acts as a single, unified body in reaching a verdict, requiring a singular verb."
+    },
+    {
+      "id": "VER-029",
+      "question": "Choose the correct spelling: (Harass / Harrass / Harras)",
+      "answer": "Harass",
+      "explanation": "Harass has only one 'r' and two 's's."
+    },
+    {
+      "id": "VER-030",
+      "question": "Choose the correct preposition: She insisted (on / in) paying the bill.",
+      "answer": "on",
+      "explanation": "The correct idiom is 'insist on' doing something."
+    },
+    {
+      "id": "VER-031",
+      "question": "Identify the synonym for 'COPIOUS'.",
+      "answer": "Abundant or plentiful",
+      "explanation": "Copious means abundant in supply or quantity."
+    },
+    {
+      "id": "VER-032",
+      "question": "Choose the correct word: She has (fewer / less) assignments than I do.",
+      "answer": "fewer",
+      "explanation": "'Fewer' is used for countable nouns (assignments), while 'less' is used for uncountable nouns (water, time)."
+    },
+    {
+      "id": "VER-033",
+      "question": "Identify the error: 'She runs fastly.'",
+      "answer": "Change 'fastly' to 'fast'.",
+      "explanation": "'Fast' is both an adjective and an adverb. The word 'fastly' does not exist in standard English."
+    },
+    {
+      "id": "VER-034",
+      "question": "Identify the antonym for 'BENEVOLENT'.",
+      "answer": "Malevolent or cruel",
+      "explanation": "Benevolent means well-meaning and kindly. Malevolent means having or showing a wish to do evil to others."
+    },
+    {
+      "id": "VER-035",
+      "question": "Choose the correct verb: Mathematics (is / are) my favorite subject.",
+      "answer": "is",
+      "explanation": "Nouns ending in '-ics' like mathematics, physics, and economics are singular when referring to a field of study."
+    },
+    {
+      "id": "VER-036",
+      "question": "Choose the correct word: It's a matter of (principal / principle).",
+      "answer": "principle",
+      "explanation": "A 'principle' is a fundamental truth or belief. A 'principal' is the head of a school or a sum of money."
+    },
+    {
+      "id": "VER-037",
+      "question": "Choose the correct spelling: (Occasion / Occassion / Ocasion)",
+      "answer": "Occasion",
+      "explanation": "Occasion is spelled with two 'c's and one 's'."
+    },
+    {
+      "id": "VER-038",
+      "question": "Identify the synonym for 'METICULOUS'.",
+      "answer": "Careful or precise",
+      "explanation": "Meticulous means showing great attention to detail; very careful and precise."
+    },
+    {
+      "id": "VER-039",
+      "question": "Choose the correct word: The book is (their's / theirs).",
+      "answer": "theirs",
+      "explanation": "Possessive pronouns (theirs, yours, ours) do not use apostrophes."
+    },
+    {
+      "id": "VER-040",
+      "question": "Identify the error: 'Irregardless of the weather, we will go.'",
+      "answer": "Change 'Irregardless' to 'Regardless'.",
+      "explanation": "'Irregardless' is considered nonstandard English; 'regardless' means without being affected by."
+    },
+    {
+      "id": "VER-041",
+      "question": "Identify the antonym for 'TENTATIVE'.",
+      "answer": "Definite or certain",
+      "explanation": "Tentative means not certain or fixed; provisional."
+    },
+    {
+      "id": "VER-042",
+      "question": "Choose the correct verb: The news (was / were) surprising.",
+      "answer": "was",
+      "explanation": "The word 'news' is an uncountable noun and always takes a singular verb."
+    },
+    {
+      "id": "VER-043",
+      "question": "Choose the correct preposition: We will meet (in / on) Monday.",
+      "answer": "on",
+      "explanation": "Use 'on' for specific days of the week."
+    },
+    {
+      "id": "VER-044",
+      "question": "Choose the correct spelling: (Pronounciation / Pronunciation)",
+      "answer": "Pronunciation",
+      "explanation": "The noun form does not have an 'o' in the middle syllable, unlike the verb 'pronounce'."
+    },
+    {
+      "id": "VER-045",
+      "question": "Identify the synonym for 'AMBIGUOUS'.",
+      "answer": "Unclear or vague",
+      "explanation": "Ambiguous means open to more than one interpretation; having a double meaning."
+    },
+    {
+      "id": "VER-046",
+      "question": "Identify the error: 'Between you and I, this plan is flawed.'",
+      "answer": "Change 'I' to 'me'.",
+      "explanation": "'Between' is a preposition, so it requires objective case pronouns ('me' instead of 'I')."
+    },
+    {
+      "id": "VER-047",
+      "question": "Choose the correct word: The dog wagged (its / it's) tail.",
+      "answer": "its",
+      "explanation": "'Its' is the possessive form. 'It's' is a contraction for 'it is' or 'it has'."
+    },
+    {
+      "id": "VER-048",
+      "question": "Identify the antonym for 'SUPERFICIAL'.",
+      "answer": "Deep or profound",
+      "explanation": "Superficial means existing or occurring at or on the surface; lacking depth."
+    },
+    {
+      "id": "VER-049",
+      "question": "Choose the correct verb: None of the cake (was / were) eaten.",
+      "answer": "was",
+      "explanation": "When 'none' refers to an uncountable noun (like cake), it takes a singular verb."
+    },
+    {
+      "id": "VER-050",
+      "question": "Choose the correct spelling: (Committee / Comittee / Commitee)",
+      "answer": "Committee",
+      "explanation": "Committee is spelled with double 'm', double 't', and double 'e'."
+    },
+    {
+      "id": "VER-051",
+      "question": "Choose the correct word: Please (lie / lay) the book on the table.",
+      "answer": "lay",
+      "explanation": "'Lay' is a transitive verb meaning to put or place something down. 'Lie' means to recline."
+    },
+    {
+      "id": "VER-052",
+      "question": "Identify the synonym for 'CANDIDATE'. (In the context of 'a candid response')",
+      "answer": "Frank or honest",
+      "explanation": "Candid means truthful and straightforward; frank."
+    },
+    {
+      "id": "VER-053",
+      "question": "Identify the error: 'He is more taller than his brother.'",
+      "answer": "Remove 'more'.",
+      "explanation": "'Taller' is already the comparative form. Adding 'more' creates a double comparative, which is grammatically incorrect."
+    },
+    {
+      "id": "VER-054",
+      "question": "Identify the antonym for 'VERBOSE'.",
+      "answer": "Concise or succinct",
+      "explanation": "Verbose means using or expressed in more words than are needed."
+    },
+    {
+      "id": "VER-055",
+      "question": "Choose the correct verb: The number of applicants (is / are) increasing.",
+      "answer": "is",
+      "explanation": "The phrase 'The number of' always takes a singular verb. ('A number of' takes a plural verb)."
+    },
+    {
+      "id": "VER-056",
+      "question": "Choose the correct spelling: (Separate / Seperate)",
+      "answer": "Separate",
+      "explanation": "There is a 'par' in 'separate'."
+    },
+    {
+      "id": "VER-057",
+      "question": "Choose the correct preposition: He is interested (in / on) learning Spanish.",
+      "answer": "in",
+      "explanation": "The correct idiom is 'interested in'."
+    },
+    {
+      "id": "VER-058",
+      "question": "Identify the synonym for 'INEVITABLE'.",
+      "answer": "Unavoidable",
+      "explanation": "Inevitable means certain to happen; unavoidable."
+    },
+    {
+      "id": "VER-059",
+      "question": "Choose the correct word: We must (accept / except) the results.",
+      "answer": "accept",
+      "explanation": "'Accept' means to receive or agree to. 'Except' means to exclude."
+    },
+    {
+      "id": "VER-060",
+      "question": "Identify the error: 'I could of gone to the party.'",
+      "answer": "Change 'of' to 'have'.",
+      "explanation": "The correct phrase is 'could have'. 'Could of' is a common phonetic misspelling."
+    },
+    {
+      "id": "VER-061",
+      "question": "Identify the antonym for 'OMINOUS'.",
+      "answer": "Promising or auspicious",
+      "explanation": "Ominous means giving the impression that something bad is going to happen."
+    },
+    {
+      "id": "VER-062",
+      "question": "Choose the correct verb: A number of students (is / are) absent today.",
+      "answer": "are",
+      "explanation": "The phrase 'A number of' means 'several' or 'many' and takes a plural verb."
+    },
+    {
+      "id": "VER-063",
+      "question": "Choose the correct spelling: (Rhythm / Rythm / Rhythem)",
+      "answer": "Rhythm",
+      "explanation": "Rhythm is spelled R-H-Y-T-H-M."
+    },
+    {
+      "id": "VER-064",
+      "question": "Choose the correct word: The weather will (affect / effect) our travel plans.",
+      "answer": "affect",
+      "explanation": "'Affect' is the verb form meaning to influence."
+    },
+    {
+      "id": "VER-065",
+      "question": "Identify the synonym for 'FRUGAL'.",
+      "answer": "Thrifty or economical",
+      "explanation": "Frugal means sparing or economical with regard to money or food."
+    },
+    {
+      "id": "VER-066",
+      "question": "Identify the error: 'She don't know the answer.'",
+      "answer": "Change 'don't' to 'doesn't'.",
+      "explanation": "'She' is third-person singular, which requires the singular auxiliary verb 'does not' or 'doesn't'."
+    },
+    {
+      "id": "VER-067",
+      "question": "Identify the antonym for 'LACKADAISICAL'.",
+      "answer": "Enthusiastic or energetic",
+      "explanation": "Lackadaisical means lacking enthusiasm and determination; carelessly lazy."
+    },
+    {
+      "id": "VER-068",
+      "question": "Choose the correct verb: Not only the teacher but also the students (was / were) excited.",
+      "answer": "were",
+      "explanation": "In 'not only/but also' pairs, the verb agrees with the closest subject ('students')."
+    },
+    {
+      "id": "VER-069",
+      "question": "Choose the correct spelling: (Maintenance / Maintainance)",
+      "answer": "Maintenance",
+      "explanation": "Though it comes from 'maintain', the spelling changes to 'ten' in the noun form."
+    },
+    {
+      "id": "VER-070",
+      "question": "Choose the correct preposition: The book was written (by / from) an anonymous author.",
+      "answer": "by",
+      "explanation": "In passive constructions, the agent who performs the action is introduced by 'by'."
+    },
+    {
+      "id": "VER-071",
+      "question": "Identify the synonym for 'TENACIOUS'.",
+      "answer": "Persistent or determined",
+      "explanation": "Tenacious means keeping a firm hold; not readily relinquishing a position."
+    },
+    {
+      "id": "VER-072",
+      "question": "Choose the correct word: I have a lot of (stationary / stationery) for writing letters.",
+      "answer": "stationery",
+      "explanation": "Stationery (with an 'e') refers to writing materials. Stationary (with an 'a') means not moving."
+    },
+    {
+      "id": "VER-073",
+      "question": "Identify the error: 'He works good under pressure.'",
+      "answer": "Change 'good' to 'well'.",
+      "explanation": "'Good' is an adjective. 'Well' is an adverb used to modify the verb 'works'."
+    },
+    {
+      "id": "VER-074",
+      "question": "Identify the antonym for 'PLACATE'.",
+      "answer": "Provoke or anger",
+      "explanation": "Placate means to make someone less angry or hostile."
+    },
+    {
+      "id": "VER-075",
+      "question": "Choose the correct verb: The United States (is / are) a large country.",
+      "answer": "is",
+      "explanation": "Names of countries, even if plural in form, take singular verbs."
+    },
+    {
+      "id": "VER-076",
+      "question": "Choose the correct spelling: (Definately / Definitely / Definitly)",
+      "answer": "Definitely",
+      "explanation": "Remember the root word is 'finite'. De-finite-ly."
+    },
+    {
+      "id": "VER-077",
+      "question": "Choose the correct word: My mother gave me some excellent (advise / advice).",
+      "answer": "advice",
+      "explanation": "'Advice' with a 'c' is the noun. 'Advise' with an 's' is the verb."
+    },
+    {
+      "id": "VER-078",
+      "question": "Identify the synonym for 'OBDURATE'.",
+      "answer": "Stubborn",
+      "explanation": "Obdurate means stubbornly refusing to change one's opinion or course of action."
+    },
+    {
+      "id": "VER-079",
+      "question": "Identify the error: 'The reason why he failed is because he didn't study.'",
+      "answer": "Change 'is because' to 'is that'.",
+      "explanation": "'Reason is because' is redundant. The correct construction is 'The reason... is that'."
+    },
+    {
+      "id": "VER-080",
+      "question": "Identify the antonym for 'CANDOR'.",
+      "answer": "Deception or dishonesty",
+      "explanation": "Candor is the quality of being open and honest."
+    },
+    {
+      "id": "VER-081",
+      "question": "Choose the correct verb: Politics (is / are) a complex subject.",
+      "answer": "is",
+      "explanation": "Politics, when referring to the subject or field, is singular."
+    },
+    {
+      "id": "VER-082",
+      "question": "Choose the correct spelling: (Acquaintance / Aquaintance / Acquantance)",
+      "answer": "Acquaintance",
+      "explanation": "Acquaintance starts with A-C-Q-U-A-I-N."
+    },
+    {
+      "id": "VER-083",
+      "question": "Choose the correct preposition: She apologized (for / to) the mistake.",
+      "answer": "for",
+      "explanation": "You apologize 'to' a person 'for' a mistake or action."
+    },
+    {
+      "id": "VER-084",
+      "question": "Identify the synonym for 'VINDICTIVE'.",
+      "answer": "Revengeful or unforgiving",
+      "explanation": "Vindictive means having or showing a strong or unreasoning desire for revenge."
+    },
+    {
+      "id": "VER-085",
+      "question": "Choose the correct word: The suspect managed to (elude / allude) the police.",
+      "answer": "elude",
+      "explanation": "'Elude' means to escape from. 'Allude' means to hint at."
+    },
+    {
+      "id": "VER-086",
+      "question": "Identify the error: 'The man which stole my wallet was caught.'",
+      "answer": "Change 'which' to 'who'.",
+      "explanation": "Use 'who' for people and 'which' for animals or things."
+    },
+    {
+      "id": "VER-087",
+      "question": "Identify the antonym for 'EPILOGUE'.",
+      "answer": "Prologue",
+      "explanation": "An epilogue is at the end of a book; a prologue is at the beginning."
+    },
+    {
+      "id": "VER-088",
+      "question": "Choose the correct verb: Two-thirds of the pie (was / were) eaten.",
+      "answer": "was",
+      "explanation": "With fractions, the verb agrees with the noun in the prepositional phrase ('pie' is singular)."
+    },
+    {
+      "id": "VER-089",
+      "question": "Choose the correct spelling: (Guarentee / Guarantee / Garuntee)",
+      "answer": "Guarantee",
+      "explanation": "Guarantee is spelled G-U-A-R-A-N-T-E-E."
+    },
+    {
+      "id": "VER-090",
+      "question": "Choose the correct word: He was (eminent / imminent) in his field of study.",
+      "answer": "eminent",
+      "explanation": "'Eminent' means famous and respected. 'Imminent' means about to happen."
+    },
+    {
+      "id": "VER-091",
+      "question": "Identify the synonym for 'LUCURATIVE'.",
+      "answer": "Profitable",
+      "explanation": "Lucrative means producing a great deal of profit."
+    },
+    {
+      "id": "VER-092",
+      "question": "Identify the error: 'She asked me where was the station.'",
+      "answer": "Change to 'where the station was'.",
+      "explanation": "In indirect questions, the subject should come before the verb."
+    },
+    {
+      "id": "VER-093",
+      "question": "Identify the antonym for 'TRANSIENT'.",
+      "answer": "Permanent or lasting",
+      "explanation": "Transient means lasting only for a short time; impermanent."
+    },
+    {
+      "id": "VER-094",
+      "question": "Choose the correct verb: There (is / are) several reasons for this.",
+      "answer": "are",
+      "explanation": "In 'there is/are' sentences, the true subject follows the verb. 'Reasons' is plural, so use 'are'."
+    },
+    {
+      "id": "VER-095",
+      "question": "Choose the correct spelling: (Consensus / Concensus)",
+      "answer": "Consensus",
+      "explanation": "Consensus comes from consent, so it has an 's' in the middle, not a 'c'."
+    },
+    {
+      "id": "VER-096",
+      "question": "Choose the correct preposition: They arrived (in / at) the airport early.",
+      "answer": "at",
+      "explanation": "We use 'at' for specific locations or facilities like an airport, train station, or bus stop."
+    },
+    {
+      "id": "VER-097",
+      "question": "Identify the synonym for 'DILIGENT'.",
+      "answer": "Hard-working or industrious",
+      "explanation": "Diligent means having or showing care and conscientiousness in one's work or duties."
+    },
+    {
+      "id": "VER-098",
+      "question": "Choose the correct word: The medicine had a strong (affect / effect) on him.",
+      "answer": "effect",
+      "explanation": "Here, 'effect' functions as a noun meaning the result or outcome."
+    },
+    {
+      "id": "VER-099",
+      "question": "Identify the error: 'Each of the participants must bring their own laptop.'",
+      "answer": "Change 'their' to 'his or her'.",
+      "explanation": "'Each' is singular, so traditional grammar rules require a singular possessive pronoun, though 'their' is increasingly accepted in casual usage."
+    },
+    {
+      "id": "VER-100",
+      "question": "Identify the antonym for 'BELLIGERENT'.",
+      "answer": "Peaceful or amicable",
+      "explanation": "Belligerent means hostile and aggressive."
+    }
+  ]
+    },
+    {
+      "category_name": "Analytical Ability",
+      "total_count": 100,
+      "flashcards": [
+        {
+      "id": "ANA-001",
+      "question": "Analogy: PETAL is to FLOWER as ENGINE is to ___?",
+      "answer": "CAR (or AUTOMOBILE)",
+      "explanation": "The relationship is 'part-to-whole'. A petal is a structural part of a flower, just as an engine is a vital part of a car."
+    },
+    {
+      "id": "ANA-002",
+      "question": "Syllogism: 'All Filipinos are hospitable. Some hospitable people are tour guides.' Conclusion: 'Therefore, some Filipinos are tour guides.' Is this conclusion logically valid?",
+      "answer": "No / Invalid",
+      "explanation": "The 'hospitable people' who are tour guides are not necessarily the same hospitable people who are Filipinos. The groups might not overlap, making the conclusion invalid."
+    },
+    {
+      "id": "ANA-003",
+      "question": "Number Series: What number comes next in the sequence: 5, 10, 20, 40, ___?",
+      "answer": "80",
+      "explanation": "The pattern is geometric progression where each number is multiplied by 2 to get the next term. 40 multiplied by 2 equals 80."
+    },
+    {
+      "id": "ANA-004",
+      "question": "Blood Relation: Pointing to a photograph, Marco said, 'She is the only daughter of my father's only son.' How is the girl in the photo related to Marco?",
+      "answer": "Daughter",
+      "explanation": "'My father's only son' is Marco himself. Therefore, the girl is the only daughter of Marco, which makes her his daughter."
+    },
+    {
+      "id": "ANA-005",
+      "question": "Classification (Odd One Out): Which word does not belong with the others? Diamond, Ruby, Emerald, Granite.",
+      "answer": "Granite",
+      "explanation": "Diamond, ruby, and emerald are precious gemstones, while granite is a type of igneous rock."
+    },
+    {
+      "id": "ANA-006",
+      "question": "Analogy: TELESCOPE is to ASTRONOMER as MICROSCOPE is to ___?",
+      "answer": "BIOLOGIST (or MICROBIOLOGIST)",
+      "explanation": "The relationship is 'tool-to-user'. An astronomer uses a telescope to observe celestial objects, whereas a biologist uses a microscope to observe micro-organisms."
+    },
+    {
+      "id": "ANA-007",
+      "question": "Letter Series: What is the next letter in the pattern: Z, X, V, T, ___?",
+      "answer": "R",
+      "explanation": "The series counts backward through the English alphabet, skipping one letter each time (Z... Y... X... W... V... U... T... S... R)."
+    },
+    {
+      "id": "ANA-008",
+      "question": "Logical Seating: Five friends (A, B, C, D, E) are sitting in a row facing north. 'A' sits next to 'B'. 'C' sits next to 'D'. 'C' is not sitting next to 'E', who is on the far left. 'D' is sitting next to 'B'. Who is sitting in the middle?",
+      "answer": "B",
+      "explanation": "Placing 'E' on the far left gives: E, _, _, _, _. Since 'A' sits next to 'B', 'D' sits next to 'B', and 'C' sits next to 'D', the structural order from left to right must be E, A, B, D, C. 'B' sits in the exact middle."
+    },
+    {
+      "id": "ANA-009",
+      "question": "Analogy: SCALE is to WEIGHT as THERMOMETER is to ___?",
+      "answer": "TEMPERATURE",
+      "explanation": "The relationship is 'instrument-to-measurement'. A scale measures weight, and a thermometer measures temperature."
+    },
+    {
+      "id": "ANA-010",
+      "question": "Logical Sequence: Arrange the following items in a logical order: 1. Harvest, 2. Seed, 3. Plant, 4. Fruit.",
+      "answer": "2, 3, 4, 1 (Seed, Plant, Fruit, Harvest)",
+      "explanation": "This represents the biological life cycle of agriculture: you start with a seed, grow it into a plant, the plant bears fruit, and finally, you harvest the yield."
+    },
+    {
+      "id": "ANA-011",
+      "question": "Syllogism: 'No reptiles have fur. A snake is a reptile.' Conclusion: 'A snake does not have fur.' Is this conclusion logically valid?",
+      "answer": "Yes / Valid",
+      "explanation": "Since the entire category of reptiles lacks fur, and a snake belongs completely within that category, it logically follows that a snake cannot have fur."
+    },
+    {
+      "id": "ANA-012",
+      "question": "Number Series: Find the next number: 100, 95, 85, 70, ___?",
+      "answer": "50",
+      "explanation": "The differences between numbers grow consecutively by multiples of 5: -5, -10, -15. The next deduction must be -20. 70 minus 20 equals 50."
+    },
+    {
+      "id": "ANA-013",
+      "question": "Analogy: SCALE is to FISH as FEATHER is to ___?",
+      "answer": "BIRD",
+      "explanation": "The relationship is 'outer covering-to-animal'. Scales cover the body of a fish; feathers cover the body of a bird."
+    },
+    {
+      "id": "ANA-014",
+      "question": "Classification (Odd One Out): Which number does not belong? 3, 5, 9, 11, 13.",
+      "answer": "9",
+      "explanation": "All other numbers in the set are prime numbers (only divisible by 1 and themselves), whereas 9 is a composite number divisible by 1, 3, and 9."
+    },
+    {
+      "id": "ANA-015",
+      "question": "Blood Relation: If Marie's mother is the only daughter of Ana's mother, how is Ana related to Marie?",
+      "answer": "Mother",
+      "explanation": "The 'only daughter of Ana's mother' must be Ana herself. Since Marie's mother is that person, Ana is Marie's mother."
+    },
+    {
+      "id": "ANA-016",
+      "question": "Letter Series: Find the missing term: AB, CD, EF, ___?",
+      "answer": "GH",
+      "explanation": "The series groups consecutive alphabetical letter pairs together in standard ascending order."
+    },
+    {
+      "id": "ANA-017",
+      "question": "Analogy: ARCHITECT is to BLUEPRINT as LEGISLATOR is to ___?",
+      "answer": "LAW (or BILL)",
+      "explanation": "The relationship is 'creator-to-product'. An architect designs blueprints; a legislator drafts and enacts laws."
+    },
+    {
+      "id": "ANA-018",
+      "question": "Linear Ordering: In a race, John finished ahead of Sam. Sam finished ahead of Mike. If Ken finished behind John but ahead of Sam, who came in second place?",
+      "answer": "Ken",
+      "explanation": "Tracking the relative order: John is first. Ken is behind John but ahead of Sam, meaning Ken follows John. Sam follows Ken, and Mike follows Sam. The final line-up is John, Ken, Sam, Mike."
+    },
+    {
+      "id": "ANA-019",
+      "question": "Analogy: WATER is to ICE as MILK is to ___?",
+      "answer": "CHEESE (or BUTTER)",
+      "explanation": "The relationship is 'raw material-to-solid byproduct'. Ice is a solid state/product made from water, just as cheese is a solid food product processed from milk."
+    },
+    {
+      "id": "ANA-020",
+      "question": "Syllogism: 'All books are pages. All pages are paper.' Conclusion: 'All books are paper.' Is this conclusion logically valid?",
+      "answer": "Yes / Valid",
+      "explanation": "This follows the transitive law of logic. If A is inside B, and B is inside C, then A is completely contained inside C."
+    },
+    {
+      "id": "ANA-021",
+      "question": "Number Series: Identify the missing term: 2, 3, 5, 8, 12, 17, ___?",
+      "answer": "23",
+      "explanation": "The difference between consecutive terms increases by 1 each time: +1, +2, +3, +4, +5. The next increment must be +6. 17 + 6 = 23."
+    },
+    {
+      "id": "ANA-022",
+      "question": "Analogy: COBBLER is to SHOES as CARPENTER is to ___?",
+      "answer": "FURNITURE (or WOOD)",
+      "explanation": "The relationship is 'profession-to-product'. A cobbler makes or repairs shoes; a carpenter constructs furniture."
+    },
+    {
+      "id": "ANA-023",
+      "question": "Classification (Odd One Out): Which word does not match the rest? Crocodile, Whale, Dolphin, Sea Lion.",
+      "answer": "Crocodile",
+      "explanation": "Whales, dolphins, and sea lions are marine mammals, whereas a crocodile is a reptile."
+    },
+    {
+      "id": "ANA-024",
+      "question": "Analogy: SOLDIER is to REGIMENT as STAR is to ___?",
+      "answer": "CONSTELLATION (or GALAXY)",
+      "explanation": "The relationship is 'individual-to-collective group'. A soldier is part of a regiment; a star is a component of a constellation."
+    },
+    {
+      "id": "ANA-025",
+      "question": "Logical Inversion: If 'If it rains, the game is canceled' is true, which of the following must also be true? (A) If it does not rain, the game is not canceled. (B) If the game is canceled, it rained. (C) If the game is not canceled, it did not rain.",
+      "answer": "C",
+      "explanation": "This represents the contrapositive statement (If not Q, then not P), which is the only variation logically equivalent to the original conditional statement."
+    },
+    {
+      "id": "ANA-026",
+      "question": "Letter Series: Find the next group: ACC, BDD, CEE, ___?",
+      "answer": "DFF",
+      "explanation": "The first letter progresses normally: A, B, C, D. The double trailing letters progress as CC, DD, EE, FF."
+    },
+    {
+      "id": "ANA-027",
+      "question": "Analogy: INSULATOR is to ELECTRICITY as DAM is to ___?",
+      "answer": "WATER",
+      "explanation": "The relationship is 'barrier-to-flow'. An insulator blocks the flow of electricity, while a dam blocks the flow of water."
+    },
+    {
+      "id": "ANA-028",
+      "question": "Blood Relation: Looking at a man, Leo said, 'His father is my father's only son.' Who is the man to Leo?",
+      "answer": "Leo's Son",
+      "explanation": "'My father's only son' is Leo himself. Since that person is the father of the man being looked at, the man is Leo's son."
+    },
+    {
+      "id": "ANA-029",
+      "question": "Number Series: Find the missing entry: 1, 4, 9, 16, 25, ___?",
+      "answer": "36",
+      "explanation": "The series consists of consecutive perfect squares: 1 squared, 2 squared, 3 squared, 4 squared, 5 squared. The next term is 6 squared, which equals 36."
+    },
+    {
+      "id": "ANA-030",
+      "question": "Analogy: ENORMOUS is to TINY as PERMANENT is to ___?",
+      "answer": "TEMPORARY (or TRANSIENT)",
+      "explanation": "The relationship is antonymous. Enormous is the opposite of tiny, and permanent is the opposite of temporary."
+    },
+    {
+      "id": "ANA-031",
+      "question": "Syllogism: 'Some executives are clean-shaven. All clean-shaven men are polite.' Conclusion: 'Some executives are polite.' Is this conclusion logically valid?",
+      "answer": "Yes / Valid",
+      "explanation": "The subset of executives who are clean-shaven must also fall within the category of polite men, guaranteeing that at least some executives are polite."
+    },
+    {
+      "id": "ANA-032",
+      "question": "Classification (Odd One Out): Select the odd word: Cub, Kitten, Puppy, Deer.",
+      "answer": "Deer",
+      "explanation": "Cub, kitten, and puppy are terms explicitly used for baby animals, whereas a deer is a fully grown adult species name."
+    },
+    {
+      "id": "ANA-033",
+      "question": "Analogy: COMPASS is to DIRECTION as CLOCK is to ___?",
+      "answer": "TIME",
+      "explanation": "The relationship is 'tool-to-indicated information'. A compass tracks direction, and a clock tracks time."
+    },
+    {
+      "id": "ANA-034",
+      "question": "Logical Arrangement: Six boxes (P, Q, R, S, T, U) are stacked. P is directly above S. R is below T. U is between P and T. Q is at the bottom. If S is directly above U, what is the sequence from top to bottom?",
+      "answer": "P, S, U, T, R, Q",
+      "explanation": "P is above S, and S is above U, yielding P-S-U. U is between P and T, which expands the stack to P-S-U-T. R is below T, adding R to make P-S-U-T-R. Q is at the bottom, completing the chain."
+    },
+    {
+      "id": "ANA-035",
+      "question": "Number Series: Find the next number: 3, 6, 11, 18, 27, ___?",
+      "answer": "38",
+      "explanation": "The difference between terms grows as consecutive odd numbers: +3, +5, +7, +9. The next jump must be +11. 27 + 11 = 38."
+    },
+    {
+      "id": "ANA-036",
+      "question": "Analogy: REFRIGERATOR is to COOL as STOVE is to ___?",
+      "answer": "HEAT (or COOK)",
+      "explanation": "The relationship is 'appliance-to-primary thermal function'. A refrigerator cools items, while a stove heats them."
+    },
+    {
+      "id": "ANA-037",
+      "question": "Letter Series: What is the missing group? AZ, CX, EV, ___?",
+      "answer": "GT",
+      "explanation": "The first letters skip-forward (A... C... E... G). The second letters skip-backward from the end of the alphabet (Z... X... V... T)."
+    },
+    {
+      "id": "ANA-038",
+      "question": "Syllogism: 'All gold is shiny. This coin is shiny.' Conclusion: 'Therefore, this coin is gold.' Is this conclusion logically valid?",
+      "answer": "No / Invalid",
+      "explanation": "This commits the logical fallacy of affirming the consequent. Other items besides gold can be shiny; the coin could be silver or plastic."
+    },
+    {
+      "id": "ANA-039",
+      "question": "Analogy: SEED is to PLANT as EGG is to ___?",
+      "answer": "BIRD (or CHICK / ANIMAL)",
+      "explanation": "The relationship is 'originating stage-to-adult structure'. A seed matures into a plant, and an egg hatches/matures into a bird."
+    },
+    {
+      "id": "ANA-040",
+      "question": "Classification (Odd One Out): Which word does not belong? Triangle, Square, Circle, Pentagon.",
+      "answer": "Circle",
+      "explanation": "Triangle, square, and pentagon are polygons composed of straight line segments, whereas a circle is a continuous curved boundary."
+    },
+    {
+      "id": "ANA-041",
+      "question": "Number Series: What is the next term: 80, 40, 20, 10, ___?",
+      "answer": "5",
+      "explanation": "Each subsequent number is calculated by dividing the previous number by 2. 10 divided by 2 is 5."
+    },
+    {
+      "id": "ANA-042",
+      "question": "Analogy: SILENT is to NOISE as BALD is to ___?",
+      "answer": "HAIR",
+      "explanation": "The relationship is 'state-to-absolute lack of'. Silent means an absence of noise; bald means an absence of hair."
+    },
+    {
+      "id": "ANA-043",
+      "question": "Blood Relation: A man introduces a woman as 'the wife of the grandson of my mother'. How is the woman related to the man?",
+      "answer": "Daughter-in-law",
+      "explanation": "The grandson of the man's mother would be the man's own son. The wife of the man's son is his daughter-in-law."
+    },
+    {
+      "id": "ANA-044",
+      "question": "Analogy: AUTHOR is to NOVEL as SCULPTOR is to ___?",
+      "answer": "STATUE (or SCULPTURE)",
+      "explanation": "The relationship is 'artisan-to-finished masterpiece'. An author writes a novel; a sculptor carves a statue."
+    },
+    {
+      "id": "ANA-045",
+      "question": "Conditional Logic: If no mechanics are musicians, and all musicians are singers, can we definitively conclude that no mechanics are singers?",
+      "answer": "No",
+      "explanation": "Mechanics cannot be musicians, but they can still overlap with the larger group of singers who are not musicians."
+    },
+    {
+      "id": "ANA-046",
+      "question": "Letter Series: Find the next entry: B2D, E3G, H4J, ___?",
+      "answer": "K5M",
+      "explanation": "The first letters advance by 3 steps (B... E... H... K). The numbers increment by 1 (2, 3, 4, 5). The trailing letters also advance by 3 steps (D... G... J... M)."
+    },
+    {
+      "id": "ANA-047",
+      "question": "Analogy: OBESE is to THIN as GIGANTIC is to ___?",
+      "answer": "SMALL (or TINY / MICROSCOPIC)",
+      "explanation": "The relationship is antonymous. Obese is the opposite of thin, and gigantic is the opposite of small."
+    },
+    {
+      "id": "ANA-048",
+      "question": "Classification (Odd One Out): Find the odd item: Keyboard, Mouse, Monitor, Scanner.",
+      "answer": "Monitor",
+      "explanation": "Keyboard, mouse, and scanner are computer hardware input devices, whereas a monitor is an output device."
+    },
+    {
+      "id": "ANA-049",
+      "question": "Number Series: Find the missing position: 1, 2, 6, 24, ___?",
+      "answer": "120",
+      "explanation": "The sequence utilizes progressive factorial steps: 1x2=2, 2x3=6, 6x4=24. The next phase must be 24x5, which equals 120."
+    },
+    {
+      "id": "ANA-050",
+      "question": "Analogy: WING is to AEROPLANE as WHEEL is to ___?",
+      "answer": "BICYCLE (or CAR)",
+      "explanation": "The relationship is 'propulsion/structural component to vehicle'. A wing enables an airplane to function, and a wheel enables a bicycle or car to move."
+    },
+    {
+      "id": "ANA-051",
+      "question": "Spatial Ordering: Six athletes run a race. Alan finished behind Carl but ahead of Dan. Ben finished ahead of Carl. Ed finished behind Dan but ahead of Fred. Who finished last?",
+      "answer": "Fred",
+      "explanation": "Assembling the chain from first to last based on descriptions: Ben, Carl, Alan, Dan, Ed, Fred. Fred sits at the end of the sequence."
+    },
+    {
+      "id": "ANA-052",
+      "question": "Analogy: SMILE is to JOY as FROWN is to ___?",
+      "answer": "SADNESS (or ANGER / SORROW)",
+      "explanation": "The relationship is 'facial expression-to-underlying emotion'. A smile reflects joy; a frown indicates sadness or anger."
+    },
+    {
+      "id": "ANA-053",
+      "question": "Syllogism: 'All squares are rhombuses. All rhombuses are quadrilaterals.' Conclusion: 'All squares are quadrilaterals.' Is this valid?",
+      "answer": "Yes / Valid",
+      "explanation": "By transitivity, if category A is fully inside category B, and category B is entirely inside category C, then category A is inevitably inside category C."
+    },
+    {
+      "id": "ANA-054",
+      "question": "Number Series: Find the missing term: 7, 9, 13, 21, 37, ___?",
+      "answer": "69",
+      "explanation": "The added values double with every step: +2, +4, +8, +16. The next jump must be +32. 37 + 32 = 69."
+    },
+    {
+      "id": "ANA-055",
+      "question": "Analogy: FIRE is to ASHES as EXPLOSION is to ___?",
+      "answer": "DEBRIS (or RUINS)",
+      "explanation": "The relationship is 'destructive event-to-physical remains'. Fire leaves behind ashes, and an explosion leaves behind debris."
+    },
+    {
+      "id": "ANA-056",
+      "question": "Classification (Odd One Out): Which city does not fit? Tokyo, Paris, New York, Manila.",
+      "answer": "New York",
+      "explanation": "Tokyo (Japan), Paris (France), and Manila (Philippines) are sovereign national capital cities, while New York is a major financial metropolis but not a capital."
+    },
+    {
+      "id": "ANA-057",
+      "question": "Letter Series: What is the next step: CBA, FED, IHG, ___?",
+      "answer": "LKJ",
+      "explanation": "The alphabet is split into consecutive blocks of three letters, and each block is written in reverse chronological order (ABC -> CBA, DEF -> FED, GHI -> IHG, JKL -> LKJ)."
+    },
+    {
+      "id": "ANA-058",
+      "question": "Analogy: REVEAL is to CONCEAL as ADVANCE is to ___?",
+      "answer": "RETREAT (or RECCEDE)",
+      "explanation": "The relationship is directional antonyms. To reveal is the opposite of to conceal; to advance is the opposite of to retreat."
+    },
+    {
+      "id": "ANA-059",
+      "question": "Blood Relation: Showing a man on stage, Cora said, 'He is the brother of my uncle's only sister's daughter.' How is the man related to Cora?",
+      "answer": "Brother",
+      "explanation": "Cora's 'uncle's only sister' is Cora's mother. Her mother's daughter is Cora herself (or her sister). The brother of Cora (or her sister) is Cora's brother."
+    },
+    {
+      "id": "ANA-060",
+      "question": "Syllogism: 'Some green items are apples. All apples are organic.' Conclusion: 'Some green items are organic.' Is this conclusion logically valid?",
+      "answer": "Yes / Valid",
+      "explanation": "The subset of green items that are apples must also be organic because all apples without exception are organic."
+    },
+    {
+      "id": "ANA-061",
+      "question": "Number Series: Find the missing element: 4, 9, 25, 49, 121, ___?",
+      "answer": "169",
+      "explanation": "The series tracks the perfect squares of consecutive prime numbers: 2 squared (4), 3 squared (9), 5 squared (25), 7 squared (49), 11 squared (121). The next prime number is 13, and 13 squared equals 169."
+    },
+    {
+      "id": "ANA-062",
+      "question": "Analogy: COLD is to WINTER as HOT is to ___?",
+      "answer": "SUMMER",
+      "explanation": "The relationship is 'predominant climate characteristic-to-season'. Winter is characterized by cold weather; summer is characterized by hot weather."
+    },
+    {
+      "id": "ANA-063",
+      "question": "Seating Arrangement: Four people (W, X, Y, Z) sit at a square table, one on each side. W is to the immediate left of X. Y is across from X. Where is Z sitting relative to W?",
+      "answer": "Across from W",
+      "explanation": "If Y is across from X, the remaining opposite pair positions must be occupied by W and Z. Thus, Z sits directly across from W."
+    },
+    {
+      "id": "ANA-064",
+      "question": "Analogy: LAWYER is to COURT as CHEF is to ___?",
+      "answer": "KITCHEN (or RESTAURANT)",
+      "explanation": "The relationship is 'professional-to-primary workspace venue'. A lawyer argues in court; a chef cooks in a kitchen."
+    },
+    {
+      "id": "ANA-065",
+      "question": "Classification (Odd One Out): Choose the odd combination: 2-4, 3-9, 4-16, 5-20.",
+      "answer": "5-20",
+      "explanation": "In all other options, the second number is the perfect square of the first number (2x2=4, 3x3=9, 4x4=16). For 5, it should be 25 instead of 20."
+    },
+    {
+      "id": "ANA-066",
+      "question": "Analogy: IMMIGRATION is to ARRIVAL as EMIGRATION is to ___?",
+      "answer": "DEPARTURE (or LEAVING)",
+      "explanation": "The relationship is structural definitions. Immigration is moving into a country (arrival); emigration is moving out of a country (departure)."
+    },
+    {
+      "id": "ANA-067",
+      "question": "Number Series: Deduce the next step: 0, 1, 1, 2, 3, 5, 8, ___?",
+      "answer": "13",
+      "explanation": "This is the classic Fibonacci sequence, where each term is the sum of the preceding two terms (5 + 8 = 13)."
+    },
+    {
+      "id": "ANA-068",
+      "question": "Syllogism: 'No triangles are circles. No circles are squares.' Conclusion: 'No triangles are squares.' Is this deduction valid?",
+      "answer": "No / Invalid",
+      "explanation": "Two negative premises yield no valid logical connection between the first and third terms. Triangles and squares could still potentially overlap or be completely separate."
+    },
+    {
+      "id": "ANA-069",
+      "question": "Analogy: WEIGHT is to KILOGRAM as DISTANCE is to ___?",
+      "answer": "METER (or KILOMETER)",
+      "explanation": "The relationship is 'physical dimension-to-standard metric unit'. Weight is tracked in kilograms; distance is tracked in meters."
+    },
+    {
+      "id": "ANA-070",
+      "question": "Blood Relation: M is the brother of N. O is the father of M. P is the sister of O. How is P related to N?",
+      "answer": "Aunt",
+      "explanation": "Since O is the father of M, and M and N are siblings, O is the father of N. The sister of one's father (P) is an aunt."
+    },
+    {
+      "id": "ANA-071",
+      "question": "Letter Series: Find the missing group: BCDE, CDEF, DEFG, ___?",
+      "answer": "EFGH",
+      "explanation": "Each group drops the first letter of the previous sequence and appends the next consecutive alphabetical letter at the end."
+    },
+    {
+      "id": "ANA-072",
+      "question": "Analogy: DRILL is to HOLE as BROOM is to ___?",
+      "answer": "CLEAN (or SWEEP)",
+      "explanation": "The relationship is 'tool-to-intended output action'. A drill is operated to make a hole; a broom is operated to sweep or clean."
+    },
+    {
+      "id": "ANA-073",
+      "question": "Logical Grouping: If red paints are mixed with yellow, orange is produced. If yellow is mixed with blue, green is produced. If a painting has no orange and no green, what primary color is missing?",
+      "answer": "Yellow",
+      "explanation": "Yellow is the shared essential ingredient for making both orange and green. Its complete absence explains why neither secondary color could be generated."
+    },
+    {
+      "id": "ANA-074",
+      "question": "Analogy: CONSTELLATION is to STARS as ARCHIPELAGO is to ___?",
+      "answer": "ISLANDS",
+      "explanation": "The relationship is 'collective noun-to-individual units'. A constellation is a cluster of stars; an archipelago is a cluster of islands."
+    },
+    {
+      "id": "ANA-075",
+      "question": "Number Series: Find the next value: 1, 3, 7, 15, 31, ___?",
+      "answer": "63",
+      "explanation": "The formula used is (Previous Term x 2) + 1. Following this rule: (31 x 2) + 1 = 62 + 1 = 63."
+    },
+    {
+      "id": "ANA-076",
+      "question": "Classification (Odd One Out): Which word does not belong? Beijing, Canberra, Rio de Janeiro, Washington D.C.",
+      "answer": "Rio de Janeiro",
+      "explanation": "Beijing, Canberra, and Washington D.C. are the political capital cities of their countries. The capital of Brazil is Brasília, not Rio de Janeiro."
+    },
+    {
+      "id": "ANA-077",
+      "question": "Analogy: CAPTAIN is to SHIP as PRINCIPAL is to ___?",
+      "answer": "SCHOOL",
+      "explanation": "The relationship is 'designated director-to-institutional entity'. A captain runs a ship; a principal runs a school."
+    },
+    {
+      "id": "ANA-078",
+      "question": "Syllogism: 'All introverts like reading. Some artists are introverts.' Conclusion: 'Therefore, some artists like reading.' Is this valid?",
+      "answer": "Yes / Valid",
+      "explanation": "The shared group of artists who are introverts must automatically like reading because every single introvert likes reading."
+    },
+    {
+      "id": "ANA-079",
+      "question": "Letter Series: Find the next letter: A, C, F, J, O, ___?",
+      "answer": "U",
+      "explanation": "The number of skipped alphabetical steps increases systematically: skip 1 letter (B), skip 2 (D,E), skip 3 (G,H,I), skip 4 (K,L,M,N). Next, skip 5 letters (P,Q,R,S,T), pointing directly to U."
+    },
+    {
+      "id": "ANA-080",
+      "question": "Analogy: LION is to CARNIVORE as COW is to ___?",
+      "answer": "HERBIVORE",
+      "explanation": "The relationship is 'animal-to-dietary classification'. A lion is an obligate meat-eater (carnivore); a cow is a plant-eater (herbivore)."
+    },
+    {
+      "id": "ANA-081",
+      "question": "Linear Sequence: In an office building, Floor 4 is directly above Floor 3. Floor 2 is below Floor 3. If Floor 5 is above Floor 4 and Floor 1 is at the base, which floor is directly in the middle of the stack?",
+      "answer": "Floor 3",
+      "explanation": "The absolute vertical lineup from lowest to highest is 1, 2, 3, 4, 5. The exact midpoint value of this sequence is 3."
+    },
+    {
+      "id": "ANA-082",
+      "question": "Analogy: SCALPEL is to SURGEON as AXE is to ___?",
+      "answer": "LUMBERJACK (or WOODCUTTER)",
+      "explanation": "The relationship is 'specialized tool-to-work professional'. A surgeon cuts tissue with a scalpel; a lumberjack cuts trees with an axe."
+    },
+    {
+      "id": "ANA-083",
+      "question": "Number Series: Find the missing link: 2, 6, 18, 54, ___?",
+      "answer": "162",
+      "explanation": "Each subsequent step is calculated by multiplying the prior value by 3 (54 x 3 = 162)."
+    },
+    {
+      "id": "ANA-084",
+      "question": "Syllogism: 'Most laptops have batteries. All batteries store energy.' Conclusion: 'Most laptops store energy.' Is this valid?",
+      "answer": "Yes / Valid",
+      "explanation": "Since the majority of laptops contain batteries, and all batteries without exception function to store energy, those specific laptops definitely store energy."
+    },
+    {
+      "id": "ANA-085",
+      "question": "Analogy: CLOUD is to RAIN as SMOKE is to ___?",
+      "answer": "FIRE",
+      "explanation": "The relationship is 'observable byproduct-to-source cause'. Clouds yield rain, and fire produces smoke."
+    },
+    {
+      "id": "ANA-086",
+      "question": "Blood Relation: X and Y are brothers. R is the father of Y. S is the brother of T and maternal uncle of X. How is T related to R?",
+      "answer": "Wife",
+      "explanation": "R is the father of X and Y. S is the maternal uncle of X, meaning S is the brother of X's mother. Since S is also the brother of T, T must be X's mother and R's wife."
+    },
+    {
+      "id": "ANA-087",
+      "question": "Classification (Odd One Out): Pick the odd item: Sheet, Pillowcase, Blanket, Mattress.",
+      "answer": "Mattress",
+      "explanation": "Sheet, pillowcase, and blanket are pieces of fabric bedding accessories that go on top, whereas a mattress is the heavy structural piece of furniture."
+    },
+    {
+      "id": "ANA-088",
+      "question": "Analogy: EXPAND is to CONTRACT as RISE is to ___?",
+      "answer": "FALL (or SINK / DECLINE)",
+      "explanation": "The relationship is action antonyms. To expand is the opposite of to contract; to rise is the opposite of to fall."
+    },
+    {
+      "id": "ANA-089",
+      "question": "Number Series: Find the missing component: 10, 11, 13, 16, 20, ___?",
+      "answer": "25",
+      "explanation": "The incremental additions scale upward sequentially by 1 with each step: +1, +2, +3, +4. The next phase requires +5. 20 + 5 = 25."
+    },
+    {
+      "id": "ANA-090",
+      "question": "Analogy: BARK is to DOG as MEOW is to ___?",
+      "answer": "CAT",
+      "explanation": "The relationship is 'vocalization-to-animal source'. A dog barks; a cat meows."
+    },
+    {
+      "id": "ANA-091",
+      "question": "Logical Grouping: If a box contains 3 red balls, 2 blue balls, and 1 yellow ball, what is the minimum number of balls you must extract without looking to guarantee you have at least two of the same color?",
+      "answer": "4 balls",
+      "explanation": "By the Pigeonhole Principle, if you draw 3 balls, they could all be different colors (1 red, 1 blue, 1 yellow). A 4th ball must match one of the colors already drawn."
+    },
+    {
+      "id": "ANA-092",
+      "question": "Analogy: GLUCOSE is to SUGAR as CHOLESTEROL is to ___?",
+      "answer": "FAT (or LIPID)",
+      "explanation": "The relationship is 'specific chemical compound-to-general nutrient family'. Glucose is a structural form of sugar; cholesterol is a structural form of fat."
+    },
+    {
+      "id": "ANA-093",
+      "question": "Letter Series: Find the next block: MNO, PQR, STU, ___?",
+      "answer": "VWX",
+      "explanation": "The sequence groups standard English alphabet letters in uninterrupted consecutive triplets."
+    },
+    {
+      "id": "ANA-094",
+      "question": "Syllogism: 'All actors are charismatic. Some politicians are actors.' Conclusion: 'All politicians are charismatic.' Is this valid?",
+      "answer": "No / Invalid",
+      "explanation": "Only the small group of politicians who work as actors are guaranteed to be charismatic. This does not validate that all politicians are."
+    },
+    {
+      "id": "ANA-095",
+      "question": "Analogy: ANARCHY is to GOVERNMENT as AMNESTY is to ___?",
+      "answer": "PUNISHMENT (or LAW / PROSECUTION)",
+      "explanation": "The relationship is 'state-to-complete elimination of'. Anarchy is the absence of government; amnesty is the official elimination or pardon of punishment."
+    },
+    {
+      "id": "ANA-096",
+      "question": "Number Series: Deduce the missing value: 2, 4, 8, 16, 32, ___?",
+      "answer": "64",
+      "explanation": "The progression continuously doubles the value of the previous term. 32 multiplied by 2 yields 64."
+    },
+    {
+      "id": "ANA-097",
+      "question": "Classification (Odd One Out): Select the odd city: Manila, Cebu, Davao, Seoul.",
+      "answer": "Seoul",
+      "explanation": "Manila, Cebu, and Davao are major domestic regional cities located within the Philippines, whereas Seoul is the foreign capital city of South Korea."
+    },
+    {
+      "id": "ANA-098",
+      "question": "Analogy: REPASS is to FOOD as INHALE is to ___?",
+      "answer": "AIR (or OXYGEN)",
+      "explanation": "The relationship is 'consumption action-to-substance ingested'. One eats food; one inhales air."
+    },
+    {
+      "id": "ANA-099",
+      "question": "Blood Relation: If Jack is the brother of the son of Ben's son, how is Jack related to Ben?",
+      "answer": "Grandson",
+      "explanation": "The 'son of Ben's son' is Ben's grandson. Since Jack is the brother of Ben's grandson, Jack is also Ben's grandson."
+    },
+    {
+      "id": "ANA-100",
+      "question": "Analogy: VACCINE is to PREVENTION as ANTIBIOTIC is to ___?",
+      "answer": "CURE (or TREATMENT)",
+      "explanation": "The relationship is 'medical item-to-primary clinical goal'. A vaccine is administered for disease prevention; an antibiotic is administered for infection cure/treatment."
+    }
+      ]
+    },
+    {
+      "category_name": "Numerical Ability",
+      "total_count": 100,
+      "flashcards": [
+        {
+      "id": "NUM-001",
+      "question": "Simplify the expression: 12 + 4 * (6 - 2)",
+      "answer": "28",
+      "explanation": "Following PEMDAS/Order of Operations, solve inside the parentheses first: 6 - 2 = 4. Then perform multiplication: 4 * 4 = 16. Finally, add: 12 + 16 = 28."
+    },
+    {
+      "id": "NUM-002",
+      "question": "Add the fractions: 3/4 + 1/6",
+      "answer": "11/12",
+      "explanation": "Find the Least Common Denominator (LCD) for 4 and 6, which is 12. Convert the fractions: 3/4 = 9/12 and 1/6 = 2/12. Combine them: 9/12 + 2/12 = 11/12."
+    },
+    {
+      "id": "NUM-003",
+      "question": "What is 15% of 120?",
+      "answer": "18",
+      "explanation": "Convert the percentage to a decimal: 15% = 0.15. Multiply by the base: 0.15 * 120 = 18."
+    },
+    {
+      "id": "NUM-004",
+      "question": "If 3 shirts cost 450 pesos, how much will 5 shirts cost at the same rate?",
+      "answer": "750",
+      "explanation": "Find the unit price by dividing total cost by quantity: 450 / 3 = 150 pesos per shirt. Multiply the unit price by the new quantity: 150 * 5 = 750 pesos."
+    },
+    {
+      "id": "NUM-005",
+      "question": "Four workers can finish painting a house in 6 days. How many days will it take 8 workers to finish the same job?",
+      "answer": "3",
+      "explanation": "This is an inverse proportion. More workers take fewer days: (4 workers * 6 days) = (8 workers * x days). 24 = 8x, so x = 3 days."
+    },
+    {
+      "id": "NUM-006",
+      "question": "Divide 1,000 pesos between two friends in the ratio 2:3. What is the larger share?",
+      "answer": "600 pesos",
+      "explanation": "Add the parts of the ratio: 2 + 3 = 5 equal parts. Find the value of one part: 1,000 / 5 = 200 pesos. The larger share is 3 parts: 3 * 200 = 600 pesos."
+    },
+    {
+      "id": "NUM-007",
+      "question": "Marco is twice as old as Ben. In 5 years, the sum of their ages will be 40. How old is Ben now?",
+      "answer": "10",
+      "explanation": "Let Ben's age be x, so Marco's age is 2x. In 5 years: (x + 5) + (2x + 5) = 40. Combine terms: 3x + 10 = 40 -> 3x = 30 -> x = 10."
+    },
+    {
+      "id": "NUM-008",
+      "question": "Ana can encode a manuscript in 4 hours, while Liza can do it in 6 hours. How long will it take them working together?",
+      "answer": "2.4 hours (or 2 hours and 24 minutes)",
+      "explanation": "Use the work formula: 1/Total = 1/4 + 1/6 = 3/12 + 2/12 = 5/12. Invert the fraction to find total time: 12 / 5 = 2.4 hours."
+    },
+    {
+      "id": "NUM-009",
+      "question": "A train travels a distance of 240 kilometers in 3 hours. What is its average speed in km/h?",
+      "answer": "80",
+      "explanation": "Use the formula Speed = Distance / Time. Speed = 240 km / 3 hours = 80 km/h."
+    },
+    {
+      "id": "NUM-010",
+      "question": "A bag originally priced at 800 pesos is sold for 640 pesos. What is the discount rate?",
+      "answer": "20%",
+      "explanation": "Find the discount amount: 800 - 640 = 160 pesos. Divide the discount by the original price: 160 / 800 = 0.20, which equals 20%."
+    },
+    {
+      "id": "NUM-011",
+      "question": "Calculate the simple interest earned on a 5,000 pesos deposit at an annual interest rate of 4% for 2 years.",
+      "answer": "400 pesos",
+      "explanation": "Use the simple interest formula: Interest = Principal * Rate * Time. Interest = 5,000 * 0.04 * 2 = 400 pesos."
+    },
+    {
+      "id": "NUM-012",
+      "question": "Find the average (mean) of the numbers: 15, 20, 25, 30, and 35.",
+      "answer": "25",
+      "explanation": "Sum the values: 15 + 20 + 25 + 30 + 35 = 125. Divide by the total count of items: 125 / 5 = 25."
+    },
+    {
+      "id": "NUM-013",
+      "question": "The average of four numbers is 10. If three of the numbers are 8, 12, and 11, what is the fourth number?",
+      "answer": "9",
+      "explanation": "The sum of the four numbers is 4 * 10 = 40. Sum the three known numbers: 8 + 12 + 11 = 31. Subtract from total sum: 40 - 31 = 9."
+    },
+    {
+      "id": "NUM-014",
+      "question": "Solve for x in the linear equation: 3x - 7 = 14",
+      "answer": "7",
+      "explanation": "Add 7 to both sides of the equation: 3x = 14 + 7 -> 3x = 21. Divide by 3: x = 21 / 3 = 7."
+    },
+    {
+      "id": "NUM-015",
+      "question": "The sum of three consecutive integers is 45. What is the smallest of these integers?",
+      "answer": "14",
+      "explanation": "Let the numbers be x, x+1, and x+2. Set up equation: x + (x + 1) + (x + 2) = 45 -> 3x + 3 = 45 -> 3x = 42 -> x = 14."
+    },
+    {
+      "id": "NUM-016",
+      "question": "In a class of 50 students, 20 are boys. What fraction of the class are girls in simplest form?",
+      "answer": "3/5",
+      "explanation": "Number of girls = 50 - 20 = 30. Express as a fraction of the total class: 30/50. Simplify by dividing by 10 to get 3/5."
+    },
+    {
+      "id": "NUM-017",
+      "question": "Convert the decimal 0.35 into a fraction in lowest terms.",
+      "answer": "7/20",
+      "explanation": "Write 0.35 as 35/100. Divide both the numerator and the denominator by their greatest common divisor, which is 5: 35/5 = 7 and 100/5 = 20."
+    },
+    {
+      "id": "NUM-018",
+      "question": "A box contains 4 red marbles and 6 blue marbles. If one marble is drawn at random, what is the probability it is red?",
+      "answer": "2/5 (or 40%)",
+      "explanation": "Total marbles = 4 + 6 = 10. Probability = favorable outcomes / total outcomes = 4/10. Simplify to lowest terms to get 2/5."
+    },
+    {
+      "id": "NUM-019",
+      "question": "A square has a perimeter of 32 cm. What is its area?",
+      "answer": "64 sq cm",
+      "explanation": "Find the length of one side: 32 cm / 4 sides = 8 cm. Area of a square = side * side = 8 cm * 8 cm = 64 sq cm."
+    },
+    {
+      "id": "NUM-020",
+      "question": "A rectangle has a length of 10 meters and a width of 6 meters. What is its area?",
+      "answer": "60 square meters",
+      "explanation": "Area of a rectangle = length * width. Area = 10 meters * 6 meters = 60 square meters."
+    },
+    {
+      "id": "NUM-021",
+      "question": "Find the circumference of a circle with a radius of 7 cm. (Use pi = 22/7)",
+      "answer": "44 cm",
+      "explanation": "Formula for circumference is 2 * pi * radius. Calculation: 2 * (22/7) * 7 = 2 * 22 = 44 cm."
+    },
+    {
+      "id": "NUM-022",
+      "question": "If x + y = 12 and x - y = 4, what is the value of x?",
+      "answer": "8",
+      "explanation": "Add the two equations together: (x + y) + (x - y) = 12 + 4. This simplifies to 2x = 16, which means x = 8."
+    },
+    {
+      "id": "NUM-023",
+      "question": "What is 125% of 80?",
+      "answer": "100",
+      "explanation": "Convert percentage to decimal: 125% = 1.25. Multiply by the number: 1.25 * 80 = 100."
+    },
+    {
+      "id": "NUM-024",
+      "question": "The retail price of a shirt was raised from 500 pesos to 650 pesos. What was the percentage markup?",
+      "answer": "30%",
+      "explanation": "Find price increase: 650 - 500 = 150 pesos. Divide by original base price: 150 / 500 = 0.30, which corresponds to 30%."
+    },
+    {
+      "id": "NUM-025",
+      "question": "A car consumes 5 liters of fuel to travel 60 kilometers. How many liters are needed for 180 kilometers?",
+      "answer": "15",
+      "explanation": "This is a direct proportion: 5/60 = x/180. Cross multiply: 60x = 900 -> x = 900 / 60 = 15 liters."
+    },
+    {
+      "id": "NUM-026",
+      "question": "If 30% of a number is 45, what is the number?",
+      "answer": "150",
+      "explanation": "Set up the equation: 0.30 * x = 45. Solve for x by dividing both sides by 0.30: x = 45 / 0.30 = 150."
+    },
+    {
+      "id": "NUM-027",
+      "question": "Evaluate and simplify the exponents: (2^3 * 2^2) / 2^4",
+      "answer": "2",
+      "explanation": "Using rules of exponents, add powers for multiplication: 2^(3+2) = 2^5. Subtract powers for division: 2^(5-4) = 2^1 = 2."
+    },
+    {
+      "id": "NUM-028",
+      "question": "If a wall clock strikes 6 times in 5 seconds, how many seconds will it take to strike 12 times?",
+      "answer": "11 seconds",
+      "explanation": "6 strikes create 5 intervals. 5 intervals take 5 seconds, so 1 interval = 1 second. 12 strikes create 11 intervals. 11 intervals * 1 second = 11 seconds."
+    },
+    {
+      "id": "NUM-029",
+      "question": "A water tank holds 500 liters. A dynamic leak drains 10% of its current contents per hour. How many liters remain after 1 hour?",
+      "answer": "450",
+      "explanation": "Find the volume lost: 10% of 500 = 50 liters. Subtract the loss from the starting amount: 500 - 50 = 450 liters."
+    },
+    {
+      "id": "NUM-030",
+      "question": "An employee's base salary increased from 15,000 pesos to 18,000 pesos. Find the percent of increase.",
+      "answer": "20%",
+      "explanation": "Amount of increase = 18,000 - 15,000 = 3,000 pesos. Percentage change = (3,000 / 15,000) * 100 = 1/5 * 100 = 20%."
+    },
+    {
+      "id": "NUM-031",
+      "question": "Multiply the following decimals: 0.04 * 0.2",
+      "answer": "0.008",
+      "explanation": "Multiply the integers ignoring decimals: 4 * 2 = 8. Count total decimal places in factors: two places in 0.04 and one in 0.2 makes three places total. 0.008."
+    },
+    {
+      "id": "NUM-032",
+      "question": "What is the square root of 0.09?",
+      "answer": "0.3",
+      "explanation": "Since 3 * 3 = 9, and decimal places double when squaring, 0.3 * 0.3 equals 0.09. Thus, the square root of 0.09 is 0.3."
+    },
+    {
+      "id": "NUM-033",
+      "question": "Find the value of missing variable x in the proportion 4:x = 12:15.",
+      "answer": "5",
+      "explanation": "Write as equivalent fractions: 4/x = 12/15. Cross-multiply to solve: 12*x = 4*15 -> 12x = 60 -> x = 60 / 12 = 5."
+    },
+    {
+      "id": "NUM-034",
+      "question": "Two numbers are in a ratio of 3:4. If their sum is 70, find the value of the larger number.",
+      "answer": "40",
+      "explanation": "Total units = 3 + 4 = 7 units. Unit value = 70 / 7 = 10. The larger number has 4 units: 4 * 10 = 40."
+    },
+    {
+      "id": "NUM-035",
+      "question": "The product of two numbers is 48. If one number is 6, what is the other number?",
+      "answer": "8",
+      "explanation": "Set up relationship: 6 * x = 48. Isolate x by dividing total product by the known factor: x = 48 / 6 = 8."
+    },
+    {
+      "id": "NUM-036",
+      "question": "A manager spends 40% of his office budget on food catering. If he spent 6,000 pesos on food, what is the total budget?",
+      "answer": "15,000 pesos",
+      "explanation": "Set up percentage equation: 0.40 * Total = 6,000. Total budget = 6,000 / 0.40 = 15,000 pesos."
+    },
+    {
+      "id": "NUM-037",
+      "question": "A solid metal cube has a side length of 5 cm. What is its total volume?",
+      "answer": "125 cubic cm",
+      "explanation": "Volume of a cube formula is side cubed (s^3). Calculation: 5 cm * 5 cm * 5 cm = 125 cubic centimeters."
+    },
+    {
+      "id": "NUM-038",
+      "question": "A container is 3/4 full of liquid. Adding 5 liters fills it to complete capacity. What is the total capacity?",
+      "answer": "20 liters",
+      "explanation": "The empty space represents 1 - 3/4 = 1/4 of the total volume. If 1/4 of total capacity = 5 liters, then total capacity = 5 * 4 = 20 liters."
+    },
+    {
+      "id": "NUM-039",
+      "question": "Find the average of the first five prime numbers.",
+      "answer": "5.6",
+      "explanation": "The first five prime numbers are 2, 3, 5, 7, and 11. Sum = 2 + 3 + 5 + 7 + 11 = 28. Average = 28 / 5 = 5.6."
+    },
+    {
+      "id": "NUM-040",
+      "question": "What is the mathematical reciprocal of the mixed number 2 1/3?",
+      "answer": "3/7",
+      "explanation": "Convert the mixed number into an improper fraction first: 2 1/3 = (2*3 + 1)/3 = 7/3. Flip the fraction to find its reciprocal: 3/7."
+    },
+    {
+      "id": "NUM-041",
+      "question": "A casual worker makes 400 pesos a day. He receives an efficient performance bonus of 15%. What is his new daily wage?",
+      "answer": "460 pesos",
+      "explanation": "Calculate bonus: 15% of 400 = 400 * 0.15 = 60 pesos. Add bonus amount to base wage: 400 + 60 = 460 pesos."
+    },
+    {
+      "id": "NUM-042",
+      "question": "Solve for x in the multi-step algebraic equation: 5x + 3 = 2x + 12",
+      "answer": "3",
+      "explanation": "Subtract 2x from both sides: 3x + 3 = 12. Subtract 3 from both sides: 3x = 9. Divide by 3: x = 3."
+    },
+    {
+      "id": "NUM-043",
+      "question": "If 15% of an unknown mystery number is 30, what is 50% of that same number?",
+      "answer": "100",
+      "explanation": "Find original number: 30 / 0.15 = 200. Now calculate 50% of that discovered value: 200 * 0.50 = 100."
+    },
+    {
+      "id": "NUM-044",
+      "question": "The structural mean average of two numbers is 14. If one of the numbers is 9, find the other number.",
+      "answer": "19",
+      "explanation": "The sum of the two items must be 2 * 14 = 28. Subtract known component value: 28 - 9 = 19."
+    },
+    {
+      "id": "NUM-045",
+      "question": "A geometric triangle features a base of 8 cm and vertical height of 5 cm. Compute its area.",
+      "answer": "20 sq cm",
+      "explanation": "Area of a triangle formula is 0.5 * base * height. Calculation: 0.5 * 8 * 5 = 4 * 5 = 20 square centimeters."
+    },
+    {
+      "id": "NUM-046",
+      "question": "A crate contains 120 apples. If 15% are damaged and rotten, how many good apples remain inside?",
+      "answer": "102",
+      "explanation": "If 15% are rotten, then 100% - 15% = 85% are good. Calculate good population: 120 * 0.85 = 102 apples."
+    },
+    {
+      "id": "NUM-047",
+      "question": "Evaluate following arithmetic expressions using strict PEMDAS order: 15 - 3 * 2 + 8 / 4",
+      "answer": "11",
+      "explanation": "Execute multiplication and division from left to right first: 3*2=6 and 8/4=2. Expression becomes 15 - 6 + 2. Now add/subtract: 15 - 6 = 9, and 9 + 2 = 11."
+    },
+    {
+      "id": "NUM-048",
+      "question": "If a surveyor walks at a consistent speed of 4 km/h, how long will it take him to travel 18 km?",
+      "answer": "4.5 hours (or 4 hours and 30 minutes)",
+      "explanation": "Time formula is Time = Distance / Speed. Calculation: 18 kilometers / 4 km/h = 4.5 hours."
+    },
+    {
+      "id": "NUM-049",
+      "question": "Find the decimal product of 1.2 multiplied by 0.3.",
+      "answer": "0.36",
+      "explanation": "12 * 3 = 36. Since there are two total decimal places across the original factors, shift the decimal point two places left: 0.36."
+    },
+    {
+      "id": "NUM-050",
+      "question": "Find the value of parameter x: x/4 + 5 = 8",
+      "answer": "12",
+      "explanation": "Isolate variable fraction by subtracting 5 from both sides: x/4 = 3. Multiply both sides by 4 to solve for x: x = 3 * 4 = 12."
+    },
+    {
+      "id": "NUM-051",
+      "question": "The sum of two numbers is 25, and their difference is 7. What is the value of the smaller number?",
+      "answer": "9",
+      "explanation": "Let equations be x+y=25 and x-y=7. Subtract second equation from the first: 2y = 18, which means y = 9 (smaller number)."
+    },
+    {
+      "id": "NUM-052",
+      "question": "An antique unit bought for 200 pesos was sold at retail for 250 pesos. Find the profit percentage.",
+      "answer": "25%",
+      "explanation": "Profit margin value = 250 - 200 = 50 pesos. Profit percent = (Profit / Original Cost Base) * 100 = (50 / 200) * 100 = 25%."
+    },
+    {
+      "id": "NUM-053",
+      "question": "Evaluate the following mathematical sum: 5^0 + 5^1 + 5^2",
+      "answer": "31",
+      "explanation": "Any non-zero number to zero power is 1 (5^0 = 1). 5^1 = 5. 5^2 = 25. Add the simplified terms: 1 + 5 + 25 = 31."
+    },
+    {
+      "id": "NUM-054",
+      "question": "The ratio of girls to boys inside a student center is 5:3. If total headcount is 40, find total boys.",
+      "answer": "15",
+      "explanation": "Total fractional parts = 5 + 3 = 8. Value of one group slice = 40 / 8 = 5. Boys represent 3 parts: 3 * 5 = 15."
+    },
+    {
+      "id": "NUM-055",
+      "question": "Inlet pipe A fills an empty pool in 8 hours, whereas outlet pipe B empties it in 12 hours. If both open, how long to fill?",
+      "answer": "24 hours",
+      "explanation": "Net filling rate per hour = 1/8 - 1/12 = 3/24 - 2/24 = 1/24. Invert rate fraction to get total hours: 24 hours."
+    },
+    {
+      "id": "NUM-056",
+      "question": "Calculate the final fractional quantity: What is 2/3 of 4/5 of 90?",
+      "answer": "48",
+      "explanation": "Multiply terms across line: 4/5 of 90 = (90/5)*4 = 18 * 4 = 72. Now find 2/3 of that subtotal: 2/3 * 72 = (72/3)*2 = 24 * 2 = 48."
+    },
+    {
+      "id": "NUM-057",
+      "question": "Reduce the structural fraction 120/180 into its lowest terms.",
+      "answer": "2/3",
+      "explanation": "Divide both numbers by their Greatest Common Factor (GCF), which is 60: 120 / 60 = 2, and 180 / 60 = 3. Result is 2/3."
+    },
+    {
+      "id": "NUM-058",
+      "question": "If 8 basic office calculators cost 3,200 pesos total, what is the cost of 3 units?",
+      "answer": "1,200 pesos",
+      "explanation": "Determine single individual calculator base price: 3,200 / 8 = 400 pesos. Multiply by required order scale: 400 * 3 = 1,200 pesos."
+    },
+    {
+      "id": "NUM-059",
+      "question": "A local cyclist covers a distance of 15 kilometers in exactly 45 minutes. Find his speed in km/h.",
+      "answer": "20",
+      "explanation": "Convert time parameter to hours: 45 minutes = 45/60 = 0.75 hours. Speed = Distance / Time = 15 / 0.75 = 20 km/h."
+    },
+    {
+      "id": "NUM-060",
+      "question": "A father is 36 years old, and his son is 6. In how many years will the father be exactly three times as old as his son?",
+      "answer": "9",
+      "explanation": "Equation: 36 + x = 3 * (6 + x). Expand term: 36 + x = 18 + 3x. Rearrange variables: 2x = 18 -> x = 9 years."
+    },
+    {
+      "id": "NUM-061",
+      "question": "Convert the common numerical fraction 5/8 into its precise decimal equivalent.",
+      "answer": "0.625",
+      "explanation": "Perform long division of 5 divided by 8: 5.000 / 8 = 0.625."
+    },
+    {
+      "id": "NUM-062",
+      "question": "What is 0.5% of 2,000?",
+      "answer": "10",
+      "explanation": "Convert percentage to a true decimal format: 0.5% = 0.005. Multiply by the target number: 0.005 * 2,000 = 10."
+    },
+    {
+      "id": "NUM-063",
+      "question": "A topographical map scale is 1:50,000. If two towns are 4 cm apart on the map, find actual distance in km.",
+      "answer": "2 km",
+      "explanation": "Actual distance in cm = 4 * 50,000 = 200,000 cm. Convert to meters: 200,000 / 100 = 2,000 m. Convert to km: 2,000 / 1,000 = 2 km."
+    },
+    {
+      "id": "NUM-064",
+      "question": "A student correctly answered 18 out of 25 questions on an exam. What is her percentage score?",
+      "answer": "72%",
+      "explanation": "Divide score by total items: 18 / 25 = 0.72. Multiply by 100 to convert to percentage: 0.72 * 100 = 72%."
+    },
+    {
+      "id": "NUM-065",
+      "question": "Simplify the arithmetic expression: (3 + 4)^2 - 5 * 6",
+      "answer": "19",
+      "explanation": "Parentheses first: 3 + 4 = 7. Square the result: 7^2 = 49. Perform multiplication next: 5 * 6 = 30. Subtract: 49 - 30 = 19."
+    },
+    {
+      "id": "NUM-066",
+      "question": "An old watch systematically loses 2 minutes every 24 hours. How many minutes will it lose in a full week?",
+      "answer": "14 minutes",
+      "explanation": "A full week consists of 7 days. If it loses 2 minutes per day (24 hours), multiply loss by days: 2 * 7 = 14 minutes."
+    },
+    {
+      "id": "NUM-067",
+      "question": "If the internal area of a flat square plot is 121 square meters, what is its total perimeter?",
+      "answer": "44 meters",
+      "explanation": "Find side length by taking square root of area: square root of 121 = 11 meters. Perimeter of square = 4 * side = 4 * 11 = 44 meters."
+    },
+    {
+      "id": "NUM-068",
+      "question": "In a regional club of 60 people, 45 speak Tagalog fluidly. What percentage do not speak Tagalog?",
+      "answer": "25%",
+      "explanation": "Non-Tagalog speakers = 60 - 45 = 15 people. Ratio = 15 / 60 = 1/4. Convert fraction to percentage: 1/4 * 100 = 25%."
+    },
+    {
+      "id": "NUM-069",
+      "question": "Solve for x in the equation: 2(x - 3) = 14",
+      "answer": "10",
+      "explanation": "Divide both sides by 2 first: x - 3 = 7. Add 3 to isolate variable x: x = 7 + 3 = 10."
+    },
+    {
+      "id": "NUM-070",
+      "question": "An investor splits 10,000 pesos into two funds paying 3% and 5% simple interest. Total annual interest is 420 pesos. How much is in the 5% fund?",
+      "answer": "6,000 pesos",
+      "explanation": "Let x be money in 5% fund. Equation: 0.05x + 0.03(10,000 - x) = 420. Simplify: 0.02x + 300 = 420 -> 0.02x = 120 -> x = 6,000."
+    },
+    {
+      "id": "NUM-071",
+      "question": "Solve the mathematical expression: 3/5 of 250 added to 1/2 of 180.",
+      "answer": "240",
+      "explanation": "Calculate first component: (250 / 5) * 3 = 50 * 3 = 150. Calculate second component: 180 / 2 = 90. Combine values: 150 + 90 = 240."
+    },
+    {
+      "id": "NUM-072",
+      "question": "A baking recipe requires 3 cups of flour to make 12 cookies. How many cups of flour are needed to produce 36 cookies?",
+      "answer": "9",
+      "explanation": "Proportion problem: 3/12 = x/36. Notice that 36 is exactly 3 times larger than 12. Tripling the flour: 3 cups * 3 = 9 cups."
+    },
+    {
+      "id": "NUM-073",
+      "question": "A vehicle's purchase price is 600,000 pesos. The down payment is 20%. What is the remaining balance owed?",
+      "answer": "480,000 pesos",
+      "explanation": "The remaining balance is 100% - 20% = 80% of total price. Calculation: 600,000 * 0.80 = 480,000 pesos."
+    },
+    {
+      "id": "NUM-074",
+      "question": "Find the Least Common Multiple (LCM) of the numbers 8 and 12.",
+      "answer": "24",
+      "explanation": "Multiples of 8 are 8, 16, 24, 32. Multiples of 12 are 12, 24, 36. The smallest common multiple shared by both lists is 24."
+    },
+    {
+      "id": "NUM-075",
+      "question": "Find the Greatest Common Divisor (GCD) of the integers 36 and 54.",
+      "answer": "18",
+      "explanation": "Factors of 36 include 1, 2, 3, 4, 6, 9, 12, 18, 36. Factors of 54 are 1, 2, 3, 6, 9, 18, 27, 54. The largest shared divisor is 18."
+    },
+    {
+      "id": "NUM-076",
+      "question": "If 5x = 40, find the value of expression: 3x + 4",
+      "answer": "28",
+      "explanation": "First find value of x by dividing: x = 40 / 5 = 8. Substitute 8 into the target expression: 3(8) + 4 = 24 + 4 = 28."
+    },
+    {
+      "id": "NUM-077",
+      "question": "A box of pens holds 4 blue pens, 5 red pens, and 3 black pens. What fraction of the pens are red?",
+      "answer": "5/12",
+      "explanation": "Sum the total number of items: 4 + 5 + 3 = 12 total pens. Red pens equal 5, which creates the final fraction ratio of 5/12."
+    },
+    {
+      "id": "NUM-078",
+      "question": "A municipal library owns 4,000 books. If fiction titles make up 35%, how many non-fiction books are there?",
+      "answer": "2,600",
+      "explanation": "Percentage of non-fiction = 100% - 35% = 65%. Compute value based on total book count: 4,000 * 0.65 = 2,600 books."
+    },
+    {
+      "id": "NUM-079",
+      "question": "A sprinter covers 400 meters in exactly 50 seconds. What is his speed in meters per second?",
+      "answer": "8",
+      "explanation": "Use basic speed formula: Speed = Distance / Time. Calculation: 400 meters / 50 seconds = 8 m/s."
+    },
+    {
+      "id": "NUM-080",
+      "question": "The market price of a commodity doubles over a week. What is the calculated percentage increase?",
+      "answer": "100%",
+      "explanation": "Formula is (New - Old) / Old * 100. If an item goes from 10 to 20: (20 - 10)/10 = 10/10 = 1. Multiply by 100 to get 100% increase."
+    },
+    {
+      "id": "NUM-081",
+      "question": "If 7 yards of premium fabric cost 140 pesos, what is the cost of 12 yards of the same fabric?",
+      "answer": "240 pesos",
+      "explanation": "Find price per single unit yard: 140 / 7 = 20 pesos per yard. Multiply unit price by the target quantity: 20 * 12 = 240 pesos."
+    },
+    {
+      "id": "NUM-082",
+      "question": "Solve for x in the linear algebraic equation: 9x - 4 = 5x + 16",
+      "answer": "5",
+      "explanation": "Subtract 5x from both sides to gather variables: 4x - 4 = 16. Add 4 to both sides: 4x = 20. Divide by 4: x = 5."
+    },
+    {
+      "id": "NUM-083",
+      "question": "A right triangle features two legs measuring 6 cm and 8 cm. Find the length of its hypotenuse.",
+      "answer": "10 cm",
+      "explanation": "Apply the Pythagorean theorem: a^2 + b^2 = c^2. Calculation: 6^2 + 8^2 = 36 + 64 = 100. Take the square root of 100 to find c = 10 cm."
+    },
+    {
+      "id": "NUM-084",
+      "question": "The mean average of three distinct numbers is 50. Two of the numbers are 40 and 45. Find the third value.",
+      "answer": "65",
+      "explanation": "Total sum required for three numbers = 3 * 50 = 150. Sum the two known elements: 40 + 45 = 85. Subtract from total sum: 150 - 85 = 65."
+    },
+    {
+      "id": "NUM-085",
+      "question": "Divide the following decimal numbers: 4.5 / 0.09",
+      "answer": "50",
+      "explanation": "Shift decimal points two places to the right to clear fractions: 450 / 9. Perform integer division: 450 / 9 = 50."
+    },
+    {
+      "id": "NUM-086",
+      "question": "Reduce the percentage 75% into its lowest fraction form.",
+      "answer": "3/4",
+      "explanation": "Write 75% as 75/100. Divide both the top and bottom values by their greatest common factor, 25: 75/25 = 3 and 100/25 = 4."
+    },
+    {
+      "id": "NUM-087",
+      "question": "A field salesperson earns a 5% commission on all transactions. Find his payout if total sales hit 50,000 pesos.",
+      "answer": "2,500 pesos",
+      "explanation": "Convert commission rate to decimal: 5% = 0.05. Multiply by gross sales volume: 50,000 * 0.05 = 2,500 pesos."
+    },
+    {
+      "id": "NUM-088",
+      "question": "If 10 agricultural workers can harvest a field in 4 days, how many workers are needed to clear it in 2 days?",
+      "answer": "20 workers",
+      "explanation": "Inverse proportion: 10 workers * 4 days = x workers * 2 days. Total workload is 40 man-days. 40 / 2 days = 20 workers."
+    },
+    {
+      "id": "NUM-089",
+      "question": "When a positive number is increased by 20%, the resulting value is 120. Find the original starting number.",
+      "answer": "100",
+      "explanation": "Set up equation: 1.20 * x = 120. Isolate variable x by dividing through by decimal factor: x = 120 / 1.20 = 100."
+    },
+    {
+      "id": "NUM-090",
+      "question": "Evaluate the arithmetic operation: 4^3 - 3^3",
+      "answer": "37",
+      "explanation": "Calculate the values of the individual powers first: 4^3 = 4*4*4 = 64, and 3^3 = 3*3*3 = 27. Subtract the terms: 64 - 27 = 37."
+    },
+    {
+      "id": "NUM-091",
+      "question": "Three brothers share an inheritance in the ratio 1:2:5. If the smallest share is 200 pesos, find the total sum.",
+      "answer": "1,600 pesos",
+      "explanation": "The smallest share is 1 part = 200 pesos. Total parts combined = 1 + 2 + 5 = 8 parts. Total money value = 8 parts * 200 pesos = 1,600 pesos."
+    },
+    {
+      "id": "NUM-092",
+      "question": "Find the perimeter of a rectangle whose total area is 48 square meters and width is 6 meters.",
+      "answer": "28 meters",
+      "explanation": "Find length using area: Area = length * width -> 48 = length * 6 -> length = 8 meters. Perimeter formula = 2 * (length + width) = 2 * (8 + 6) = 28 meters."
+    },
+    {
+      "id": "NUM-093",
+      "question": "A pair of shoes is marked 30% off on clearance. If the sale price is 1,400 pesos, what was the original retail price?",
+      "answer": "2,000 pesos",
+      "explanation": "The sale price represents 100% - 30% = 70% of original value. Equation: 0.70 * x = 1,400. Original price = 1,400 / 0.70 = 2,000 pesos."
+    },
+    {
+      "id": "NUM-094",
+      "question": "Simplify the chain fraction multiplication: 4/5 * 5/6 * 6/7",
+      "answer": "4/7",
+      "explanation": "Cancel out identical terms that appear simultaneously in the numerators and denominators (5 and 6 cancel out directly). Remaining numbers leave 4/7."
+    },
+    {
+      "id": "NUM-095",
+      "question": "What is the value of x in the following equation: 3(x + 2) - 2(x - 1) = 11?",
+      "answer": "3",
+      "explanation": "Expand terms: 3x + 6 - 2x + 2 = 11. Combine like terms on the left side: x + 8 = 11. Subtract 8 from both sides: x = 3."
+    },
+    {
+      "id": "NUM-096",
+      "question": "An office machine prints 150 pages in 5 minutes. How many pages can it print in one continuous hour?",
+      "answer": "1,800 pages",
+      "explanation": "Determine printing rate per minute: 150 pages / 5 minutes = 30 pages per minute. One hour has 60 minutes. Total print output = 30 * 60 = 1,800 pages."
+    },
+    {
+      "id": "NUM-097",
+      "question": "Calculate the compound fractional value: What is 1/3 of 45% of 200?",
+      "answer": "30",
+      "explanation": "First handle percentage of base: 45% of 200 = 0.45 * 200 = 90. Now find one-third of that resulting value: 1/3 * 90 = 30."
+    },
+    {
+      "id": "NUM-098",
+      "question": "A car rental charges a base fee of 1,500 pesos plus 10 pesos per kilometer. If total bill is 2,200 pesos, how far was it driven?",
+      "answer": "70 km",
+      "explanation": "Subtract baseline fixed charge from the total bill: 2,200 - 1,500 = 700 pesos spent on distance. Divide by rate per kilometer: 700 / 10 = 70 km."
+    },
+    {
+      "id": "NUM-099",
+      "question": "If the sum of two consecutive odd integers is 36, find the value of the larger integer.",
+      "answer": "19",
+      "explanation": "Let integers be x and x+2. Equation: x + (x + 2) = 36 -> 2x + 2 = 36 -> 2x = 34 -> x = 17. The larger consecutive odd integer is 17 + 2 = 19."
+    },
+    {
+      "id": "NUM-100",
+      "question": "A professional spent 1/4 of his monthly salary on rent and 1/3 on food food items. What fraction of his salary remains?",
+      "answer": "5/12",
+      "explanation": "Find common denominator to sum expenditures: 1/4 + 1/3 = 3/12 + 4/12 = 7/12 total spent. Subtract total expenses from whole pool: 1 - 7/12 = 5/12."
+    }
+      ]
+    },
+    {
+      "category_name": "General Information",
+  "total_count": 100,
+  "flashcards": [
+    {
+      "id": "GEN-001",
+      "question": "What is the supreme law of the Republic of the Philippines?",
+      "answer": "The Philippine Constitution (specifically the 1987 Constitution)",
+      "explanation": "The Constitution is the fundamental and supreme law of the land to which all other laws must conform."
+    },
+    {
+      "id": "GEN-002",
+      "question": "When was the current Philippine Constitution ratified?",
+      "answer": "February 2, 1987",
+      "explanation": "The 1987 Constitution was officially ratified by a national plebiscite held on February 2, 1987."
+    },
+    {
+      "id": "GEN-003",
+      "question": "Which article of the 1987 Philippine Constitution is known as the Bill of Rights?",
+      "answer": "Article III",
+      "explanation": "Article III enumerates the fundamental rights, privileges, and protections of Filipino citizens against state encroachment."
+    },
+    {
+      "id": "GEN-004",
+      "question": "What is the title of Article XI of the 1987 Constitution, which details the accountability of government officials?",
+      "answer": "Accountability of Public Officers",
+      "explanation": "Article XI states that public office is a public trust and sets regulations for the impeachment and accountability of officials."
+    },
+    {
+      "id": "GEN-005",
+      "question": "According to the Constitution, what is the official term length of the President of the Philippines?",
+      "answer": "6 years",
+      "explanation": "The President is elected by direct vote for a single term of six years and is not eligible for any reelection."
+    },
+    {
+      "id": "GEN-006",
+      "question": "What is the term length and maximum number of consecutive terms allowed for a member of the Philippine Senate?",
+      "answer": "6 years per term, with a maximum of 2 consecutive terms",
+      "explanation": "Senators serve for 6 years, and Article VI, Section 4 limits them to no more than two consecutive terms."
+    },
+    {
+      "id": "GEN-007",
+      "question": "What is the term length and maximum number of consecutive terms allowed for a member of the House of Representatives?",
+      "answer": "3 years per term, with a maximum of 3 consecutive terms",
+      "explanation": "District and party-list representatives serve 3-year terms and are limited to three consecutive terms."
+    },
+    {
+      "id": "GEN-008",
+      "question": "Who serves as the Commander-in-Chief of all armed forces of the Philippines?",
+      "answer": "The President of the Philippines",
+      "explanation": "Article VII, Section 18 vests the power of Commander-in-Chief of the Armed Forces of the Philippines (AFP) in the President."
+    },
+    {
+      "id": "GEN-009",
+      "question": "Which branch of government has the sole power to initiate all cases of impeachment?",
+      "answer": "The House of Representatives",
+      "explanation": "Under Article XI, Section 3, the House of Representatives has the exclusive power to initiate impeachment, while the Senate tries the case."
+    },
+    {
+      "id": "GEN-010",
+      "question": "Which body has the sole power to try and decide all cases of impeachment?",
+      "answer": "The Senate",
+      "explanation": "The Senate acts as an impeachment court. A conviction requires the concurrence of two-thirds of all its members."
+    },
+    {
+      "id": "GEN-011",
+      "question": "What are the three independent Constitutional Commissions established under Article IX of the 1987 Constitution?",
+      "answer": "Civil Service Commission (CSC), Commission on Elections (COMELEC), and Commission on Audit (COA)",
+      "explanation": "These three bodies are designed to be independent of the executive, legislative, and judicial branches of government."
+    },
+    {
+      "id": "GEN-012",
+      "question": "Which Constitutional Commission is designated as the central personnel agency of the Philippine Government?",
+      "answer": "Civil Service Commission (CSC)",
+      "explanation": "The CSC is responsible for establishing a merit-based career service, promoting morale, and ensuring efficiency in the bureaucracy."
+    },
+    {
+      "id": "GEN-013",
+      "question": "Which Constitutional Commission has the power to examine, audit, and settle all accounts pertaining to government revenues and expenditures?",
+      "answer": "Commission on Audit (COA)",
+      "explanation": "COA acts as the guardian of public funds, ensuring that government spending complies with laws and regulations."
+    },
+    {
+      "id": "GEN-014",
+      "question": "What is the minimum age requirement to run for President or Vice President of the Philippines?",
+      "answer": "40 years old on the day of the election",
+      "explanation": "Article VII, Section 3 mandates that a candidate for President/Vice President must be a natural-born citizen, registered voter, literate, and at least 40 years old."
+    },
+    {
+      "id": "GEN-015",
+      "question": "What is the minimum age requirement to run for a seat in the Philippine Senate?",
+      "answer": "35 years old on the day of the election",
+      "explanation": "Article VI, Section 3 sets the qualifications for Senators, including being a natural-born citizen, a registered voter, and at least 35 years of age."
+    },
+    {
+      "id": "GEN-016",
+      "question": "What is the minimum age requirement to run for a seat in the House of Representatives?",
+      "answer": "25 years old on the day of the election",
+      "explanation": "Article VI, Section 6 specifies that candidates for district or party-list representatives must be at least 25 years old on election day."
+    },
+    {
+      "id": "GEN-017",
+      "question": "Which judicial body consists of a Chief Justice and fourteen Associate Justices?",
+      "answer": "The Supreme Court",
+      "explanation": "The Supreme Court is the highest court in the country and is composed of 15 members total under Article VIII, Section 4."
+    },
+    {
+      "id": "GEN-018",
+      "question": "Who appoints the Justices of the Supreme Court and judges of lower courts in the Philippines?",
+      "answer": "The President of the Philippines",
+      "explanation": "The President appoints judicial officers from a list of nominees prepared by the Judicial and Bar Council (JBC)."
+    },
+    {
+      "id": "GEN-019",
+      "question": "What is the mandatory retirement age for Supreme Court Justices and lower court judges?",
+      "answer": "70 years old",
+      "explanation": "Article VIII, Section 11 dictates that members of the Judiciary hold office during good behavior until they reach the age of seventy years."
+    },
+    {
+      "id": "GEN-020",
+      "question": "What is the name of the special court that has jurisdiction over criminal and civil cases involving graft and corrupt practices committed by public officers?",
+      "answer": "The Sandiganbayan",
+      "explanation": "The Sandiganbayan is the anti-graft court established under Article XI, Section 4 of the Constitution."
+    },
+    {
+      "id": "GEN-021",
+      "question": "Who is tasked by the Constitution to act as the 'Ombudsman' or the 'Tanodbayan' (Protector of the People)?",
+      "answer": "The Office of the Ombudsman",
+      "explanation": "The Ombudsman investigates and prosecutes any public official or employee for illegal, unjust, improper, or inefficient acts."
+    },
+    {
+      "id": "GEN-022",
+      "question": "What refers to the right of citizens to vote in elections, plebiscites, referendums, and initiatives?",
+      "answer": "Suffrage",
+      "explanation": "Suffrage is detailed in Article V of the Constitution and is granted to all citizens of the Philippines at least 18 years of age."
+    },
+    {
+      "id": "GEN-023",
+      "explanation": "The state cannot take away life, liberty, or property arbitrarily without a fair legal process, as written in Article III, Section 1.",
+      "answer": "Due process of law",
+      "question": "Fill in the blank from the Bill of Rights: 'No person shall be deprived of life, liberty, or property without ___.'"
+    },
+    {
+      "id": "GEN-024",
+      "question": "What right protects citizens against unlawful searches and seizures of their persons, houses, papers, and effects?",
+      "answer": "The right against unreasonable searches and seizures",
+      "explanation": "Article III, Section 2 requires a judge to determine probable cause personally before issuing a search or arrest warrant."
+    },
+    {
+      "id": "GEN-025",
+      "question": "What legal order commands a person or agency detaining another to produce the body of the prisoner and show valid reason for detention?",
+      "answer": "Writ of Habeas Corpus",
+      "explanation": "The Writ of Habeas Corpus protects citizens against arbitrary, warrantless arrests and secret detentions."
+    },
+    {
+      "id": "GEN-026",
+      "question": "Under what two specific conditions can the President suspend the privilege of the writ of habeas corpus or declare martial law?",
+      "answer": "Invasion or rebellion, when the public safety requires it",
+      "explanation": "Article VII, Section 18 permits this suspension for a period not exceeding sixty days in case of actual invasion or rebellion."
+    },
+    {
+      "id": "GEN-027",
+      "question": "What is the phrase used to describe the power of the State to take private property for public use upon payment of just compensation?",
+      "answer": "Eminent Domain",
+      "explanation": "Eminent domain is an inherent power of the State, qualified by Article III, Section 9 of the Constitution."
+    },
+    {
+      "id": "GEN-028",
+      "question": "What law or rule makes an action illegal after it was committed, even if the action was legal when it occurred? (The Constitution prohibits this).",
+      "answer": "Ex post facto law",
+      "explanation": "Article III, Section 22 explicitly states: 'No ex post facto law or bill of attainder shall be enacted.'"
+    },
+    {
+      "id": "GEN-029",
+      "question": "What right ensures that an accused individual cannot be tried twice for the exact same legal offense?",
+      "answer": "Right against double jeopardy",
+      "explanation": "Article III, Section 21 states that if an act is punished by a law and an ordinance, conviction or acquittal under either bars another prosecution."
+    },
+    {
+      "id": "GEN-030",
+      "question": "What is the name of the legislative power that allows the electorate to directly propose and enact laws?",
+      "answer": "Initiative",
+      "explanation": "Initiative allows citizens to bypass legislative bodies to draft statutory or constitutional laws directly."
+    },
+    {
+      "id": "GEN-031",
+      "question": "What is the name of the process by which a law passed by Congress or a local government unit is submitted to the people for approval or rejection?",
+      "answer": "Referendum",
+      "explanation": "Referendum is the power of the electorate to approve or reject a piece of legislation through a voting process."
+    },
+    {
+      "id": "GEN-032",
+      "question": "What are the two components of the bicameral legislative body of the Philippines?",
+      "answer": "The Senate and the House of Representatives",
+      "explanation": "The legislative power is vested in the Congress of the Philippines, which consists of these two chambers."
+    },
+    {
+      "id": "GEN-033",
+      "question": "How many total Senators compose the Philippine Senate?",
+      "answer": "24",
+      "explanation": "The Senate is composed of 24 Senators who are elected at large by the qualified voters of the Philippines."
+    },
+    {
+      "id": "GEN-034",
+      "question": "What type of citizenship is acquired by blood relationship, where a child follows the citizenship of their parents?",
+      "answer": "Jus sanguinis",
+      "explanation": "The Philippines follows the principle of 'jus sanguinis' (right of blood). If a parent is a Filipino citizen, the child is a Filipino citizen."
+    },
+    {
+      "id": "GEN-035",
+      "question": "What type of citizenship is acquired by place of birth, where a person becomes a citizen of the country in which they were born?",
+      "answer": "Jus soli",
+      "explanation": "The United States follows 'jus soli' (right of the soil), but the Philippines does not use this principle."
+    },
+    {
+      "id": "GEN-036",
+      "question": "What is the legal process by which a foreigner adopts Filipino citizenship?",
+      "answer": "Naturalization",
+      "explanation": "Naturalization can happen through judicial processes, administrative processes, or via an act of Congress."
+    },
+    {
+      "id": "GEN-037",
+      "question": "Which agency is responsible for checking administrative complaints against public schools, teachers, and local government units?",
+      "answer": "Office of the Ombudsman",
+      "explanation": "The Ombudsman has broad authority to handle grievances involving all public offices and government-owned corporations."
+    },
+    {
+      "id": "GEN-038",
+      "question": "What is the title of the statutory law known as the 'Code of Conduct and Ethical Standards for Public Officials and Employees'?",
+      "answer": "Republic Act No. 6713 (RA 6713)",
+      "explanation": "RA 6713 establishes the ethical principles, responsibilities, and prohibited acts for all personnel working in the Philippine government."
+    },
+    {
+      "id": "GEN-039",
+      "question": "According to RA 6713, what core principle states that public officials must remain loyal to the Republic and avoid favoring any political party?",
+      "answer": "Political Neutrality",
+      "explanation": "Political Neutrality ensures that public servants provide services fairly without partisan political interference."
+    },
+    {
+      "id": "GEN-040",
+      "question": "Under RA 6713, within how many days must a public official respond to letters, telegrams, or other written requests sent by the public?",
+      "answer": "15 working days",
+      "explanation": "Section 5 of RA 6713 mandates that all public officials must respond to communication within 15 working days from receipt."
+    },
+    {
+      "id": "GEN-041",
+      "question": "What does the abbreviation 'SALN' stand for, which all public officials are required to file annually?",
+      "answer": "Statement of Assets, Liabilities, and Net Worth",
+      "explanation": "The SALN is an annual mandatory declaration designed to ensure transparency and track unexplained wealth."
+    },
+    {
+      "id": "GEN-042",
+      "question": "What is the deadline date for the annual filing of the SALN by public officers and employees?",
+      "answer": "April 30 of every year",
+      "explanation": "Government employees must submit their SALN covering the previous calendar year on or before April 30."
+    },
+    {
+      "id": "GEN-043",
+      "question": "What norm of conduct in RA 6713 requires public servants to lead modest lives appropriate to their positions and income?",
+      "answer": "Simple Living",
+      "explanation": "Public officials and their families must avoid displays of extravagant wealth or conspicuous consumption."
+    },
+    {
+      "id": "GEN-044",
+      "question": "True or False: Government employees are allowed to accept expensive gifts from individuals if the gift is given on their birthday.",
+      "answer": "False",
+      "explanation": "RA 6713 prohibits accepting substantial gifts, favors, or loans that may influence or create the appearance of influencing official duties."
+    },
+    {
+      "id": "GEN-045",
+      "question": "What norm of conduct in RA 6713 emphasizes that public servants must do their work with the highest degree of excellence, intelligence, and skill?",
+      "answer": "Professionalism",
+      "explanation": "Professionalism ensures public servants perform duties competently and maintain the good reputation of public service."
+    },
+    {
+      "id": "GEN-046",
+      "question": "What norm of conduct in RA 6713 dictates that public officials must extend immediate attention to the needs of the public?",
+      "answer": "Responsiveness to the Public",
+      "explanation": "Responsiveness means avoiding bureaucratic delays and making government procedures clear and accessible."
+    },
+    {
+      "id": "GEN-047",
+      "question": "What situation arises when a public official is a member of a board or owns property that could influence the fair performance of their official duties?",
+      "answer": "Conflict of Interest",
+      "explanation": "A conflict of interest occurs when personal, financial, or business relationships clash with public obligations."
+    },
+    {
+      "id": "GEN-048",
+      "question": "Within how many days must a public official divest themselves of shares or status as an officer in a private enterprise if a conflict of interest arises?",
+      "answer": "60 days",
+      "explanation": "RA 6713 requires a public official to resign from private positions or sell business interests within 60 days of assuming office."
+    },
+    {
+      "id": "GEN-049",
+      "question": "Are public officials allowed to recommend any relative for employment to any government agency under their direct supervision?",
+      "answer": "No",
+      "explanation": "This practice constitutes nepotism, which is prohibited under civil service laws to protect merit-based hiring."
+    },
+    {
+      "id": "GEN-050",
+      "question": "What norm of conduct under RA 6713 encourages public servants to buy local products and preserve the country's cultural heritage?",
+      "answer": "Nationalism and Patriotism",
+      "explanation": "Nationalism and patriotism require public officials to remain loyal to the Philippines and favor local development."
+    },
+    {
+      "id": "GEN-051",
+      "question": "Which norm of conduct requires public officials to remain loyal to democratic principles and maintain the supremacy of civilian authority over the military?",
+      "answer": "Commitment to Democracy",
+      "explanation": "Commitment to democracy requires public servants to uphold democratic values, Human Rights, and the rule of law."
+    },
+    {
+      "id": "GEN-052",
+      "question": "Under RA 6713, what is the maximum duration for which a former public official is banned from practicing their profession in connection with any matter they handled while in government?",
+      "answer": "1 year",
+      "explanation": "Section 7 of RA 6713 imposes a one-year post-employment ban on specific professional interactions with their former agency."
+    },
+    {
+      "id": "GEN-053",
+      "question": "Who are exempted from the requirement of filing a Statement of Assets, Liabilities, and Net Worth (SALN)?",
+      "answer": "Those serving in an honorary capacity, laborers, and casual or temporary workers",
+      "explanation": "RA 6713 provides exceptions for casual workers, laborers, and individuals who serve without compensation."
+    },
+    {
+      "id": "GEN-054",
+      "question": "What is the penalty for a public official who fails to submit their SALN on time under RA 6713?",
+      "answer": "Suspension or dismissal from service",
+      "explanation": "Failure to file a SALN carries an administrative penalty of suspension for the first offense and dismissal for the second offense."
+    },
+    {
+      "id": "GEN-055",
+      "question": "What act refers to the practice of appointing relatives to public positions within the third degree of consanguinity or affinity?",
+      "answer": "Nepotism",
+      "explanation": "Civil Service regulations prohibit nepotism to ensure public positions are awarded based on qualifications rather than family ties."
+    },
+    {
+      "id": "GEN-056",
+      "question": "What is the name of the statutory law known as the 'Ecological Solid Waste Management Act of 2000'?",
+      "answer": "Republic Act No. 9003 (RA 9003)",
+      "explanation": "RA 9003 provides the legal framework for a systematic, comprehensive, and ecological solid waste management program in the Philippines."
+    },
+    {
+      "id": "GEN-057",
+      "question": "What is the title of Republic Act No. 8749, which aims to protect and preserve the quality of the air in the Philippines?",
+      "answer": "Philippine Clean Air Act of 1999",
+      "explanation": "RA 8749 outlines air quality management policies, including the prohibition of specific forms of waste incineration."
+    },
+    {
+      "id": "GEN-058",
+      "question": "What law is known as the 'Philippine Clean Water Act of 2004'?",
+      "answer": "Republic Act No. 9275 (RA 9275)",
+      "explanation": "RA 9275 aims to protect the country's water bodies from pollution coming from land-based sources like industries and households."
+    },
+    {
+      "id": "GEN-059",
+      "question": "What global environmental issue refers to the long-term shift in temperatures and weather patterns, primarily caused by human activities like burning fossil fuels?",
+      "answer": "Climate Change (or Global Warming)",
+      "explanation": "Climate change leads to rising sea levels, severe droughts, and intense tropical storms, which directly affect the Philippines."
+    },
+    {
+      "id": "GEN-060",
+      "question": "What term describes development that meets the needs of the present without compromising the ability of future generations to meet their own needs?",
+      "answer": "Sustainable Development",
+      "explanation": "Sustainable development balances economic growth, environmental protection, and social equity."
+    },
+    {
+      "id": "GEN-061",
+      "question": "What gas is primarily responsible for trapping heat in the Earth's atmosphere, contributing to the greenhouse effect?",
+      "answer": "Carbon Dioxide (CO2)",
+      "explanation": "Carbon dioxide, alongside methane and nitrous oxide, forms a blanket in the atmosphere that drives global warming."
+    },
+    {
+      "id": "GEN-062",
+      "question": "What historical international agreement, signed in 2015, aims to limit global warming to well below 2 degrees Celsius compared to pre-industrial levels?",
+      "answer": "The Paris Agreement",
+      "explanation": "The Paris Agreement is a legally binding international treaty on climate change adopted by 196 parties, including the Philippines."
+    },
+    {
+      "id": "GEN-063",
+      "question": "What are the inherent powers of the State necessary for its survival and governance?",
+      "answer": "Police Power, Power of Eminent Domain, and Power of Taxation",
+      "explanation": "These three co-exist as essential sovereignty powers to regulate liberty, property, and raise public revenues."
+    },
+    {
+      "id": "GEN-064",
+      "question": "Which inherent power of the State allows it to pass laws to regulate liberty and property for the promotion of general public welfare?",
+      "answer": "Police Power",
+      "explanation": "Police power is the broadest inherent power, allowing the State to restrict individual liberties to secure public health, safety, and morals."
+    },
+    {
+      "id": "GEN-065",
+      "question": "Which inherent power of the State allows it to raise revenue to fund government expenses and public services?",
+      "answer": "Power of Taxation",
+      "explanation": "Taxation is the method by which the State apportion costs among its citizens to support government operations."
+    },
+    {
+      "id": "GEN-066",
+      "question": "What is the name of the constitutional protection that prevents an individual from being forced to testify against themselves in a criminal case?",
+      "answer": "Right against self-incrimination",
+      "explanation": "Article III, Section 17 provides this right, often stated during arrests as part of the Miranda rights."
+    },
+    {
+      "id": "GEN-067",
+      "question": "What set of legal rights must be read to a suspect at the time of arrest, including the right to remain silent and the right to an attorney?",
+      "answer": "Miranda Rights (or Miranda Warning)",
+      "explanation": "Derived from Article III, Section 12, these rights ensure that confessions made during custodial investigations are voluntary."
+    },
+    {
+      "id": "GEN-068",
+      "question": "Which office in the Philippines provides free legal assistance to indigent or low-income citizens accused of crimes?",
+      "answer": "Public Attorney's Office (PAO)",
+      "explanation": "PAO is an agency attached to the Department of Justice that represents citizens who cannot afford private legal counsel."
+    },
+    {
+      "id": "GEN-069",
+      "question": "What international document, adopted by the United Nations General Assembly in 1948, forms the global standard for fundamental human rights?",
+      "answer": "Universal Declaration of Human Rights (UDHR)",
+      "explanation": "The UDHR outlines 30 basic rights and freedoms that belong to all human beings, regardless of nationality or race."
+    },
+    {
+      "id": "GEN-070",
+      "question": "What independent constitutional office in the Philippines is tasked with investigating human rights violations involving civil and political rights?",
+      "answer": "Commission on Human Rights (CHR)",
+      "explanation": "The CHR was established under Article XIII, Section 17 of the 1987 Constitution to check state abuses and protect human rights."
+    },
+    {
+      "id": "GEN-071",
+      "question": "What are the three distinct branches of the Philippine Government under the principle of separation of powers?",
+      "answer": "Executive, Legislative, and Judicial branches",
+      "explanation": "The Executive branch enforces laws, the Legislative branch makes laws, and the Judicial branch interprets laws."
+    },
+    {
+      "id": "GEN-072",
+      "question": "What system allows each branch of government to limit or amend the acts of the other branches to prevent any single branch from becoming too dominant?",
+      "answer": "Checks and balances",
+      "explanation": "Checks and balances ensure political stability by distributing authority and preventing tyranny."
+    },
+    {
+      "id": "GEN-073",
+      "question": "What power allows the President to reject a bill passed by Congress, preventing it from becoming a law?",
+      "answer": "Veto power",
+      "explanation": "Article VI, Section 27 outlines how the President can veto a bill, which Congress can then override with a two-thirds vote."
+    },
+    {
+      "id": "GEN-074",
+      "question": "How many days does the President have to sign or veto a bill sent by Congress before it automatically lapses into a law?",
+      "answer": "30 days",
+      "explanation": "If the President does not act on a bill within 30 days of receipt, it becomes a law as if it had been signed."
+    },
+    {
+      "id": "GEN-075",
+      "question": "What is the official title of Republic Act No. 8491, which governs the proper display and respect due to the Philippine national flag and anthem?",
+      "answer": "Flag and Heraldic Code of the Philippines",
+      "explanation": "RA 8491 mandates the protocols for displaying the flag, singing 'Lupang Hinirang', and penalties for disrespect."
+    },
+    {
+      "id": "GEN-076",
+      "question": "When the Philippine flag is flown vertically during a state of war, which color must be on the observer's left side?",
+      "answer": "Red",
+      "explanation": "In a vertical display during peacetime, blue is on the left. During wartime, the red field is placed on the left side of the observer."
+    },
+    {
+      "id": "GEN-077",
+      "question": "When the Philippine flag is flown horizontally during peacetime, which color field must be on top?",
+      "answer": "Blue",
+      "explanation": "The blue field is placed on top during peacetime, while red is placed on top to signal that the country is in an official state of war."
+    },
+    {
+      "id": "GEN-078",
+      "question": "What is the title of the national anthem of the Philippines?",
+      "answer": "Lupang Hinirang",
+      "explanation": "The music was composed by Julián Felipe, and the current Filipino lyrics are derived from the poem 'Filipinas'."
+    },
+    {
+      "id": "GEN-079",
+      "question": "What is the official motto of the Republic of the Philippines as specified under RA 8491?",
+      "answer": "Maka-Diyos, Maka-tao, Makakalikasan, at Makabansa",
+      "explanation": "This translates to 'For God, People, Nature, and Country', representing the core values of Filipino citizenship."
+    },
+    {
+      "id": "GEN-080",
+      "question": "What is the name of the national tree of the Philippines?",
+      "answer": "Narra",
+      "explanation": "The Narra tree is known for its durability and strength, symbolizing the resilience of the Filipino people."
+    },
+    {
+      "id": "GEN-081",
+      "question": "What is the name of the national flower of the Philippines?",
+      "answer": "Sampaguita",
+      "explanation": "The white Sampaguita flower symbolizes purity, simplicity, humility, and strength."
+    },
+    {
+      "id": "GEN-082",
+      "question": "What is the name of the national bird of the Philippines?",
+      "answer": "Philippine Eagle (Monkey-eating Eagle)",
+      "explanation": "The Philippine Eagle was declared the national bird in 1995 to promote conservation efforts for this endangered species."
+    },
+    {
+      "id": "GEN-083",
+      "question": "What is the name of the national martial art and sport of the Philippines enacted under Republic Act No. 9850?",
+      "answer": "Arnis",
+      "explanation": "Arnis, also known as Kali or Eskrima, is a traditional weapon-based martial art declared as the national sport in 2009."
+    },
+    {
+      "id": "GEN-084",
+      "question": "What is the name of the central bank of the Philippines, which regulates the country's banking system and monetary policy?",
+      "answer": "Bangko Sentral ng Pilipinas (BSP)",
+      "explanation": "The BSP maintains price stability, monetary stability, and the convertibility of the Philippine peso."
+    },
+    {
+      "id": "GEN-085",
+      "question": "What government agency is responsible for generating official statistical data on population, economy, and demographics in the Philippines?",
+      "answer": "Philippine Statistics Authority (PSA)",
+      "explanation": "The PSA carries out national censuses, processes civil registration documents, and issues the National ID system."
+    },
+    {
+      "id": "GEN-086",
+      "question": "What government agency manages public health services, regulates food and medicines, and leads responses to health emergencies?",
+      "answer": "Department of Health (DOH)",
+      "explanation": "The DOH is the executive department responsible for ensuring access to basic public health services for all Filipinos."
+    },
+    {
+      "id": "GEN-087",
+      "question": "What executive department is responsible for managing the formulation and implementation of public education policies in elementary and secondary schools?",
+      "answer": "Department of Education (DepEd)",
+      "explanation": "DepEd manages the basic education curriculum, public schools, and certified learning facilities across the country."
+    },
+    {
+      "id": "GEN-088",
+      "question": "Which agency handles higher education, including colleges, universities, and degree-granting academic institutions?",
+      "answer": "Commission on Higher Education (CHED)",
+      "explanation": "CHED is independent of DepEd and focuses specifically on tertiary and graduate academic programs."
+    },
+    {
+      "id": "GEN-089",
+      "question": "What government corporation provides health insurance coverage and financial medical assistance to Filipino citizens?",
+      "answer": "Philippine Health Insurance Corporation (PhilHealth)",
+      "explanation": "PhilHealth is designed to create a universal health insurance program for financial access to healthcare."
+    },
+    {
+      "id": "GEN-090",
+      "question": "What state social insurance institution provides pension and disability benefits to workers in the private sector?",
+      "answer": "Social Security System (SSS)",
+      "explanation": "The SSS serves private sector employees, while the GSIS serves employees working inside government agencies."
+    },
+    {
+      "id": "GEN-091",
+      "question": "What state social insurance institution provides pension, life insurance, and retirement benefits to public sector government employees?",
+      "answer": "Government Service Insurance System (GSIS)",
+      "explanation": "The GSIS covers all regular government employees with retirement, disability, and unemployment insurance."
+    },
+    {
+      "id": "GEN-092",
+      "question": "What agency is responsible for weather forecasting, flood warnings, and monitoring astronomical phenomena in the Philippines?",
+      "answer": "PAGASA",
+      "explanation": "PAGASA stands for the Philippine Atmospheric, Geophysical and Astronomical Services Administration."
+    },
+    {
+      "id": "GEN-093",
+      "question": "What institute is tasked with monitoring volcanic eruptions, earthquakes, and tsunamis in the Philippines?",
+      "answer": "PHIVOLCS",
+      "explanation": "PHIVOLCS stands for the Philippine Institute of Volcanology and Seismology."
+    },
+    {
+      "id": "GEN-094",
+      "question": "What core principle of peace education focuses on resolving disagreements without resorting to physical force, violence, or armaments?",
+      "answer": "Non-violence",
+      "explanation": "Non-violence emphasizes peaceful dialogue, active mediation, and legal mechanisms to resolve socio-political conflicts."
+    },
+    {
+      "id": "GEN-095",
+      "question": "What concept refers to a state of harmony characterized by the lack of violent conflict, presence of justice, and equitable distribution of resources?",
+      "answer": "Positive Peace",
+      "explanation": "Negative peace is simply the absence of active war, whereas positive peace addresses structural causes of inequality and injustice."
+    },
+    {
+      "id": "GEN-096",
+      "question": "What international body, established in 1945 after World War II, works to maintain international peace and security?",
+      "answer": "The United Nations (UN)",
+      "explanation": "The Philippines was one of the original charter members that founded the United Nations in 1945."
+    },
+    {
+      "id": "GEN-097",
+      "question": "What regional political and economic organization consists of ten Southeast Asian nations, including the Philippines?",
+      "answer": "ASEAN (Association of Southeast Asian Nations)",
+      "explanation": "ASEAN promotes economic growth, social progress, and regional stability among its member states."
+    },
+    {
+      "id": "GEN-098",
+      "question": "What term describes the basic right of an independent nation to govern itself without foreign interference?",
+      "answer": "Sovereignty",
+      "explanation": "Article II, Section 1 declares: 'Sovereignty resides in the people and all government authority emanates from them.'"
+    },
+    {
+      "id": "GEN-099",
+      "question": "What is the title of Republic Act No. 11032, which aims to reduce red tape and eliminate bureaucratic delays in government service delivery?",
+      "answer": "Ease of Doing Business and Efficient Government Service Delivery Act of 2018",
+      "explanation": "This law sets strict timelines for processing transactions (3 days for simple, 7 days for complex, 20 days for highly technical)."
+    },
+    {
+      "id": "GEN-100",
+      "question": "What value refers to absolute honesty, transparency, and consistency in a public servant's moral principles?",
+      "answer": "Integrity",
+      "explanation": "Integrity requires public officials to act ethically and transparently, ensuring public actions line up with moral rules."
+    }
+  ]
+    }
+  ]
+}
+
