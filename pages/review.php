@@ -14,6 +14,9 @@ $root      = '../';
 
 <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
     <div class="flex items-center gap-3">
+        <button id="sbHamburger" class="md:hidden text-slate-400 hover:text-white mr-1" aria-label="Open sidebar">
+            <i class="fas fa-bars text-lg"></i>
+        </button>
         <img src="../assets/img/logo.png" class="w-9 h-9 rounded-xl object-contain">
         <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>
     </div>

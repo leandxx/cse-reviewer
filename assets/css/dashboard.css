@@ -38,6 +38,12 @@ body:has(#leftSidebar[data-collapsed="true"]) .dashboard-main {
     margin-left: var(--sb-icon, 52px);
 }
 
+@media (max-width: 767px) {
+    .dashboard-main {
+        margin-left: 0 !important;
+    }
+}
+
 .card {
     background: rgba(255,255,255,0.04);
     border: 1px solid rgba(255,255,255,0.08);

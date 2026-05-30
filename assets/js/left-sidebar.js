@@ -57,13 +57,54 @@
     function syncNavHeight() {
         const h = nav ? nav.offsetHeight : 65;
         document.documentElement.style.setProperty('--nav-h', h + 'px');
-        sidebar.style.top    = h + 'px';
-        sidebar.style.height = 'calc(100vh - ' + h + 'px)';
+        if (window.innerWidth >= 768) {
+            sidebar.style.top    = h + 'px';
+            sidebar.style.height = 'calc(100vh - ' + h + 'px)';
+        } else {
+            sidebar.style.top    = '0';
+            sidebar.style.height = '100vh';
+        }
     }
     syncNavHeight();
-    window.addEventListener('resize', syncNavHeight);
+    window.addEventListener('resize', () => { syncNavHeight(); applyLayout(); });
+
+    const overlay = document.getElementById('sbOverlay');
+    const hamburger = document.getElementById('sbHamburger');
+
+    function isMobile() { return window.innerWidth < 768; }
+
+    function applyLayout() {
+        const main = document.querySelector('.dashboard-main');
+        if (isMobile()) {
+            sidebar.style.width = '280px';
+            if (main) main.style.marginLeft = '0';
+        } else {
+            applySidebarWidth();
+        }
+    }
+
+    function openMobileSidebar() {
+        sidebar.classList.add('mobile-open');
+        if (overlay) overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+    }
+
+    function closeMobileSidebar() {
+        sidebar.classList.remove('mobile-open');
+        if (overlay) overlay.classList.remove('active');
+        document.body.style.overflow = '';
+    }
+
+    if (hamburger) {
+        hamburger.addEventListener('click', () => {
+            if (sidebar.classList.contains('mobile-open')) closeMobileSidebar();
+            else openMobileSidebar();
+        });
+    }
+    if (overlay) overlay.addEventListener('click', closeMobileSidebar);
 
     function applySidebarWidth() {
+        if (isMobile()) return;
         const collapsed = sidebar.dataset.collapsed === 'true';
         const w = collapsed ? '52px' : '280px';
         sidebar.style.width = w;
@@ -74,7 +115,7 @@
     // ── Collapse / expand ─────────────────────────────────────────────────────
     const STORAGE_KEY = 'leftSidebarCollapsed';
     if (localStorage.getItem(STORAGE_KEY) === 'true') sidebar.dataset.collapsed = 'true';
-    applySidebarWidth();
+    applyLayout();
 
     toggleBtn.addEventListener('click', () => {
         const isCollapsed = sidebar.dataset.collapsed === 'true';
@@ -95,7 +136,7 @@
 
     document.querySelectorAll('.sb-tab-btn, .sb-tab-icon').forEach(btn => {
         btn.addEventListener('click', () => {
-            if (sidebar.dataset.collapsed === 'true') {
+            if (!isMobile() && sidebar.dataset.collapsed === 'true') {
                 sidebar.dataset.collapsed = 'false';
                 localStorage.setItem(STORAGE_KEY, 'false');
                 applySidebarWidth();
