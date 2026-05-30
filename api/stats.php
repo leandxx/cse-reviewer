@@ -19,9 +19,13 @@ require_once '../config/db.php';
 
 $me = (int) $_SESSION['user_id'];
 
-// XP thresholds per level (level = floor(xp / 100) + 1, capped display)
-function xpToLevel($xp) {
-    return floor($xp / 100) + 1;
+function xpToLevel($xp) { return floor($xp / 100) + 1; }
+
+function xpToRank($xp) {
+    if ($xp >= 5000) return ['name' => 'Master Baiter',      'color' => 'gold',   'civil_service_ready' => true];
+    if ($xp >= 2000) return ['name' => 'Sensei',             'color' => 'purple', 'civil_service_ready' => false];
+    if ($xp >= 500)  return ['name' => 'Seryoso na',         'color' => 'blue',   'civil_service_ready' => false];
+                     return ['name' => 'Mahinang nilalang',  'color' => 'gray',   'civil_service_ready' => false];
 }
 
 $action = $_GET['action'] ?? '';
@@ -45,12 +49,16 @@ if ($action === 'stats') {
     ");
     $history->execute([$me]);
 
+    $rank = xpToRank($xp);
     send([
-        'xp'         => $xp,
-        'level'      => $level,
-        'xp_in_level'=> $xpInLevel,
-        'xp_for_next'=> $xpForNext,
-        'history'    => $history->fetchAll(),
+        'xp'                 => $xp,
+        'level'              => $level,
+        'xp_in_level'        => $xpInLevel,
+        'xp_for_next'        => $xpForNext,
+        'rank'               => $rank['name'],
+        'rank_color'         => $rank['color'],
+        'civil_service_ready'=> $rank['civil_service_ready'],
+        'history'            => $history->fetchAll(),
     ]);
 }
 
@@ -63,11 +71,14 @@ if ($action === 'leaderboard') {
     ")->fetchAll();
 
     $board = array_map(function($r) use ($me) {
+        $rank = xpToRank((int) $r['xp']);
         return [
             'id'        => (int) $r['id'],
             'full_name' => $r['full_name'],
             'xp'        => (int) $r['xp'],
             'level'     => xpToLevel((int) $r['xp']),
+            'rank'      => $rank['name'],
+            'rank_color'=> $rank['color'],
             'is_me'     => (int) $r['id'] === $me,
         ];
     }, $rows);

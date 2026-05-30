@@ -34,16 +34,21 @@ $root      = '../';
 <div class="dashboard-main flex flex-col min-h-screen">
     <div class="max-w-5xl mx-auto px-6 py-12">
 
-        <!-- XP / Level card -->
+        <!-- Rank card -->
         <div class="card rounded-2xl p-6 mb-8">
             <div class="flex items-center justify-between mb-3">
                 <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center">
-                        <i class="fas fa-star text-white text-lg"></i>
+                    <div id="rankIcon" class="w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br from-slate-500 to-slate-700">
+                        <i class="fas fa-shield-alt text-white text-lg"></i>
                     </div>
                     <div>
-                        <div class="text-white font-bold text-lg">Level <span id="userLevel">—</span></div>
-                        <div class="text-slate-400 text-xs"><span id="userXP">—</span> XP total</div>
+                        <div class="flex items-center gap-2">
+                            <div id="rankName" class="text-white font-bold text-lg">—</div>
+                            <span id="csrBadge" class="hidden text-xs font-bold px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                                ✅ Civil Service Ready
+                            </span>
+                        </div>
+                        <div class="text-slate-400 text-xs">Level <span id="userLevel">—</span> &nbsp;·&nbsp; <span id="userXP">—</span> XP total</div>
                     </div>
                 </div>
                 <div class="text-right">
@@ -51,7 +56,7 @@ $root      = '../';
                 </div>
             </div>
             <div class="h-3 bg-slate-800 rounded-full overflow-hidden">
-                <div id="xpBar" class="h-full bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full transition-all duration-700" style="width:0%"></div>
+                <div id="xpBar" class="h-full rounded-full transition-all duration-700" style="width:0%"></div>
             </div>
         </div>
 
@@ -120,10 +125,27 @@ $root      = '../';
     fetch(ROOT + 'api/stats.php?action=stats')
         .then(r => r.json())
         .then(d => {
+            const rankStyles = {
+                gray:   { icon: 'from-slate-500 to-slate-700',   bar: 'from-slate-400 to-slate-500' },
+                blue:   { icon: 'from-blue-500 to-indigo-600',   bar: 'from-blue-400 to-indigo-500' },
+                purple: { icon: 'from-purple-500 to-violet-600', bar: 'from-purple-400 to-violet-500' },
+                gold:   { icon: 'from-yellow-400 to-orange-500', bar: 'from-yellow-400 to-orange-500' },
+            };
+            const s = rankStyles[d.rank_color] || rankStyles.gray;
+
+            document.getElementById('rankName').textContent   = d.rank;
             document.getElementById('userLevel').textContent  = d.level;
             document.getElementById('userXP').textContent     = d.xp.toLocaleString();
             document.getElementById('xpInLevel').textContent  = d.xp_in_level;
-            document.getElementById('xpBar').style.width      = (d.xp_in_level / d.xp_for_next * 100) + '%';
+
+            const icon = document.getElementById('rankIcon');
+            icon.className = `w-12 h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${s.icon}`;
+
+            const bar = document.getElementById('xpBar');
+            bar.className = `h-full rounded-full transition-all duration-700 bg-gradient-to-r ${s.bar}`;
+            bar.style.width = (d.xp_in_level / d.xp_for_next * 100) + '%';
+
+            if (d.civil_service_ready) document.getElementById('csrBadge').classList.remove('hidden');
 
             const list = document.getElementById('historyList');
             if (!d.history.length) {

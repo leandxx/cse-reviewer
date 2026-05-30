@@ -349,7 +349,7 @@
                         </div>
                     </div>
                     <div style="text-align:right;flex-shrink:0;">
-                        <div style="font-size:11px;font-weight:700;color:#f59e0b;">Lv.${u.level}</div>
+                        <div style="font-size:10px;font-weight:700;color:${u.rank_color==='gold'?'#f59e0b':u.rank_color==='purple'?'#a78bfa':u.rank_color==='blue'?'#60a5fa':'#94a3b8'};max-width:72px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escHtml(u.rank)}</div>
                         <div style="font-size:9px;color:#475569;">${u.xp} XP</div>
                     </div>
                 </div>`;
