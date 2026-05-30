@@ -3,14 +3,27 @@ ini_set('session.cookie_path', '/');
 ini_set('session.gc_maxlifetime', 86400);
 ini_set('session.cookie_lifetime', 86400);
 session_start();
-if (!isset($_SESSION['user_id'])) { header('Location: login.php'); exit; }
+if (!isset($_SESSION['user_id'])) {
+    header('Location: login.php');
+    http_response_code(302);
+    throw new RuntimeException('Unauthorized: Please log in.');
+}
 
 $pageTitle = 'Study Ebook — CSEReviewer';
 $extraCss  = ['assets/css/dashboard.css', 'assets/css/ebook.css'];
 $root      = '../';
 
-$jsonPath = __DIR__ . '/../database/CSE_Mastery_Guide_Ebook.json';
+$jsonPath     = realpath(__DIR__ . '/../database/CSE_Mastery_Guide_Ebook.json');
+$allowedDir   = realpath(__DIR__ . '/../database');
+
+if ($jsonPath === false || strpos($jsonPath, $allowedDir) !== 0 || !is_file($jsonPath)) {
+    throw new RuntimeException('Ebook resource not found.');
+}
+
 $ebook    = json_decode(file_get_contents($jsonPath), true);
+if (!$ebook) {
+    throw new RuntimeException('Failed to parse ebook data.');
+}
 $meta     = $ebook['book_metadata'];
 $chapters = $ebook['chapters'];
 
@@ -106,7 +119,9 @@ $chapterIcons = [
                 <i class="fas <?= $icon ?> text-indigo-400" style="font-size:15px;"></i>
             </div>
             <h2 class="chapter-title mb-3"><?= htmlspecialchars($ch['title']) ?></h2>
+            <?php if (!empty($ch['introduction'])): ?>
             <p class="chapter-intro"><?= htmlspecialchars($ch['introduction']) ?></p>
+            <?php endif; ?>
             <div class="chapter-divider"></div>
 
             <!-- Sections -->
@@ -120,30 +135,48 @@ $chapterIcons = [
                     <i class="fas fa-chevron-down section-chevron"></i>
                 </button>
                 <div class="section-body">
+
+                    <?php if (!empty($sec['formula'])): ?>
+                    <div class="formula-box">
+                        <span class="formula-label"><i class="fas fa-square-root-alt mr-1"></i> Formula</span>
+                        <p class="formula-text"><?= htmlspecialchars($sec['formula']) ?></p>
+                    </div>
+                    <?php endif; ?>
+
+                    <?php if (!empty($sec['content'])): ?>
                     <p class="section-content"><?= htmlspecialchars($sec['content']) ?></p>
+                    <?php endif; ?>
+
+                    <?php if (!empty($sec['rules'])): ?>
+                    <ul class="rules-list">
+                        <?php foreach ($sec['rules'] as $rule): ?>
+                        <li><i class="fas fa-check-circle"></i><?= htmlspecialchars($rule) ?></li>
+                        <?php endforeach; ?>
+                    </ul>
+                    <?php endif; ?>
 
                     <?php if (!empty($sec['examples'])): ?>
                         <?php foreach ($sec['examples'] as $ex): ?>
                         <div class="example-box">
                             <div class="example-label"><i class="fas fa-flask mr-1"></i> Example</div>
                             <div class="example-question"><?= htmlspecialchars($ex['question']) ?></div>
-                            <ul class="example-options">
-                                <?php foreach ($ex['options'] as $opt):
-                                    $isCorrect = (trim($opt) === trim($ex['answer']));
-                                ?>
-                                <li class="<?= $isCorrect ? 'correct' : '' ?>">
-                                    <?php if ($isCorrect): ?><i class="fas fa-check-circle mr-1"></i><?php endif; ?>
-                                    <?= htmlspecialchars($opt) ?>
-                                </li>
+
+                            <?php if (!empty($ex['solution_steps'])): ?>
+                            <ol class="solution-steps">
+                                <?php foreach ($ex['solution_steps'] as $step): ?>
+                                <li><?= htmlspecialchars($step) ?></li>
                                 <?php endforeach; ?>
-                            </ul>
+                            </ol>
+                            <?php endif; ?>
+
                             <div class="answer-row">
-                                <span class="answer-badge">Answer: <?= htmlspecialchars($ex['answer']) ?></span>
-                                <span class="answer-explanation"><?= htmlspecialchars($ex['explanation']) ?></span>
+                                <span class="answer-badge">Answer</span>
+                                <span class="answer-explanation"><?= htmlspecialchars($ex['answer']) ?></span>
                             </div>
                         </div>
                         <?php endforeach; ?>
                     <?php endif; ?>
+
                 </div>
             </div>
             <?php endforeach; ?>
