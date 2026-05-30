@@ -1,5 +1,5 @@
 (() => {
-    const API = 'api/friends.php';
+    const API = (typeof ROOT !== 'undefined' ? ROOT : '') + 'api/friends.php';
 
     const sidebar          = document.getElementById('leftSidebar');
     const toggleBtn        = document.getElementById('sbToggle');

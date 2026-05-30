@@ -59,6 +59,7 @@ $root      = '../';
         </div>
     </div>
 
+    <script>const ROOT = '../';</script>
     <script src="../assets/js/left-sidebar.js"></script>
 </body>
 </html>
