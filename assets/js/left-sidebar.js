@@ -269,6 +269,48 @@
     refresh();
     setInterval(refresh, 30_000);
 
+    // ── Load XP / progress stats into leaderboard pane ────────────────────────
+    const STATS_API = (typeof ROOT !== 'undefined' ? ROOT : '') + 'api/stats.php';
+    const subjectLabels = { verbal:'Verbal', numerical:'Numerical', analytical:'Analytical', general:'General Info', all:'Mock Exam' };
+    const subjectColors = { verbal:'#818cf8', numerical:'#38bdf8', analytical:'#c084fc', general:'#34d399', all:'#f472b6' };
+
+    async function loadStats() {
+        try {
+            const r = await fetch(STATS_API + '?action=stats');
+            const d = await r.json();
+            if (d.error) return;
+
+            document.getElementById('sb-level').textContent   = d.level;
+            document.getElementById('sb-xp').textContent      = d.xp.toLocaleString();
+            document.getElementById('sb-xp-next').textContent = d.xp_in_level;
+            document.getElementById('sb-xp-bar').style.width  = (d.xp_in_level / d.xp_for_next * 100) + '%';
+
+            const hist = document.getElementById('sb-history');
+            if (!d.history.length) {
+                hist.innerHTML = '<div class="sb-empty" style="padding:16px;"><p>No sessions yet.</p></div>';
+                return;
+            }
+            hist.innerHTML = d.history.map(s => {
+                const pct   = Math.round(s.correct / s.total * 100);
+                const color = pct >= 80 ? '#4ade80' : pct >= 60 ? '#facc15' : '#f87171';
+                const bar   = pct >= 80 ? '#22c55e' : pct >= 60 ? '#eab308' : '#ef4444';
+                return `
+                <a href="review.php?session_id=${s.id}" style="display:flex;align-items:center;gap:8px;padding:6px 4px;border-radius:8px;text-decoration:none;transition:background 0.15s;" onmouseover="this.style.background='rgba(255,255,255,0.04)'" onmouseout="this.style.background='transparent'">
+                    <span style="font-size:9px;font-weight:700;padding:2px 6px;border-radius:20px;background:rgba(255,255,255,0.06);color:${subjectColors[s.subject] ?? '#94a3b8'};flex-shrink:0;">${subjectLabels[s.subject] ?? s.subject}</span>
+                    <div style="flex:1;min-width:0;">
+                        <div style="height:4px;background:#1e293b;border-radius:99px;overflow:hidden;">
+                            <div style="height:100%;background:${bar};border-radius:99px;width:${pct}%;"></div>
+                        </div>
+                    </div>
+                    <span style="font-size:11px;font-weight:700;color:${color};flex-shrink:0;">${pct}%</span>
+                </a>`;
+            }).join('');
+        } catch(e) {}
+    }
+
+    loadStats();
+    setInterval(loadStats, 60_000);
+
     // ── Search ────────────────────────────────────────────────────────────────
     let searchTimer;
     searchInput.addEventListener('input', () => {

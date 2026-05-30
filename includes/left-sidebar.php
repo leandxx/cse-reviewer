@@ -75,9 +75,34 @@
 
         <!-- Leaderboard pane -->
         <div class="sb-pane" id="pane-leaderboard">
-            <div class="sb-coming-soon">
-                <i class="fas fa-trophy"></i>
-                <p style="color:#334155;">Leaderboard<br>coming soon</p>
+            <div class="sb-pane-header">
+                <span class="text-white text-xs font-semibold">Your Progress</span>
+            </div>
+            <!-- XP card -->
+            <div style="padding:10px 12px 6px;flex-shrink:0;">
+                <div style="background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.07);border-radius:12px;padding:12px;">
+                    <div style="display:flex;align-items:center;gap:8px;margin-bottom:8px;">
+                        <div style="width:32px;height:32px;border-radius:9px;background:linear-gradient(135deg,#f59e0b,#f97316);display:flex;align-items:center;justify-content:center;flex-shrink:0;">
+                            <i class="fas fa-star" style="color:#fff;font-size:13px;"></i>
+                        </div>
+                        <div>
+                            <div style="color:#fff;font-size:13px;font-weight:700;">Level <span id="sb-level">—</span></div>
+                            <div style="color:#64748b;font-size:10px;"><span id="sb-xp">—</span> XP total</div>
+                        </div>
+                    </div>
+                    <div style="height:6px;background:#1e293b;border-radius:99px;overflow:hidden;">
+                        <div id="sb-xp-bar" style="height:100%;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:99px;width:0%;transition:width 0.6s;"></div>
+                    </div>
+                    <div style="color:#64748b;font-size:10px;margin-top:4px;"><span id="sb-xp-next">—</span> / 100 XP to next level</div>
+                </div>
+            </div>
+            <!-- Recent sessions -->
+            <div class="sb-section-label" style="margin-top:4px;">
+                <i class="fas fa-history" style="color:#818cf8;"></i>
+                Recent Sessions
+            </div>
+            <div id="sb-history" class="friends-list" style="padding:0 8px 8px;">
+                <div class="sb-empty"><i class="fas fa-spinner fa-spin" style="font-size:16px;margin-bottom:4px;"></i></div>
             </div>
         </div>
 

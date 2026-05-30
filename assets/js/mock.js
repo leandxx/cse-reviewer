@@ -335,20 +335,28 @@
         mockCorrect.textContent = res.correct;
         mockWrong.textContent   = wrong;
 
+        // XP earned
+        const xpEl = document.getElementById('mockXpEarned');
+        if (xpEl && res.xp_earned > 0) { xpEl.textContent = '+' + res.xp_earned + ' XP'; xpEl.classList.remove('hidden'); }
+
+        // Review mistakes link
+        const reviewBtn = document.getElementById('mockReviewBtn');
+        if (reviewBtn) reviewBtn.href = 'review.php?session_id=' + sessionId;
+
         if (pct >= 80) {
             mockResultIcon.className = 'w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl bg-emerald-500/20';
             mockResultIcon.innerHTML = '🎉';
-            mockVerdict.className    = 'rounded-2xl p-4 mb-8 text-sm font-semibold bg-emerald-500/10 text-emerald-400';
+            mockVerdict.className    = 'rounded-2xl p-4 mb-6 text-sm font-semibold bg-emerald-500/10 text-emerald-400';
             mockVerdict.textContent  = 'Excellent! You passed the mock exam. Keep it up!';
         } else if (pct >= 60) {
             mockResultIcon.className = 'w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl bg-yellow-500/20';
             mockResultIcon.innerHTML = '👍';
-            mockVerdict.className    = 'rounded-2xl p-4 mb-8 text-sm font-semibold bg-yellow-500/10 text-yellow-400';
+            mockVerdict.className    = 'rounded-2xl p-4 mb-6 text-sm font-semibold bg-yellow-500/10 text-yellow-400';
             mockVerdict.textContent  = 'Good effort! Review your weak areas and try again.';
         } else {
             mockResultIcon.className = 'w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl bg-red-500/20';
             mockResultIcon.innerHTML = '📚';
-            mockVerdict.className    = 'rounded-2xl p-4 mb-8 text-sm font-semibold bg-red-500/10 text-red-400';
+            mockVerdict.className    = 'rounded-2xl p-4 mb-6 text-sm font-semibold bg-red-500/10 text-red-400';
             mockVerdict.textContent  = 'Keep studying! Practice more and retake the exam.';
         }
     }

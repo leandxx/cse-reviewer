@@ -230,6 +230,16 @@
             resultIcon.className = 'w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl bg-red-500/20';
             resultIcon.innerHTML = '📚';
         }
+
+        // XP earned
+        if (res.xp_earned > 0) {
+            const xpEl = document.getElementById('xpEarned');
+            if (xpEl) { xpEl.textContent = '+' + res.xp_earned + ' XP'; xpEl.classList.remove('hidden'); }
+        }
+
+        // Review mistakes button
+        const reviewBtn = document.getElementById('reviewBtn');
+        if (reviewBtn) reviewBtn.href = 'review.php?session_id=' + sessionId;
     }
 
     // ── Retry ─────────────────────────────────────────────────────────────────

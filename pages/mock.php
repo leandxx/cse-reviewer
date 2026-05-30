@@ -173,9 +173,12 @@ $root      = '../';
                 <div class="glass-card rounded-3xl p-10 mb-6 text-center">
                     <div id="mockResultIcon" class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl"></div>
                     <h2 class="text-3xl font-black text-white mb-2">Exam Complete!</h2>
-                    <p class="text-slate-400 mb-8">Mock Civil Service Exam</p>
+                    <p class="text-slate-400 mb-2">Mock Civil Service Exam</p>
+                    <span id="mockXpEarned" class="hidden inline-block text-yellow-400 font-bold text-sm bg-yellow-500/10 px-3 py-1 rounded-full mb-6">
+                        <i class="fas fa-star mr-1"></i>
+                    </span>
 
-                    <div class="grid grid-cols-3 gap-4 mb-8">
+                    <div class="grid grid-cols-3 gap-4 mb-6">
                         <div class="bg-slate-800/50 rounded-2xl p-4">
                             <div class="text-3xl font-black gradient-text" id="mockScore"></div>
                             <div class="text-slate-500 text-xs mt-1">Score</div>
@@ -190,13 +193,16 @@ $root      = '../';
                         </div>
                     </div>
 
-                    <div id="mockVerdict" class="rounded-2xl p-4 mb-8 text-sm font-semibold"></div>
+                    <div id="mockVerdict" class="rounded-2xl p-4 mb-6 text-sm font-semibold"></div>
 
-                    <div class="flex gap-4 justify-center">
-                        <button id="retakeBtn" class="btn-primary text-white font-bold px-8 py-3 rounded-2xl">
+                    <div class="flex gap-3 justify-center flex-wrap">
+                        <button id="retakeBtn" class="btn-primary text-white font-bold px-6 py-3 rounded-2xl">
                             <i class="fas fa-redo mr-2"></i> Retake
                         </button>
-                        <a href="dashboard.php" class="glass-card text-white font-semibold px-8 py-3 rounded-2xl flex items-center hover:bg-white/10 transition-all">
+                        <a id="mockReviewBtn" href="#" class="glass-card text-white font-semibold px-6 py-3 rounded-2xl flex items-center hover:bg-white/10 transition-all">
+                            <i class="fas fa-eye mr-2"></i> Review Mistakes
+                        </a>
+                        <a href="dashboard.php" class="glass-card text-white font-semibold px-6 py-3 rounded-2xl flex items-center hover:bg-white/10 transition-all">
                             <i class="fas fa-home mr-2"></i> Dashboard
                         </a>
                     </div>

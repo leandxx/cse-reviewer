@@ -126,14 +126,20 @@ $root      = '../';
                 <div class="glass-card rounded-3xl p-10 mb-6">
                     <div id="resultIcon" class="w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-3xl"></div>
                     <h2 class="text-3xl font-black text-white mb-2">Quiz Complete!</h2>
-                    <p id="resultSubject" class="text-slate-400 mb-6"></p>
+                    <p id="resultSubject" class="text-slate-400 mb-2"></p>
+                    <span id="xpEarned" class="hidden inline-block text-yellow-400 font-bold text-sm bg-yellow-500/10 px-3 py-1 rounded-full mb-4">
+                        <i class="fas fa-star mr-1"></i>
+                    </span>
                     <div class="text-6xl font-black gradient-text mb-2" id="resultScore"></div>
                     <div class="text-slate-400 text-sm mb-8" id="resultDetail"></div>
-                    <div class="flex gap-4 justify-center">
-                        <button id="retryBtn" class="btn-primary text-white font-bold px-8 py-3 rounded-2xl">
+                    <div class="flex gap-3 justify-center flex-wrap">
+                        <button id="retryBtn" class="btn-primary text-white font-bold px-6 py-3 rounded-2xl">
                             <i class="fas fa-redo mr-2"></i> Try Again
                         </button>
-                        <a href="dashboard.php" class="glass-card text-white font-semibold px-8 py-3 rounded-2xl flex items-center hover:bg-white/10 transition-all">
+                        <a id="reviewBtn" href="#" class="glass-card text-white font-semibold px-6 py-3 rounded-2xl flex items-center hover:bg-white/10 transition-all">
+                            <i class="fas fa-eye mr-2"></i> Review Mistakes
+                        </a>
+                        <a href="dashboard.php" class="glass-card text-white font-semibold px-6 py-3 rounded-2xl flex items-center hover:bg-white/10 transition-all">
                             <i class="fas fa-home mr-2"></i> Dashboard
                         </a>
                     </div>

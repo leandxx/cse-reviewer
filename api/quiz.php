@@ -123,7 +123,38 @@ if ($action === 'finish') {
 
     $sess = $pdo->prepare("SELECT subject, total, correct FROM quiz_sessions WHERE id=? AND user_id=?");
     $sess->execute([$sessionId, $me]);
-    send($sess->fetch());
+    $result = $sess->fetch();
+
+    // Award XP: 10 per correct answer
+    $xpEarned = $result['correct'] * 10;
+    if ($xpEarned > 0) {
+        $pdo->prepare("UPDATE users SET xp = xp + ? WHERE id=?")->execute([$xpEarned, $me]);
+    }
+    $result['xp_earned'] = $xpEarned;
+    send($result);
+}
+
+if ($action === 'review') {
+    $sessionId = (int) ($_GET['session_id'] ?? 0);
+
+    $sess = $pdo->prepare("SELECT id, total, correct FROM quiz_sessions WHERE id=? AND user_id=? AND finished=1");
+    $sess->execute([$sessionId, $me]);
+    $session = $sess->fetch();
+    if (!$session) send(['error' => 'Session not found']);
+
+    $rows = $pdo->prepare("
+        SELECT q.question, q.choice_a, q.choice_b, q.choice_c, q.choice_d, q.answer, q.explanation, qa.chosen
+        FROM quiz_answers qa
+        JOIN questions q ON q.id = qa.question_id
+        WHERE qa.session_id = ? AND qa.is_correct = 0 AND qa.chosen IS NOT NULL
+        ORDER BY qa.id ASC
+    ");
+    $rows->execute([$sessionId]);
+    send([
+        'total' => $session['total'],
+        'wrong' => $session['total'] - $session['correct'],
+        'items' => $rows->fetchAll(),
+    ]);
 }
 
 if ($action === 'history') {
