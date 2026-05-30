@@ -88,6 +88,17 @@ $root      = '../';
     </div>
 </div>
 
+<footer class="relative z-10 text-center py-6 mt-2">
+    <p class="text-slate-600 text-xs">
+        Made by <span class="text-slate-400 font-semibold">Leandro Lojero</span>
+        &nbsp;·&nbsp;
+        <a href="https://facebook.com/leandro.lojero23" target="_blank" rel="noopener"
+           class="text-indigo-400 hover:text-indigo-300 transition-colors">
+            <i class="fab fa-facebook mr-1"></i>@leandro.lojero23
+        </a>
+    </p>
+</footer>
+
 <script>const ROOT = '../';</script>
 <script src="../assets/js/left-sidebar.js"></script>
 <script>
