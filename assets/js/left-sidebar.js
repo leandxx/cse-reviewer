@@ -410,10 +410,8 @@
                     <div class="lb-row-pos">${posDisplay}</div>
                     <div class="lb-row-avatar ${u.is_gm ? 'lb-gm-avatar' : ''}">${initials(u.full_name)}</div>
                     <div class="lb-row-info">
-                        <div class="lb-row-top">
-                            <span class="lb-row-name" style="${defaultColor}${nameStyle}">${escHtml(u.full_name)}${u.is_me ? '<span class="lb-you-tag">you</span>' : ''}${gmBadge}</span>
-                            ${titleHtml}
-                        </div>
+                        <div class="lb-row-name" style="${defaultColor}${nameStyle}">${escHtml(u.full_name)}${u.is_me ? '<span class="lb-you-tag">you</span>' : ''}${gmBadge}</div>
+                        ${titleHtml}
                         <div class="lb-row-xpbar">
                             <div class="lb-row-xpfill ${u.is_gm ? 'lb-gm-xpfill' : ''}" style="width:${pct}%"></div>
                         </div>
