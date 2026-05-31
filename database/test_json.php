@@ -16,6 +16,43 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_reset'])) {
     exit;
 }
 
+// Diagnose why import stops at 270
+if (isset($_GET['diagnose'])) {
+    $jsonData = json_decode(file_get_contents(__DIR__ . '/cse_exam_questions.json'), true);
+    $ins = $pdo->prepare("
+        INSERT INTO questions (subject, difficulty, question, choice_a, choice_b, choice_c, choice_d, answer, hint, explanation)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ");
+    $saved = 0; $skipped = [];
+    foreach ($jsonData as $i => $q) {
+        try {
+            $ins->execute([
+                $q['subject'], $q['difficulty'], $q['question'],
+                $q['choice_a'], $q['choice_b'], $q['choice_c'], $q['choice_d'],
+                $q['answer'], $q['hint'] ?? '', $q['explanation'] ?? ''
+            ]);
+            $saved++;
+        } catch (PDOException $e) {
+            $skipped[] = ['index' => $i, 'error' => $e->getMessage(), 'question' => substr($q['question'], 0, 80)];
+        }
+    }
+    header('Content-Type: text/html');
+    echo '<body style="background:#1e1e2e;color:#cdd6f4;font-family:monospace;padding:20px">';
+    echo '<h2 style="color:#89b4fa">Diagnose Import</h2>';
+    echo '<p style="color:#a6e3a1">Saved: '.$saved.'</p>';
+    echo '<p style="color:#f38ba8">Skipped: '.count($skipped).'</p>';
+    if ($skipped) {
+        echo '<table border=1 style="border-color:#45475a;border-collapse:collapse;width:100%">';
+        echo '<tr><th>Index</th><th>Error</th><th>Question</th></tr>';
+        foreach ($skipped as $s) {
+            echo '<tr><td>'.$s['index'].'</td><td>'.htmlspecialchars($s['error']).'</td><td>'.htmlspecialchars($s['question']).'</td></tr>';
+        }
+        echo '</table>';
+    }
+    echo '</body>';
+    exit;
+}
+
 // Handle import from JSON
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_import'])) {
     $jsonData = json_decode(file_get_contents(__DIR__ . '/cse_exam_questions.json'), true);
