@@ -25,7 +25,7 @@ if ($action === 'balance') {
 }
 
 if ($action === 'shop') {
-    $items = $pdo->query("SELECT * FROM shop_items ORDER BY type, price")->fetchAll();
+    $items = $pdo->query("SELECT id, type, name, value, price, description, preview_css, theme FROM shop_items ORDER BY theme DESC, type, price")->fetchAll();
     $owned = $pdo->prepare("SELECT item_id, equipped FROM user_cosmetics WHERE user_id=?");
     $owned->execute([$me]);
     $ownedMap = [];

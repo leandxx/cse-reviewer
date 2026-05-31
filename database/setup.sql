@@ -86,8 +86,10 @@ CREATE TABLE IF NOT EXISTS shop_items (
     value       VARCHAR(100) NOT NULL COMMENT 'CSS class or text value',
     price       INT NOT NULL DEFAULT 100,
     description VARCHAR(255) NULL,
-    preview_css VARCHAR(500) NULL COMMENT 'inline style for preview'
+    preview_css VARCHAR(500) NULL COMMENT 'inline style for preview',
+    theme       VARCHAR(30)  NULL COMMENT 'special card theme e.g. fire'
 );
+ALTER TABLE shop_items ADD COLUMN IF NOT EXISTS theme VARCHAR(30) NULL COMMENT 'special card theme e.g. fire';
 
 CREATE TABLE IF NOT EXISTS user_cosmetics (
     id          INT AUTO_INCREMENT PRIMARY KEY,
@@ -101,21 +103,26 @@ CREATE TABLE IF NOT EXISTS user_cosmetics (
 );
 
 -- Seed shop items
-INSERT IGNORE INTO shop_items (id, type, name, value, price, description, preview_css) VALUES
+INSERT IGNORE INTO shop_items (id, type, name, value, price, description, preview_css, theme) VALUES
 -- Titles
-(1,  'title',      'The Grinder',    'The Grinder',    100,  'For those who never stop.',         'color:#a78bfa;font-weight:700;'),
-(2,  'title',      'Ace',            'Ace',            150,  'Top scorer energy.',                'color:#f59e0b;font-weight:700;'),
-(3,  'title',      'Civil Servant',  'Civil Servant',  200,  'Ready for the real thing.',         'color:#34d399;font-weight:700;'),
-(4,  'title',      'Legend',         'Legend',         500,  'Only the elite wear this.',         'color:#f97316;font-weight:800;text-shadow:0 0 8px #f97316;'),
-(5,  'title',      'Reviewer King',  'Reviewer King',  800,  'The undisputed champion.',          'background:linear-gradient(90deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;'),
+(1,  'title',      'The Grinder',    'The Grinder',    100,  'For those who never stop.',         'color:#a78bfa;font-weight:700;',  NULL),
+(2,  'title',      'Ace',            'Ace',            150,  'Top scorer energy.',                'color:#f59e0b;font-weight:700;',  NULL),
+(3,  'title',      'Civil Servant',  'Civil Servant',  200,  'Ready for the real thing.',         'color:#34d399;font-weight:700;',  NULL),
+(4,  'title',      'Legend',         'Legend',         500,  'Only the elite wear this.',         'color:#f97316;font-weight:800;text-shadow:0 0 8px #f97316;', NULL),
+(5,  'title',      'Reviewer King',  'Reviewer King',  800,  'The undisputed champion.',          'background:linear-gradient(90deg,#f59e0b,#f97316);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;', NULL),
 -- Name Colors
-(6,  'name_color', 'Gold',           'color-gold',     150,  'Shine like gold.',                  'color:#f59e0b;font-weight:700;'),
-(7,  'name_color', 'Purple',         'color-purple',   150,  'Royal purple.',                     'color:#a78bfa;font-weight:700;'),
-(8,  'name_color', 'Cyan',           'color-cyan',     150,  'Cool cyan.',                        'color:#22d3ee;font-weight:700;'),
-(9,  'name_color', 'Red',            'color-red',      150,  'Fiery red.',                        'color:#f87171;font-weight:700;'),
-(10, 'name_color', 'Green',          'color-green',    150,  'Fresh green.',                      'color:#4ade80;font-weight:700;'),
+(6,  'name_color', 'Gold',           'color-gold',     150,  'Shine like gold.',                  'color:#f59e0b;font-weight:700;',  NULL),
+(7,  'name_color', 'Purple',         'color-purple',   150,  'Royal purple.',                     'color:#a78bfa;font-weight:700;',  NULL),
+(8,  'name_color', 'Cyan',           'color-cyan',     150,  'Cool cyan.',                        'color:#22d3ee;font-weight:700;',  NULL),
+(9,  'name_color', 'Red',            'color-red',      150,  'Fiery red.',                        'color:#f87171;font-weight:700;',  NULL),
+(10, 'name_color', 'Green',          'color-green',    150,  'Fresh green.',                      'color:#4ade80;font-weight:700;',  NULL),
 -- Name Backgrounds
-(11, 'name_bg',    'Indigo Glow',    'bg-indigo',      200,  'Subtle indigo highlight.',          'background:rgba(99,102,241,0.25);border-radius:6px;padding:1px 6px;'),
-(12, 'name_bg',    'Gold Glow',      'bg-gold',        200,  'Golden aura.',                      'background:rgba(245,158,11,0.2);border-radius:6px;padding:1px 6px;'),
-(13, 'name_bg',    'Emerald Glow',   'bg-emerald',     200,  'Emerald shine.',                    'background:rgba(52,211,153,0.2);border-radius:6px;padding:1px 6px;'),
-(14, 'name_bg',    'Fire',           'bg-fire',        350,  'You\'re on fire.',                  'background:linear-gradient(90deg,rgba(249,115,22,0.3),rgba(239,68,68,0.3));border-radius:6px;padding:1px 6px;');
+(11, 'name_bg',    'Indigo Glow',    'bg-indigo',      200,  'Subtle indigo highlight.',          'background:rgba(99,102,241,0.25);border-radius:6px;padding:1px 6px;', NULL),
+(12, 'name_bg',    'Gold Glow',      'bg-gold',        200,  'Golden aura.',                      'background:rgba(245,158,11,0.2);border-radius:6px;padding:1px 6px;',  NULL),
+(13, 'name_bg',    'Emerald Glow',   'bg-emerald',     200,  'Emerald shine.',                    'background:rgba(52,211,153,0.2);border-radius:6px;padding:1px 6px;',  NULL),
+(14, 'name_bg',    'Fire',           'bg-fire',        350,  'You\'re on fire.',                  'background:linear-gradient(90deg,rgba(249,115,22,0.3),rgba(239,68,68,0.3));border-radius:6px;padding:1px 6px;', 'fire'),
+-- 🔥 Fire-themed items
+(15, 'title',      '🔥 Blazing',      'Blazing',        600,  'Your name burns brighter than the rest.', 'background:linear-gradient(90deg,#fbbf24,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900;', 'fire'),
+(16, 'title',      '🔥 Inferno',      'Inferno',        1200, 'Absolute destruction. Pure fire.',  'background:linear-gradient(90deg,#fff7ed,#fbbf24,#f97316,#dc2626);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:900;letter-spacing:1px;', 'fire'),
+(17, 'name_color', '🔥 Lava',         'color-lava',     500,  'Molten lava dripping from your name.', 'background:linear-gradient(90deg,#f97316,#ef4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;font-weight:800;', 'fire'),
+(18, 'name_bg',    '🔥 Hellfire',     'bg-hellfire',    700,  'The rarest background. Pure hellfire.', 'background:linear-gradient(90deg,rgba(239,68,68,0.45),rgba(249,115,22,0.45),rgba(234,179,8,0.3));border-radius:6px;padding:1px 6px;', 'fire');
