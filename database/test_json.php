@@ -16,6 +16,28 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_reset'])) {
     exit;
 }
 
+// Handle import from JSON
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_import'])) {
+    $jsonData = json_decode(file_get_contents(__DIR__ . '/cse_exam_questions.json'), true);
+    $ins = $pdo->prepare("
+        INSERT INTO questions (subject, difficulty, question, choice_a, choice_b, choice_c, choice_d, answer, hint, explanation)
+        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
+    ");
+    $saved = 0;
+    foreach ($jsonData as $q) {
+        try {
+            $ins->execute([
+                $q['subject'], $q['difficulty'], $q['question'],
+                $q['choice_a'], $q['choice_b'], $q['choice_c'], $q['choice_d'],
+                $q['answer'], $q['hint'] ?? '', $q['explanation'] ?? ''
+            ]);
+            $saved++;
+        } catch (PDOException $e) {}
+    }
+    header('Location: ' . $_SERVER['PHP_SELF'] . '?imported=' . $saved);
+    exit;
+}
+
 $jsonPath = __DIR__ . '/cse_exam_questions.json';
 $jsonData = json_decode(file_get_contents($jsonPath), true);
 $jsonCount = count($jsonData);
@@ -131,8 +153,7 @@ header('Content-Type: text/html');
 <?php endif; ?>
 
 <?php
-// Handle import (missing only)
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_import'])) {
+if (false) {
     $ins = $pdo->prepare("
         INSERT INTO questions (subject, difficulty, question, choice_a, choice_b, choice_c, choice_d, answer, hint, explanation)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
@@ -153,7 +174,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_import'])) {
 ?>
 
 <hr style="border-color:#45475a;margin:30px 0">
-<h3 class="err">🗑 Danger Zone</h3>
+<h3 style="color:#a6e3a1">⬆ Import from JSON</h3>
+<p class="warn">Import all questions from <code>cse_exam_questions.json</code> into the database (skips duplicates).</p>
+<form method="post">
+  <input type="hidden" name="do_import" value="1">
+  <button type="submit" style="background:#a6e3a1;color:#1e1e2e;padding:10px 24px;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:15px;">
+    ⬆ Import JSON into DB
+  </button>
+</form>
+
+<?php if (isset($_GET['imported'])): ?>
+  <p class="ok" style="font-size:18px">✔ Imported <?= (int)$_GET['imported'] ?> questions from JSON!</p>
+<?php endif; ?>
 <p class="warn">This will <strong>delete ALL questions, quiz sessions, and answers</strong> from the database. This cannot be undone.</p>
 <form method="post" onsubmit="return confirm('Delete ALL questions from the database? This cannot be undone.')"> 
   <input type="hidden" name="do_reset" value="1">
