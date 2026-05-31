@@ -1,33 +1,19 @@
 /* ── Shop page background ───────────────────────────────────────────────── */
 body.shop-page {
     background-image: none;
-    background-color: #0f1117;
+    background-color: #f1f5f9;
 }
 body.shop-page::before {
-    background: radial-gradient(ellipse 70% 50% at 50% 30%, rgba(249,115,22,0.12) 0%, transparent 70%);
+    display: none;
 }
 
-/* ── Ember particles ────────────────────────────────────────────────────── */
-.ember-field {
-    position: fixed;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-}
-.ember {
-    position: absolute;
-    bottom: -10px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #fff7ed 0%, #f97316 40%, transparent 70%);
-    animation: floatEmber linear infinite;
-    opacity: 0;
-}
-@keyframes floatEmber {
-    0%   { transform: translateY(0) translateX(0) scale(1);   opacity: 0; }
-    10%  { opacity: 1; }
-    50%  { transform: translateY(-45vh) translateX(var(--drift)) scale(0.8); opacity: 0.7; }
-    100% { transform: translateY(-100vh) translateX(calc(var(--drift) * 1.6)) scale(0.3); opacity: 0; }
+/* ── Hide ember field ───────────────────────────────────────────────────── */
+.ember-field { display: none; }
+
+/* ── Nav override ───────────────────────────────────────────────────────── */
+body.shop-page nav {
+    background: #fff !important;
+    border-bottom: 1px solid #e2e8f0 !important;
 }
 
 /* ── Fire header banner ─────────────────────────────────────────────────── */
@@ -41,15 +27,14 @@ body.shop-page::before {
     font-size: clamp(2rem, 5vw, 3.5rem);
     font-weight: 900;
     line-height: 1.1;
-    background: linear-gradient(135deg, #fff7ed 0%, #fbbf24 30%, #f97316 60%, #ef4444 100%);
+    background: linear-gradient(135deg, #f59e0b 0%, #f97316 50%, #ef4444 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    filter: drop-shadow(0 0 24px rgba(249,115,22,0.5));
     margin-bottom: 10px;
 }
 .shop-hero-sub {
-    color: #c2622a;
+    color: #64748b;
     font-size: 14px;
     font-weight: 500;
 }
@@ -59,43 +44,34 @@ body.shop-page::before {
     display: inline-flex;
     align-items: center;
     gap: 8px;
-    background: linear-gradient(135deg, rgba(245,158,11,0.15), rgba(249,115,22,0.1));
-    border: 1px solid rgba(245,158,11,0.35);
+    background: #fff;
+    border: 1px solid #fde68a;
     border-radius: 999px;
     padding: 8px 20px;
     font-size: 15px;
     font-weight: 800;
-    color: #fbbf24;
-    box-shadow: 0 0 20px rgba(245,158,11,0.2);
+    color: #d97706;
+    box-shadow: 0 2px 8px rgba(245,158,11,0.12);
     margin-bottom: 32px;
 }
 .shop-coin-pill i { font-size: 16px; }
 
 /* ── Reward banner ──────────────────────────────────────────────────────── */
 .shop-reward-banner {
-    background: linear-gradient(135deg, rgba(249,115,22,0.08), rgba(239,68,68,0.06));
-    border: 1px solid rgba(249,115,22,0.25);
+    background: #fff;
+    border: 1px solid #e2e8f0;
     border-radius: 16px;
     padding: 20px 24px;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
-.shop-reward-banner::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(249,115,22,0.04), transparent);
-    animation: shimmer 3s ease infinite;
-}
-@keyframes shimmer {
-    0%   { transform: translateX(-100%); }
-    100% { transform: translateX(100%); }
-}
+.shop-reward-banner::before { display: none; }
 .reward-banner-title {
     display: flex;
     align-items: center;
     gap: 8px;
-    color: #fbbf24;
+    color: #d97706;
     font-weight: 700;
     font-size: 13px;
     margin-bottom: 12px;
@@ -109,17 +85,17 @@ body.shop-page::before {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(0,0,0,0.15);
-    border: 1px solid rgba(249,115,22,0.2);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 10px;
     padding: 6px 14px;
     font-size: 12px;
 }
-.tier-pct  { color: #c4a882; }
-.tier-coins { color: #fbbf24; font-weight: 700; }
+.tier-pct  { color: #64748b; }
+.tier-coins { color: #d97706; font-weight: 700; }
 .reward-tier.bonus {
-    border-color: rgba(245,158,11,0.4);
-    background: rgba(245,158,11,0.08);
+    border-color: #fde68a;
+    background: #fffbeb;
 }
 
 /* ── Filter tabs ────────────────────────────────────────────────────────── */
@@ -134,22 +110,22 @@ body.shop-page::before {
     border-radius: 10px;
     font-size: 13px;
     font-weight: 600;
-    color: #c2622a;
-    background: rgba(249,115,22,0.1);
-    border: 1px solid rgba(249,115,22,0.2);
+    color: #64748b;
+    background: #fff;
+    border: 1px solid #e2e8f0;
     cursor: pointer;
     transition: all 0.2s;
 }
 .shop-tab:hover {
-    color: #fed7aa;
-    background: rgba(249,115,22,0.12);
-    border-color: rgba(249,115,22,0.3);
+    color: #f97316;
+    border-color: #fed7aa;
+    background: #fff7ed;
 }
 .shop-tab.active {
-    color: #fff7ed;
-    background: linear-gradient(135deg, rgba(249,115,22,0.3), rgba(239,68,68,0.2));
-    border-color: rgba(249,115,22,0.5);
-    box-shadow: 0 0 12px rgba(249,115,22,0.2);
+    color: #fff;
+    background: linear-gradient(135deg, #f97316, #ef4444);
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(249,115,22,0.3);
 }
 
 /* ── Shop grid ──────────────────────────────────────────────────────────── */
@@ -161,8 +137,8 @@ body.shop-page::before {
 
 /* ── Shop card ──────────────────────────────────────────────────────────── */
 .shop-card {
-    background: linear-gradient(160deg, rgba(60,28,8,0.75) 0%, rgba(45,18,4,0.85) 100%);
-    border: 1px solid rgba(249,115,22,0.25);
+    background: #fff;
+    border: 1px solid #e2e8f0;
     border-radius: 18px;
     padding: 20px 16px;
     display: flex;
@@ -171,33 +147,33 @@ body.shop-page::before {
     transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
     position: relative;
     overflow: hidden;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
 }
 .shop-card::before {
     content: '';
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(249,115,22,0.4), transparent);
+    background: linear-gradient(90deg, transparent, rgba(249,115,22,0.35), transparent);
     opacity: 0;
     transition: opacity 0.25s;
 }
 .shop-card:hover {
-    border-color: rgba(249,115,22,0.45);
+    border-color: #fed7aa;
     transform: translateY(-3px);
-    box-shadow: 0 8px 32px rgba(249,115,22,0.15), 0 0 0 1px rgba(249,115,22,0.1);
+    box-shadow: 0 8px 24px rgba(249,115,22,0.1);
 }
 .shop-card:hover::before { opacity: 1; }
 
 .shop-card.is-equipped {
-    border-color: rgba(249,115,22,0.6);
-    background: linear-gradient(160deg, rgba(75,32,8,0.85) 0%, rgba(55,22,4,0.9) 100%);
-    box-shadow: 0 0 24px rgba(249,115,22,0.18);
+    border-color: #f97316;
+    box-shadow: 0 0 0 2px rgba(249,115,22,0.15);
 }
 
 .shop-card-type {
     font-size: 10px;
     font-weight: 700;
-    color: #c2622a;
+    color: #94a3b8;
     text-transform: uppercase;
     letter-spacing: 0.07em;
 }
@@ -206,25 +182,25 @@ body.shop-page::before {
     font-size: 15px;
     font-weight: 700;
     padding: 12px;
-    background: rgba(0,0,0,0.28);
-    border: 1px solid rgba(249,115,22,0.18);
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
     border-radius: 10px;
     text-align: center;
     min-height: 46px;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #e2e8f0;
+    color: #1e293b;
 }
 
 .shop-card-name {
     font-size: 13px;
     font-weight: 700;
-    color: #fed7aa;
+    color: #1e293b;
 }
 .shop-card-desc {
     font-size: 11px;
-    color: #a0522d;
+    color: #94a3b8;
     flex: 1;
 }
 
@@ -243,31 +219,31 @@ body.shop-page::before {
 .shop-btn.buy {
     background: linear-gradient(135deg, #f59e0b, #f97316, #ef4444);
     color: #fff;
-    box-shadow: 0 4px 14px rgba(249,115,22,0.35);
+    box-shadow: 0 4px 14px rgba(249,115,22,0.3);
 }
 .shop-btn.buy:hover {
-    box-shadow: 0 6px 20px rgba(249,115,22,0.55);
+    box-shadow: 0 6px 20px rgba(249,115,22,0.5);
     transform: translateY(-1px);
 }
 .shop-btn.buy.cant-afford {
-    background: rgba(255,255,255,0.07);
-    color: #7c4a2a;
+    background: #f1f5f9;
+    color: #94a3b8;
     cursor: not-allowed;
     box-shadow: none;
 }
 .shop-btn.equip {
-    background: rgba(249,115,22,0.12);
-    color: #fb923c;
-    border: 1px solid rgba(249,115,22,0.3);
+    background: #fff7ed;
+    color: #f97316;
+    border: 1px solid #fed7aa;
 }
 .shop-btn.equip:hover {
-    background: rgba(249,115,22,0.22);
-    box-shadow: 0 0 12px rgba(249,115,22,0.2);
+    background: #ffedd5;
+    box-shadow: 0 0 8px rgba(249,115,22,0.15);
 }
 .shop-btn.equipped {
-    background: rgba(52,211,153,0.1);
-    color: #34d399;
-    border: 1px solid rgba(52,211,153,0.25);
+    background: #f0fdf4;
+    color: #16a34a;
+    border: 1px solid #bbf7d0;
     cursor: default;
 }
 
@@ -285,28 +261,22 @@ body.shop-page::before {
     backdrop-filter: blur(12px);
 }
 .shop-toast.ok  {
-    background: rgba(52,211,153,0.12);
-    border: 1px solid rgba(52,211,153,0.3);
-    color: #34d399;
+    background: #f0fdf4;
+    border: 1px solid #bbf7d0;
+    color: #16a34a;
 }
 .shop-toast.err {
-    background: rgba(239,68,68,0.12);
-    border: 1px solid rgba(239,68,68,0.3);
-    color: #f87171;
+    background: #fef2f2;
+    border: 1px solid #fecaca;
+    color: #dc2626;
 }
 .shop-toast.hidden { display: none; }
-
-/* ── Nav override for fire theme ────────────────────────────────────────── */
-body.shop-page nav {
-    background: rgba(15,17,23,0.92) !important;
-    border-bottom-color: rgba(249,115,22,0.2) !important;
-}
 
 /* ── Section divider ────────────────────────────────────────────────────── */
 .shop-section-label {
     font-size: 11px;
     font-weight: 700;
-    color: #c2622a;
+    color: #94a3b8;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 12px;
@@ -318,7 +288,7 @@ body.shop-page nav {
     content: '';
     flex: 1;
     height: 1px;
-    background: linear-gradient(90deg, rgba(249,115,22,0.2), transparent);
+    background: #e2e8f0;
 }
 
 @keyframes fadeInUp {
@@ -326,22 +296,37 @@ body.shop-page nav {
     to   { opacity: 1; transform: translateY(0); }
 }
 
-/* ── 🔥 Fire-themed item cards ──────────────────────────────────────────── */
-@keyframes firePulse {
-    0%, 100% { box-shadow: 0 0 8px rgba(249,115,22,0.4), 0 0 0 1.5px rgba(239,68,68,0.5); }
-    50%       { box-shadow: 0 0 18px rgba(249,115,22,0.7), 0 0 0 1.5px rgba(239,68,68,0.8); }
-}
-
+/* ── 🔥 Fire theme — card only gets a subtle red border, NO whole-card animation ── */
 .shop-card.theme-fire {
-    background: linear-gradient(160deg, rgba(45,18,4,0.9) 0%, rgba(28,8,2,0.95) 100%);
-    border: 1.5px solid rgba(239,68,68,0.5);
-    animation: firePulse 2.5s ease-in-out infinite;
+    background: #fff;
+    border: 1.5px solid rgba(239,68,68,0.35);
+    box-shadow: 0 2px 12px rgba(239,68,68,0.08);
+}
+.shop-card.theme-fire:hover {
+    border-color: rgba(239,68,68,0.6);
+    box-shadow: 0 8px 24px rgba(239,68,68,0.12);
+}
+.shop-card.theme-fire::before { display: none; }
+.shop-card.theme-fire .shop-card-type { display: flex; align-items: center; color: #ef4444; }
+.shop-card.theme-fire .shop-card-name { color: #1e293b; }
+.shop-card.theme-fire .shop-card-desc { color: #94a3b8; }
+
+/* ── Fire animation ONLY on the preview box (title/bg preview) ─────────── */
+@keyframes fireGlow {
+    0%, 100% { box-shadow: 0 0 6px rgba(249,115,22,0.4), inset 0 0 8px rgba(239,68,68,0.08); border-color: rgba(239,68,68,0.35); }
+    50%       { box-shadow: 0 0 14px rgba(249,115,22,0.7), inset 0 0 14px rgba(239,68,68,0.15); border-color: rgba(249,115,22,0.7); }
+}
+.shop-card.theme-fire .shop-preview {
+    background: #fff7ed;
+    border-color: rgba(239,68,68,0.3);
+    animation: fireGlow 2s ease-in-out infinite;
 }
 
-/* Hide unused fire elements */
-.fire-flame-wrap, .fire-shimmer, .fire-sparks { display: none; }
-
-/* Fire badge */
+/* ── Fire badge ─────────────────────────────────────────────────────────── */
+@keyframes firePulse {
+    0%, 100% { opacity: 0.85; }
+    50%       { opacity: 1; }
+}
 .fire-badge {
     display: inline-flex;
     align-items: center;
@@ -350,7 +335,7 @@ body.shop-page nav {
     font-weight: 800;
     text-transform: uppercase;
     letter-spacing: 0.08em;
-    color: #fff7ed;
+    color: #fff;
     background: linear-gradient(135deg, #ef4444, #f97316);
     border-radius: 6px;
     padding: 2px 7px;
@@ -358,28 +343,28 @@ body.shop-page nav {
     animation: firePulse 1.8s ease-in-out infinite;
 }
 
-.shop-card.theme-fire::before, .shop-card.theme-fire::after { display: none; }
-.shop-card.theme-fire .shop-card-type { display:flex; align-items:center; color:#f97316; }
-.shop-card.theme-fire .shop-preview {
-    background: rgba(0,0,0,0.4);
-    border-color: rgba(239,68,68,0.3);
-}
-.shop-card.theme-fire .shop-card-name { color: #fed7aa; }
-.shop-card.theme-fire .shop-card-desc { color: #a0522d; }
-
+/* ── Fire buy button ────────────────────────────────────────────────────── */
 .shop-card.theme-fire .shop-btn.buy {
     background: linear-gradient(135deg, #dc2626, #f97316, #fbbf24);
-    box-shadow: 0 4px 18px rgba(239,68,68,0.5);
-    animation: firePulse 1.8s ease-in-out infinite;
+    box-shadow: 0 4px 14px rgba(239,68,68,0.35);
 }
-.shop-card.theme-fire .shop-btn.buy:hover { box-shadow: 0 6px 28px rgba(239,68,68,0.75); }
-.shop-card.theme-fire .shop-btn.equip { background:rgba(239,68,68,0.15); color:#f97316; border-color:rgba(239,68,68,0.4); }
+.shop-card.theme-fire .shop-btn.buy:hover {
+    box-shadow: 0 6px 22px rgba(239,68,68,0.55);
+}
+.shop-card.theme-fire .shop-btn.equip {
+    background: #fff7ed;
+    color: #f97316;
+    border-color: #fed7aa;
+}
 
-/* Fire filter tab */
-.shop-tab[data-filter="fire"] { color:#f97316; background:rgba(239,68,68,0.08); border-color:rgba(239,68,68,0.25); }
+/* ── Fire filter tab ────────────────────────────────────────────────────── */
+.shop-tab[data-filter="fire"] { color: #ef4444; background: #fff; border-color: #fecaca; }
 .shop-tab[data-filter="fire"].active {
-    color: #fff7ed;
-    background: linear-gradient(135deg, rgba(239,68,68,0.35), rgba(249,115,22,0.25));
-    border-color: rgba(239,68,68,0.6);
-    box-shadow: 0 0 16px rgba(239,68,68,0.3);
+    color: #fff;
+    background: linear-gradient(135deg, #ef4444, #f97316);
+    border-color: transparent;
+    box-shadow: 0 2px 8px rgba(239,68,68,0.3);
 }
+
+/* ── Hide unused fire DOM elements ──────────────────────────────────────── */
+.fire-flame-wrap, .fire-shimmer, .fire-sparks { display: none; }
