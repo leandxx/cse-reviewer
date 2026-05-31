@@ -56,12 +56,15 @@ if (isset($_GET['diagnose'])) {
 // Handle import from JSON
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_import'])) {
     $jsonData = json_decode(file_get_contents(__DIR__ . '/cse_exam_questions.json'), true);
-    $ins = $pdo->prepare("
+    $check = $pdo->prepare("SELECT COUNT(*) FROM questions WHERE question = ?");
+    $ins   = $pdo->prepare("
         INSERT INTO questions (subject, difficulty, question, choice_a, choice_b, choice_c, choice_d, answer, hint, explanation)
         VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
     ");
     $saved = 0;
     foreach ($jsonData as $q) {
+        $check->execute([$q['question']]);
+        if ($check->fetchColumn() > 0) continue;
         try {
             $ins->execute([
                 $q['subject'], $q['difficulty'], $q['question'],
