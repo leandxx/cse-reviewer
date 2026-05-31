@@ -78,6 +78,11 @@ CREATE TABLE IF NOT EXISTS friends (
 -- ── Coins & Shop ─────────────────────────────────────────────────────────────
 ALTER TABLE users
     ADD COLUMN IF NOT EXISTS coins INT NOT NULL DEFAULT 50;
+ALTER TABLE users
+    ADD COLUMN IF NOT EXISTS is_game_master TINYINT(1) NOT NULL DEFAULT 0;
+-- Set Leandro Lojero as Game Master (subquery avoids safe update mode)
+UPDATE users SET is_game_master = 1
+    WHERE id = (SELECT id FROM (SELECT id FROM users WHERE full_name = 'Leandro Lojero' LIMIT 1) AS t);
 
 CREATE TABLE IF NOT EXISTS shop_items (
     id          INT AUTO_INCREMENT PRIMARY KEY,
@@ -97,10 +102,13 @@ CREATE TABLE IF NOT EXISTS user_cosmetics (
     item_id     INT NOT NULL,
     equipped    TINYINT(1) NOT NULL DEFAULT 0,
     bought_at   TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    gifted_by   INT NULL,
     UNIQUE KEY uq_user_item (user_id, item_id),
-    FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
-    FOREIGN KEY (item_id) REFERENCES shop_items(id) ON DELETE CASCADE
+    FOREIGN KEY (user_id)   REFERENCES users(id) ON DELETE CASCADE,
+    FOREIGN KEY (item_id)   REFERENCES shop_items(id) ON DELETE CASCADE,
+    FOREIGN KEY (gifted_by) REFERENCES users(id) ON DELETE SET NULL
 );
+ALTER TABLE user_cosmetics ADD COLUMN IF NOT EXISTS gifted_by INT NULL;
 
 -- Seed shop items
 INSERT IGNORE INTO shop_items (id, type, name, value, price, description, preview_css, theme) VALUES

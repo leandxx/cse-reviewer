@@ -13,7 +13,6 @@ $root      = '../';
 <head><?php include '../includes/head.php'; ?></head>
 <body class="shop-page min-h-screen">
 
-<!-- Ember particle field -->
 <div class="ember-field" id="emberField"></div>
 
 <nav class="bg-slate-900/80 border-b border-slate-800 px-6 py-4 flex items-center justify-between">
@@ -23,12 +22,16 @@ $root      = '../';
         </button>
         <img src="../assets/img/logo.png" alt="CSE Reviewer Logo" class="w-9 h-9 rounded-xl object-contain">
         <span class="text-white font-bold text-lg">CSE<span class="gradient-text">Reviewer</span></span>
+        <span id="gmBadge" class="hidden gm-badge"><i class="fas fa-crown mr-1"></i>Game Master</span>
     </div>
     <div class="flex items-center gap-4">
         <div class="shop-coin-pill" style="margin-bottom:0;">
             <i class="fas fa-coins"></i>
             <span id="coinBalance">—</span> coins
         </div>
+        <button id="inventoryBtn" class="inventory-nav-btn">
+            <i class="fas fa-box-open mr-1"></i><span class="hidden sm:inline">Inventory</span>
+        </button>
         <a href="dashboard.php" class="text-orange-700 hover:text-orange-400 text-sm transition-colors flex items-center gap-1">
             <i class="fas fa-home"></i><span class="hidden sm:inline"> Dashboard</span>
         </a>
@@ -93,44 +96,60 @@ $root      = '../';
     </div>
 </div>
 
+<!-- ── Inventory Modal ──────────────────────────────────────────────────────── -->
+<div id="inventoryModal" class="inv-modal-overlay hidden">
+    <div class="inv-modal">
+        <div class="inv-modal-header">
+            <span><i class="fas fa-box-open mr-2"></i>My Inventory</span>
+            <button id="invClose" class="inv-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div class="inv-tabs">
+            <button class="inv-tab active" data-type="all">All</button>
+            <button class="inv-tab" data-type="title">Titles</button>
+            <button class="inv-tab" data-type="name_color">Name Colors</button>
+            <button class="inv-tab" data-type="name_bg">Backgrounds</button>
+        </div>
+        <div id="invGrid" class="inv-grid">
+            <div style="text-align:center;padding:32px;color:#475569;">
+                <i class="fas fa-spinner fa-spin" style="font-size:20px;"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- ── GM Gift Modal ────────────────────────────────────────────────────────── -->
+<div id="giftModal" class="inv-modal-overlay hidden">
+    <div class="inv-modal" style="max-width:400px;">
+        <div class="inv-modal-header">
+            <span><i class="fas fa-gift mr-2"></i>Gift Item</span>
+            <button id="giftClose" class="inv-close"><i class="fas fa-times"></i></button>
+        </div>
+        <div style="padding:20px;">
+            <p id="giftItemName" style="color:#e2e8f0;font-weight:700;font-size:14px;margin-bottom:14px;"></p>
+            <div style="position:relative;margin-bottom:10px;">
+                <input id="giftSearch" type="text" placeholder="Search player name…" class="gm-search-input">
+            </div>
+            <div id="giftUserResults" class="gm-user-list"></div>
+            <p id="giftStatus" style="font-size:12px;margin-top:10px;min-height:18px;"></p>
+        </div>
+    </div>
+</div>
+
 <!-- Toast -->
 <div id="shopToast" class="shop-toast hidden"></div>
 
 <script>const ROOT = '../';</script>
 <script src="../assets/js/left-sidebar.js"></script>
 <script>
-// ── Ember particles ──────────────────────────────────────────────────────────
-(() => {
-    const field = document.getElementById('emberField');
-    const COUNT = 38;
-    for (let i = 0; i < COUNT; i++) {
-        const e = document.createElement('div');
-        e.className = 'ember';
-        const size = Math.random() * 4 + 2;
-        const left = Math.random() * 100;
-        const delay = Math.random() * 8;
-        const dur   = Math.random() * 6 + 5;
-        const drift = (Math.random() - 0.5) * 120;
-        e.style.cssText = `
-            width:${size}px; height:${size}px;
-            left:${left}%;
-            animation-duration:${dur}s;
-            animation-delay:${delay}s;
-            --drift:${drift}px;
-        `;
-        field.appendChild(e);
-    }
-})();
-
-// ── Shop logic ───────────────────────────────────────────────────────────────
 (() => {
     const API = ROOT + 'api/coins.php';
-    let allItems = [], currentFilter = 'all', myCoins = 0;
+    let allItems = [], currentFilter = 'all', myCoins = 0, isGM = false;
+    let giftTargetItemId = null;
 
-    const grid        = document.getElementById('shopGrid');
-    const balNav      = document.getElementById('coinBalance');
-    const balHero     = document.getElementById('coinBalanceHero');
-    const toast       = document.getElementById('shopToast');
+    const grid    = document.getElementById('shopGrid');
+    const balNav  = document.getElementById('coinBalance');
+    const balHero = document.getElementById('coinBalanceHero');
+    const toast   = document.getElementById('shopToast');
 
     function setBalance(n) {
         myCoins = n;
@@ -146,9 +165,13 @@ $root      = '../';
         toast._t = setTimeout(() => toast.classList.add('hidden'), 2800);
     }
 
+    const escHtml = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
     async function loadBalance() {
         const r = await fetch(API + '?action=balance').then(r => r.json());
         setBalance(r.coins ?? 0);
+        isGM = r.is_gm === true;
+        if (isGM) document.getElementById('gmBadge').classList.remove('hidden');
     }
 
     async function loadShop() {
@@ -159,12 +182,12 @@ $root      = '../';
 
     function render() {
         let filtered;
-        if (currentFilter === 'all')   filtered = allItems;
+        if (currentFilter === 'all')       filtered = allItems;
         else if (currentFilter === 'fire') filtered = allItems.filter(i => i.theme === 'fire');
-        else filtered = allItems.filter(i => i.type === currentFilter);
+        else                               filtered = allItems.filter(i => i.type === currentFilter);
 
         if (!filtered.length) {
-            grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:48px 0;color:#78350f;">No items here.</p>';
+            grid.innerHTML = '<p style="grid-column:1/-1;text-align:center;padding:48px 0;color:#475569;">No items here.</p>';
             return;
         }
 
@@ -173,34 +196,12 @@ $root      = '../';
 
         grid.innerHTML = filtered.map(item => {
             const isFire    = item.theme === 'fire';
-            const canAfford = myCoins >= item.price;
+            const canAfford = isGM || myCoins >= item.price;
             const fireClass = isFire ? 'theme-fire' : '';
 
             const fireBadge = isFire
                 ? `<span class="fire-badge"><i class="fas fa-fire"></i> Fire</span>`
                 : '';
-
-            // Generate spark elements for fire cards
-            const sparks = isFire ? `<div class="fire-sparks">${
-                Array.from({length: 10}, (_, i) => {
-                    const left  = 5 + i * 9;
-                    const dur   = (1.2 + Math.random() * 1.4).toFixed(2);
-                    const delay = (Math.random() * 2.5).toFixed(2);
-                    const sx    = ((Math.random() - 0.5) * 28).toFixed(1);
-                    return `<div class="fire-spark" style="left:${left}%;animation-duration:${dur}s;animation-delay:${delay}s;--sx:${sx}px;"></div>`;
-                }).join('')
-            }</div>` : '';
-
-            const flames = isFire ? `
-                <div class="fire-flame-wrap">
-                    <div class="flame flame-1"></div>
-                    <div class="flame flame-2"></div>
-                    <div class="flame flame-3"></div>
-                    <div class="flame flame-4"></div>
-                    <div class="flame flame-5"></div>
-                    <div class="flame flame-6"></div>
-                </div>
-                <div class="fire-shimmer"></div>` : '';
 
             let btn = '';
             if (item.owned && item.equipped) {
@@ -208,20 +209,22 @@ $root      = '../';
             } else if (item.owned) {
                 btn = `<button class="shop-btn equip" data-equip="${item.id}"><i class="fas fa-wand-magic-sparkles mr-1"></i>Equip</button>`;
             } else {
-                btn = `<button class="shop-btn buy ${canAfford ? '' : 'cant-afford'}" data-buy="${item.id}" ${canAfford ? '' : 'disabled'}>
-                    <i class="fas fa-coins mr-1"></i>${Number(item.price).toLocaleString()} coins
-                </button>`;
+                const label = isGM ? `<i class="fas fa-crown mr-1"></i>Get Free` : `<i class="fas fa-coins mr-1"></i>${Number(item.price).toLocaleString()} coins`;
+                btn = `<button class="shop-btn buy ${canAfford ? '' : 'cant-afford'}" data-buy="${item.id}" ${canAfford ? '' : 'disabled'}>${label}</button>`;
             }
+
+            const gmGift = isGM
+                ? `<button class="shop-btn gm-gift" data-gift="${item.id}" data-name="${escHtml(item.name)}"><i class="fas fa-gift mr-1"></i>Gift to Player</button>`
+                : '';
 
             return `
             <div class="shop-card ${fireClass} ${item.equipped ? 'is-equipped' : ''}">
-                ${sparks}
-                ${flames}
                 <div class="shop-card-type"><i class="fas ${typeIcon[item.type]} mr-1"></i>${typeLabel[item.type]}${fireBadge}</div>
                 <div class="shop-preview" style="${item.preview_css ?? ''}">${escHtml(item.name)}</div>
                 <div class="shop-card-name">${escHtml(item.name)}</div>
                 <div class="shop-card-desc">${escHtml(item.description ?? '')}</div>
                 ${btn}
+                ${gmGift}
             </div>`;
         }).join('');
 
@@ -237,7 +240,7 @@ $root      = '../';
                 }).then(r => r.json());
                 if (r.error) { showToast(r.error, false); btn.disabled = false; loadShop(); return; }
                 setBalance(r.coins);
-                showToast('🔥 Purchased! Equip it now.');
+                showToast(isGM ? '👑 Added to your collection!' : '🔥 Purchased! Equip it now.');
                 loadShop();
             });
         });
@@ -255,15 +258,15 @@ $root      = '../';
             });
         });
 
-        grid.querySelectorAll('[data-unequip]').forEach(btn => {
-            btn.addEventListener('click', async () => {
-                await fetch(API, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: `action=unequip&item_id=${btn.dataset.unequip}`
-                });
-                showToast('Unequipped.');
-                loadShop();
+        // GM gift buttons
+        grid.querySelectorAll('[data-gift]').forEach(btn => {
+            btn.addEventListener('click', () => {
+                giftTargetItemId = btn.dataset.gift;
+                document.getElementById('giftItemName').textContent = '🎁 Gifting: ' + btn.dataset.name;
+                document.getElementById('giftSearch').value = '';
+                document.getElementById('giftUserResults').innerHTML = '';
+                document.getElementById('giftStatus').textContent = '';
+                document.getElementById('giftModal').classList.remove('hidden');
             });
         });
     }
@@ -277,7 +280,115 @@ $root      = '../';
         });
     });
 
-    const escHtml = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    // ── Inventory ──────────────────────────────────────────────────────────────
+    let invItems = [], invFilter = 'all';
+
+    async function openInventory() {
+        document.getElementById('inventoryModal').classList.remove('hidden');
+        document.getElementById('invGrid').innerHTML = '<div style="text-align:center;padding:32px;color:#475569;"><i class="fas fa-spinner fa-spin" style="font-size:20px;"></i></div>';
+        const items = await fetch(API + '?action=inventory').then(r => r.json());
+        invItems = Array.isArray(items) ? items : [];
+        renderInventory();
+    }
+
+    function renderInventory() {
+        const filtered = invFilter === 'all' ? invItems : invItems.filter(i => i.type === invFilter);
+        const typeLabel = { title: 'Title', name_color: 'Name Color', name_bg: 'Background' };
+        const typeIcon  = { title: 'fa-tag', name_color: 'fa-palette', name_bg: 'fa-fill-drip' };
+
+        if (!filtered.length) {
+            document.getElementById('invGrid').innerHTML = '<p style="text-align:center;padding:32px;color:#475569;">No items yet. Go buy some!</p>';
+            return;
+        }
+
+        document.getElementById('invGrid').innerHTML = filtered.map(item => {
+            const isFire = item.theme === 'fire';
+            const giftedTag = item.gifted_by_name
+                ? `<span class="inv-gifted-tag"><i class="fas fa-gift mr-1"></i>Gifted by ${escHtml(item.gifted_by_name)}</span>`
+                : '';
+            const equipBtn = item.equipped
+                ? `<button class="shop-btn equipped" style="font-size:11px;padding:6px 10px;"><i class="fas fa-check-circle mr-1"></i>Equipped</button>`
+                : `<button class="inv-equip-btn" data-equip="${item.id}"><i class="fas fa-wand-magic-sparkles mr-1"></i>Equip</button>`;
+
+            return `
+            <div class="inv-card ${isFire ? 'theme-fire' : ''}">
+                <div class="shop-card-type"><i class="fas ${typeIcon[item.type]} mr-1"></i>${typeLabel[item.type]}</div>
+                <div class="shop-preview" style="${item.preview_css ?? ''}">${escHtml(item.name)}</div>
+                <div class="shop-card-name">${escHtml(item.name)}</div>
+                ${giftedTag}
+                ${equipBtn}
+            </div>`;
+        }).join('');
+
+        document.getElementById('invGrid').querySelectorAll('[data-equip]').forEach(btn => {
+            btn.addEventListener('click', async () => {
+                btn.disabled = true;
+                await fetch(API, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: `action=equip&item_id=${btn.dataset.equip}`
+                });
+                showToast('✅ Equipped!');
+                openInventory();
+                loadShop();
+            });
+        });
+    }
+
+    document.getElementById('inventoryBtn').addEventListener('click', openInventory);
+    document.getElementById('invClose').addEventListener('click', () => document.getElementById('inventoryModal').classList.add('hidden'));
+    document.getElementById('inventoryModal').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.classList.add('hidden'); });
+
+    document.querySelectorAll('.inv-tab').forEach(tab => {
+        tab.addEventListener('click', () => {
+            document.querySelectorAll('.inv-tab').forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            invFilter = tab.dataset.type;
+            renderInventory();
+        });
+    });
+
+    // ── GM Gift Modal ──────────────────────────────────────────────────────────
+    document.getElementById('giftClose').addEventListener('click', () => document.getElementById('giftModal').classList.add('hidden'));
+    document.getElementById('giftModal').addEventListener('click', e => { if (e.target === e.currentTarget) e.currentTarget.classList.add('hidden'); });
+
+    let giftSearchTimer;
+    document.getElementById('giftSearch').addEventListener('input', function() {
+        clearTimeout(giftSearchTimer);
+        const q = this.value.trim();
+        if (!q) { document.getElementById('giftUserResults').innerHTML = ''; return; }
+        giftSearchTimer = setTimeout(async () => {
+            const users = await fetch(`${API}?action=search_users&q=${encodeURIComponent(q)}`).then(r => r.json());
+            const list = document.getElementById('giftUserResults');
+            if (!users.length) { list.innerHTML = '<p style="color:#475569;font-size:12px;padding:8px;">No users found.</p>'; return; }
+            list.innerHTML = users.map(u =>
+                `<button class="gm-user-row" data-uid="${u.id}" data-uname="${escHtml(u.full_name)}">
+                    <i class="fas fa-user mr-2" style="color:#64748b;"></i>${escHtml(u.full_name)}
+                </button>`
+            ).join('');
+            list.querySelectorAll('.gm-user-row').forEach(row => {
+                row.addEventListener('click', async () => {
+                    const status = document.getElementById('giftStatus');
+                    status.style.color = '#94a3b8';
+                    status.textContent = 'Gifting…';
+                    const r = await fetch(API, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                        body: `action=gift&item_id=${giftTargetItemId}&target_id=${row.dataset.uid}`
+                    }).then(r => r.json());
+                    if (r.error) {
+                        status.style.color = '#f87171';
+                        status.textContent = '✗ ' + r.error;
+                    } else {
+                        status.style.color = '#34d399';
+                        status.textContent = `✓ Gifted to ${row.dataset.uname}!`;
+                        showToast(`🎁 Gifted to ${row.dataset.uname}!`);
+                        loadShop();
+                    }
+                });
+            });
+        }, 300);
+    });
 
     loadBalance().then(loadShop);
 })();
