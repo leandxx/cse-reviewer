@@ -36,6 +36,12 @@ function grantItem($pdo, $userId, $itemId, $giftedBy = null) {
 }
 
 if ($action === 'balance') {
+    // Auto-add is_game_master if missing
+    try {
+        $pdo->query("SELECT is_game_master FROM users LIMIT 1");
+    } catch (Exception $e) {
+        $pdo->exec("ALTER TABLE users ADD COLUMN is_game_master TINYINT(1) NOT NULL DEFAULT 0");
+    }
     $row = $pdo->prepare("SELECT coins, is_game_master FROM users WHERE id=?");
     $row->execute([$me]);
     $row = $row->fetch();
@@ -80,7 +86,13 @@ if ($action === 'buy') {
     if ($price > 0) {
         $pdo->prepare("UPDATE users SET coins = coins - ? WHERE id=?")->execute([$price, $me]);
     }
-    $pdo->prepare("INSERT INTO user_cosmetics (user_id, item_id) VALUES (?,?)")->execute([$me, $itemId]);
+    // gifted_by column may not exist yet — insert without it
+    try {
+        $pdo->query("SELECT gifted_by FROM user_cosmetics LIMIT 1");
+        $pdo->prepare("INSERT INTO user_cosmetics (user_id, item_id, gifted_by) VALUES (?,?,NULL)")->execute([$me, $itemId]);
+    } catch (Exception $e) {
+        $pdo->prepare("INSERT INTO user_cosmetics (user_id, item_id) VALUES (?,?)")->execute([$me, $itemId]);
+    }
     $pdo->commit();
 
     $newBal = $pdo->prepare("SELECT coins FROM users WHERE id=?");
@@ -146,6 +158,13 @@ if ($action === 'search_users') {
 
 // ── Inventory: owned items for current user ───────────────────────────────────
 if ($action === 'inventory') {
+    // Check if gifted_by column exists, add it if missing
+    try {
+        $pdo->query("SELECT gifted_by FROM user_cosmetics LIMIT 1");
+    } catch (Exception $e) {
+        $pdo->exec("ALTER TABLE user_cosmetics ADD COLUMN gifted_by INT NULL");
+    }
+
     $rows = $pdo->prepare("
         SELECT si.id, si.type, si.name, si.value, si.price, si.description, si.preview_css, si.theme,
                uc.equipped, uc.bought_at, uc.gifted_by,

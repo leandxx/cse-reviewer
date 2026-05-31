@@ -369,7 +369,7 @@
         popup.querySelector('.lb-popup-coins').textContent  = u.coins.toLocaleString();
         popup.querySelector('.lb-popup-level').textContent  = u.level;
         popup.querySelector('.lb-popup-rank').innerHTML =
-            `<span style="color:${rankColors[u.rank_color] ?? '#94a3b8'};font-weight:700;font-size:12px">${escHtml(u.rank)}</span>`;
+            `<span style="color:${u.is_gm ? '#fbbf24' : (rankColors[u.rank_color] ?? '#94a3b8')};font-weight:700;font-size:12px">${u.is_gm ? '👑 Game Master' : escHtml(u.rank)}</span>`;
 
         const preview = popup.querySelector('#lbPopupNamePreview');
         const sampleStyle = (u.name_color_css || '') + (u.name_bg_css || '');
@@ -400,22 +400,26 @@
                 const titleHtml    = u.title
                     ? `<span class="lb-row-title" style="${u.title_css ?? ''}">${escHtml(u.title)}</span>`
                     : '';
+                const gmBadge = u.is_gm
+                    ? `<span class="lb-gm-badge"><i class="fas fa-crown"></i> GM</span>`
+                    : '';
+                const posDisplay = u.is_gm ? '👑' : (pos <= 3 ? medals[pos-1] : pos);
 
                 return `
-                <div class="lb-row ${u.is_me ? 'lb-row-me' : ''}" data-idx="${i}">
-                    <div class="lb-row-pos">${pos <= 3 ? medals[pos-1] : pos}</div>
-                    <div class="lb-row-avatar">${initials(u.full_name)}</div>
+                <div class="lb-row ${u.is_me ? 'lb-row-me' : ''} ${u.is_gm ? 'lb-row-gm' : ''}" data-idx="${i}">
+                    <div class="lb-row-pos">${posDisplay}</div>
+                    <div class="lb-row-avatar ${u.is_gm ? 'lb-gm-avatar' : ''}">${initials(u.full_name)}</div>
                     <div class="lb-row-info">
                         <div class="lb-row-top">
-                            <span class="lb-row-name" style="${defaultColor}${nameStyle}">${escHtml(u.full_name)}${u.is_me ? '<span class="lb-you-tag">you</span>' : ''}</span>
+                            <span class="lb-row-name" style="${defaultColor}${nameStyle}">${escHtml(u.full_name)}${u.is_me ? '<span class="lb-you-tag">you</span>' : ''}${gmBadge}</span>
                             ${titleHtml}
                         </div>
                         <div class="lb-row-xpbar">
-                            <div class="lb-row-xpfill" style="width:${pct}%"></div>
+                            <div class="lb-row-xpfill ${u.is_gm ? 'lb-gm-xpfill' : ''}" style="width:${pct}%"></div>
                         </div>
                     </div>
                     <div class="lb-row-right">
-                        <div class="lb-row-rankname" style="color:${rankColors[u.rank_color] ?? '#64748b'}">${escHtml(u.rank)}</div>
+                        <div class="lb-row-rankname" style="color:${u.is_gm ? '#fbbf24' : (rankColors[u.rank_color] ?? '#64748b')}">${u.is_gm ? 'Game Master' : escHtml(u.rank)}</div>
                         <div class="lb-row-meta">
                             <span><i class="fas fa-star" style="color:#f59e0b;font-size:8px"></i> ${u.xp}</span>
                             <span><i class="fas fa-coins" style="color:#fbbf24;font-size:8px"></i> ${u.coins}</span>

@@ -424,7 +424,7 @@ body.shop-page nav {
     justify-content: center;
     padding: 16px;
 }
-.inv-modal-overlay.hidden { display: none; }
+.inv-modal-overlay.hidden { display: none !important; }
 
 .inv-modal {
     background: #0f172a;

@@ -64,8 +64,12 @@ if ($action === 'stats') {
 }
 
 if ($action === 'leaderboard') {
+    // Auto-add is_game_master if missing
+    try { $pdo->query("SELECT is_game_master FROM users LIMIT 1"); }
+    catch (Exception $e) { $pdo->exec("ALTER TABLE users ADD COLUMN is_game_master TINYINT(1) NOT NULL DEFAULT 0"); }
+
     $rows = $pdo->query("
-        SELECT u.id, u.full_name, u.xp, u.coins,
+        SELECT u.id, u.full_name, u.xp, u.coins, u.is_game_master,
                MAX(CASE WHEN si.type='title'      AND uc.equipped=1 THEN si.value END) AS title,
                MAX(CASE WHEN si.type='title'      AND uc.equipped=1 THEN si.preview_css END) AS title_css,
                MAX(CASE WHEN si.type='name_color' AND uc.equipped=1 THEN si.preview_css END) AS name_color_css,
@@ -73,26 +77,27 @@ if ($action === 'leaderboard') {
         FROM users u
         LEFT JOIN user_cosmetics uc ON uc.user_id = u.id
         LEFT JOIN shop_items si     ON si.id = uc.item_id
-        GROUP BY u.id, u.full_name, u.xp
-        ORDER BY u.xp DESC
+        GROUP BY u.id, u.full_name, u.xp, u.coins, u.is_game_master
+        ORDER BY u.is_game_master DESC, u.xp DESC
         LIMIT 20
     ")->fetchAll();
 
     $board = array_map(function($r) use ($me) {
         $rank = xpToRank((int) $r['xp']);
         return [
-            'id'            => (int) $r['id'],
-            'full_name'     => $r['full_name'],
-            'xp'            => (int) $r['xp'],
-            'coins'         => (int) $r['coins'],
-            'level'         => xpToLevel((int) $r['xp']),
-            'rank'          => $rank['name'],
-            'rank_color'    => $rank['color'],
-            'is_me'         => (int) $r['id'] === $me,
-            'title'         => $r['title'],
-            'title_css'     => $r['title_css'],
-            'name_color_css'=> $r['name_color_css'],
-            'name_bg_css'   => $r['name_bg_css'],
+            'id'             => (int) $r['id'],
+            'full_name'      => $r['full_name'],
+            'xp'             => (int) $r['xp'],
+            'coins'          => (int) $r['coins'],
+            'level'          => xpToLevel((int) $r['xp']),
+            'rank'           => $rank['name'],
+            'rank_color'     => $rank['color'],
+            'is_me'          => (int) $r['id'] === $me,
+            'is_gm'          => (int) $r['is_game_master'] === 1,
+            'title'          => $r['title'],
+            'title_css'      => $r['title_css'],
+            'name_color_css' => $r['name_color_css'],
+            'name_bg_css'    => $r['name_bg_css'],
         ];
     }, $rows);
 
