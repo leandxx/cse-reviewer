@@ -28,7 +28,7 @@ if ($action === 'start') {
     $subject = $_POST['subject'] ?? 'verbal';
     $limit   = min((int) ($_POST['limit'] ?? 10), 100);
 
-    $valid = ['verbal', 'numerical', 'analytical', 'general', 'all'];
+    $valid = ['verbal', 'numerical', 'analytical', 'general', 'general_information', 'all'];
     if (!in_array($subject, $valid)) send(['error' => 'Invalid subject']);
 
     if ($subject === 'all') {

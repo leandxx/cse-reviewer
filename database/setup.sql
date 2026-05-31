@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS friend_requests (
 -- Questions
 CREATE TABLE IF NOT EXISTS questions (
     id          INT AUTO_INCREMENT PRIMARY KEY,
-    subject     ENUM('verbal','numerical','analytical','general') NOT NULL,
+    subject     ENUM('verbal','numerical','analytical','general','general_information') NOT NULL,
     difficulty  ENUM('easy','medium','hard') NOT NULL DEFAULT 'medium',
     question    TEXT NOT NULL,
     choice_a    VARCHAR(500) NOT NULL,

@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_reset'])) {
     $pdo->exec('DELETE FROM quiz_sessions');
     $pdo->exec('DELETE FROM questions');
     $pdo->exec('ALTER TABLE questions AUTO_INCREMENT = 1');
+    $pdo->exec("ALTER TABLE questions MODIFY subject ENUM('verbal','numerical','analytical','general','general_information') NOT NULL");
     header('Location: ' . $_SERVER['PHP_SELF'] . '?reset=1');
     exit;
 }
@@ -55,6 +56,7 @@ if (isset($_GET['diagnose'])) {
 
 // Handle import from JSON
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_import'])) {
+    $pdo->exec("ALTER TABLE questions MODIFY subject ENUM('verbal','numerical','analytical','general','general_information') NOT NULL");
     $jsonData = json_decode(file_get_contents(__DIR__ . '/cse_exam_questions.json'), true);
     $check = $pdo->prepare("SELECT COUNT(*) FROM questions WHERE question = ?");
     $ins   = $pdo->prepare("
