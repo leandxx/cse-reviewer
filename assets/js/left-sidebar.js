@@ -332,6 +332,8 @@
                 const rank = i + 1;
                 const pct  = u.xp % 100;
                 const isMe = u.is_me;
+                const nameStyle = (u.name_color_css || '') + (u.name_bg_css || '');
+                const titleHtml = u.title ? `<span style="font-size:9px;${u.title_css ?? ''}">${escHtml(u.title)}</span>` : '';
                 return `
                 <div style="display:flex;align-items:center;gap:8px;padding:7px 4px;border-radius:10px;${isMe ? 'background:rgba(99,102,241,0.12);' : ''}">
                     <div style="width:22px;text-align:center;font-size:${rank <= 3 ? '16px' : '11px'};font-weight:700;color:#475569;flex-shrink:0;">
@@ -341,8 +343,11 @@
                         ${u.full_name.trim().split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
                     </div>
                     <div style="flex:1;min-width:0;">
-                        <div style="font-size:11px;font-weight:${isMe ? '700' : '600'};color:${isMe ? '#818cf8' : '#e2e8f0'};white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">
-                            ${escHtml(u.full_name)}${isMe ? ' (you)' : ''}
+                        <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
+                            <span style="font-size:11px;font-weight:${isMe ? '700' : '600'};${nameStyle}white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:90px;">
+                                ${escHtml(u.full_name)}${isMe ? ' (you)' : ''}
+                            </span>
+                            ${titleHtml}
                         </div>
                         <div style="height:3px;background:#0f172a;border-radius:99px;overflow:hidden;margin-top:3px;">
                             <div style="height:100%;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:99px;width:${pct}%;"></div>

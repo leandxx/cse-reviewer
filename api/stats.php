@@ -31,7 +31,7 @@ function xpToRank($xp) {
 $action = $_GET['action'] ?? '';
 
 if ($action === 'stats') {
-    $u = $pdo->prepare("SELECT xp FROM users WHERE id=?");
+    $u = $pdo->prepare("SELECT xp, coins FROM users WHERE id=?");
     $u->execute([$me]);
     $user = $u->fetch();
     $xp   = (int) $user['xp'];
@@ -52,6 +52,7 @@ if ($action === 'stats') {
     $rank = xpToRank($xp);
     send([
         'xp'                 => $xp,
+        'coins'              => (int) $user['coins'],
         'level'              => $level,
         'xp_in_level'        => $xpInLevel,
         'xp_for_next'        => $xpForNext,
@@ -64,22 +65,33 @@ if ($action === 'stats') {
 
 if ($action === 'leaderboard') {
     $rows = $pdo->query("
-        SELECT id, full_name, xp
-        FROM users
-        ORDER BY xp DESC
+        SELECT u.id, u.full_name, u.xp,
+               MAX(CASE WHEN si.type='title'      AND uc.equipped=1 THEN si.value END) AS title,
+               MAX(CASE WHEN si.type='title'      AND uc.equipped=1 THEN si.preview_css END) AS title_css,
+               MAX(CASE WHEN si.type='name_color' AND uc.equipped=1 THEN si.preview_css END) AS name_color_css,
+               MAX(CASE WHEN si.type='name_bg'    AND uc.equipped=1 THEN si.preview_css END) AS name_bg_css
+        FROM users u
+        LEFT JOIN user_cosmetics uc ON uc.user_id = u.id
+        LEFT JOIN shop_items si     ON si.id = uc.item_id
+        GROUP BY u.id, u.full_name, u.xp
+        ORDER BY u.xp DESC
         LIMIT 20
     ")->fetchAll();
 
     $board = array_map(function($r) use ($me) {
         $rank = xpToRank((int) $r['xp']);
         return [
-            'id'        => (int) $r['id'],
-            'full_name' => $r['full_name'],
-            'xp'        => (int) $r['xp'],
-            'level'     => xpToLevel((int) $r['xp']),
-            'rank'      => $rank['name'],
-            'rank_color'=> $rank['color'],
-            'is_me'     => (int) $r['id'] === $me,
+            'id'            => (int) $r['id'],
+            'full_name'     => $r['full_name'],
+            'xp'            => (int) $r['xp'],
+            'level'         => xpToLevel((int) $r['xp']),
+            'rank'          => $rank['name'],
+            'rank_color'    => $rank['color'],
+            'is_me'         => (int) $r['id'] === $me,
+            'title'         => $r['title'],
+            'title_css'     => $r['title_css'],
+            'name_color_css'=> $r['name_color_css'],
+            'name_bg_css'   => $r['name_bg_css'],
         ];
     }, $rows);
 

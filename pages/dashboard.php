@@ -23,6 +23,10 @@ $root      = '../';
     </div>
     <div class="flex items-center gap-3">
         <span class="hidden sm:inline text-slate-400 text-sm">Hello, <span class="text-white font-semibold"><?= htmlspecialchars($_SESSION['user_name']) ?></span></span>
+        <a href="shop.php" class="flex items-center gap-1.5 bg-yellow-500/10 border border-yellow-500/20 px-3 py-1.5 rounded-xl hover:bg-yellow-500/20 transition-all">
+            <i class="fas fa-coins text-yellow-400 text-sm"></i>
+            <span id="navCoinBalance" class="text-yellow-400 font-bold text-sm">—</span>
+        </a>
         <a href="../auth/logout.php" class="text-slate-400 hover:text-red-400 text-sm transition-colors flex items-center gap-1">
             <i class="fas fa-sign-out-alt"></i><span class="hidden sm:inline"> Logout</span>
         </a>
@@ -70,6 +74,7 @@ $root      = '../';
                 ['fas fa-graduation-cap', 'from-emerald-500 to-teal-500', 'Study Ebook', 'Tips, shortcuts, and strategies to pass the CSE.', 'Read Now', 'ebook.php'],
                 ['fas fa-layer-group', 'from-violet-500 to-fuchsia-500', 'Flashcards', 'Flip through key concepts by category.', 'Study Now', 'flashcard.php'],
                 ['fas fa-chart-bar', 'from-rose-500 to-orange-500', 'Analytics', 'See your weaknesses, strengths, and accuracy by topic.', 'View Stats', 'analytics.php'],
+                ['fas fa-store', 'from-yellow-400 to-orange-400', 'Coin Shop', 'Buy titles, name colors, and backgrounds for the leaderboard.', 'Open Shop', 'shop.php'],
             ];
             foreach ($cards as $c): ?>
             <div class="card rounded-2xl p-6 text-center">
@@ -133,6 +138,7 @@ $root      = '../';
             };
             const s = rankStyles[d.rank_color] || rankStyles.gray;
 
+            document.getElementById('navCoinBalance').textContent = d.coins !== undefined ? d.coins.toLocaleString() : '—';
             document.getElementById('rankName').textContent   = d.rank;
             document.getElementById('userLevel').textContent  = d.level;
             document.getElementById('userXP').textContent     = d.xp.toLocaleString();

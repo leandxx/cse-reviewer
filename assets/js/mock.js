@@ -344,6 +344,14 @@
         const xpEl = document.getElementById('mockXpEarned');
         if (xpEl && res.xp_earned > 0) { xpEl.textContent = '+' + res.xp_earned + ' XP'; xpEl.classList.remove('hidden'); }
 
+        // Coins earned
+        if (res.coins_earned > 0) {
+            const coinEl = document.createElement('span');
+            coinEl.className = 'inline-block text-yellow-400 font-bold text-sm bg-yellow-500/10 px-3 py-1 rounded-full mb-6 ml-2';
+            coinEl.innerHTML = `<i class="fas fa-coins mr-1"></i>+${res.coins_earned} coins`;
+            if (xpEl) xpEl.parentNode.insertBefore(coinEl, xpEl.nextSibling);
+        }
+
         // Review mistakes link
         const reviewBtn = document.getElementById('mockReviewBtn');
         if (reviewBtn) reviewBtn.href = 'review.php?session_id=' + sessionId;

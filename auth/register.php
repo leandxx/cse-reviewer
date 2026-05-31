@@ -43,7 +43,7 @@ if ($stmt->fetch()) {
 }
 
 $hashed = password_hash($password, PASSWORD_DEFAULT);
-$stmt   = $pdo->prepare('INSERT INTO users (full_name, email, password) VALUES (?, ?, ?)');
+$stmt   = $pdo->prepare('INSERT INTO users (full_name, email, password, coins) VALUES (?, ?, ?, 50)');
 $stmt->execute([$full_name, $email, $hashed]);
 
 echo json_encode(['success' => true, 'message' => 'Account created! You can now log in.']);

@@ -132,6 +132,18 @@ if ($action === 'finish') {
         $pdo->prepare("UPDATE users SET xp = xp + ? WHERE id=?")->execute([$xpEarned, $me]);
     }
     $result['xp_earned'] = $xpEarned;
+
+    // Award coins based on score %
+    $pct = $result['total'] > 0 ? ($result['correct'] / $result['total']) * 100 : 0;
+    if      ($pct >= 90) $coins = 50;
+    elseif  ($pct >= 75) $coins = 30;
+    elseif  ($pct >= 60) $coins = 15;
+    elseif  ($pct >= 50) $coins = 8;
+    else                 $coins = 3;
+    // Bonus for full mock exam (100 questions)
+    if ($result['total'] >= 100) $coins += 10;
+    $pdo->prepare("UPDATE users SET coins = coins + ? WHERE id=?")->execute([$coins, $me]);
+    $result['coins_earned'] = $coins;
     send($result);
 }
 
