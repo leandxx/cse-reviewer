@@ -65,7 +65,7 @@ if ($action === 'stats') {
 
 if ($action === 'leaderboard') {
     $rows = $pdo->query("
-        SELECT u.id, u.full_name, u.xp,
+        SELECT u.id, u.full_name, u.xp, u.coins,
                MAX(CASE WHEN si.type='title'      AND uc.equipped=1 THEN si.value END) AS title,
                MAX(CASE WHEN si.type='title'      AND uc.equipped=1 THEN si.preview_css END) AS title_css,
                MAX(CASE WHEN si.type='name_color' AND uc.equipped=1 THEN si.preview_css END) AS name_color_css,
@@ -84,6 +84,7 @@ if ($action === 'leaderboard') {
             'id'            => (int) $r['id'],
             'full_name'     => $r['full_name'],
             'xp'            => (int) $r['xp'],
+            'coins'         => (int) $r['coins'],
             'level'         => xpToLevel((int) $r['xp']),
             'rank'          => $rank['name'],
             'rank_color'    => $rank['color'],

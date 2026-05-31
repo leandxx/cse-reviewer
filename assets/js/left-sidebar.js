@@ -318,6 +318,68 @@
     // ── Load leaderboard ────────────────────────────────────────────────────────
     const STATS_API = (typeof ROOT !== 'undefined' ? ROOT : '') + 'api/stats.php';
 
+    // Profile popup
+    const popup = document.createElement('div');
+    popup.id = 'lbPopup';
+    popup.innerHTML = `
+        <div class="lb-popup-backdrop"></div>
+        <div class="lb-popup-box">
+            <button class="lb-popup-close"><i class="fas fa-times"></i></button>
+            <div class="lb-popup-avatar"></div>
+            <div class="lb-popup-name"></div>
+            <div class="lb-popup-title"></div>
+            <div class="lb-popup-stats">
+                <div class="lb-popup-stat">
+                    <i class="fas fa-star" style="color:#f59e0b"></i>
+                    <span class="lb-popup-xp"></span>
+                    <small>XP</small>
+                </div>
+                <div class="lb-popup-stat">
+                    <i class="fas fa-coins" style="color:#fbbf24"></i>
+                    <span class="lb-popup-coins"></span>
+                    <small>Coins</small>
+                </div>
+                <div class="lb-popup-stat">
+                    <i class="fas fa-layer-group" style="color:#818cf8"></i>
+                    <span class="lb-popup-level"></span>
+                    <small>Level</small>
+                </div>
+            </div>
+            <div class="lb-popup-rank"></div>
+            <div class="lb-popup-cosmetics">
+                <div class="lb-popup-cosm-row" id="lbPopupNamePreview"></div>
+            </div>
+        </div>`;
+    document.body.appendChild(popup);
+    popup.querySelector('.lb-popup-backdrop').addEventListener('click', () => popup.classList.remove('active'));
+    popup.querySelector('.lb-popup-close').addEventListener('click',   () => popup.classList.remove('active'));
+
+    function openPopup(u) {
+        const nameStyle = (u.name_color_css || '') + (u.name_bg_css || '');
+        const defaultColor = nameStyle ? '' : (u.is_me ? 'color:#818cf8;' : 'color:#e2e8f0;');
+        const rankColors = { gold:'#f59e0b', purple:'#a78bfa', blue:'#60a5fa', gray:'#94a3b8' };
+
+        popup.querySelector('.lb-popup-avatar').textContent = initials(u.full_name);
+        popup.querySelector('.lb-popup-name').innerHTML =
+            `<span style="${defaultColor}${nameStyle}">${escHtml(u.full_name)}${u.is_me ? ' <span style="color:#818cf8;font-size:10px">(you)</span>' : ''}</span>`;
+        popup.querySelector('.lb-popup-title').innerHTML  = u.title
+            ? `<span style="${u.title_css ?? ''}">${escHtml(u.title)}</span>`
+            : '<span style="color:#334155">No title equipped</span>';
+        popup.querySelector('.lb-popup-xp').textContent     = u.xp.toLocaleString();
+        popup.querySelector('.lb-popup-coins').textContent  = u.coins.toLocaleString();
+        popup.querySelector('.lb-popup-level').textContent  = u.level;
+        popup.querySelector('.lb-popup-rank').innerHTML =
+            `<span style="color:${rankColors[u.rank_color] ?? '#94a3b8'};font-weight:700;font-size:12px">${escHtml(u.rank)}</span>`;
+
+        const preview = popup.querySelector('#lbPopupNamePreview');
+        const sampleStyle = (u.name_color_css || '') + (u.name_bg_css || '');
+        preview.innerHTML = sampleStyle
+            ? `<span style="font-size:11px;color:#475569;margin-right:6px">Preview:</span><span style="font-size:12px;font-weight:700;${sampleStyle}">${escHtml(u.full_name)}</span>`
+            : `<span style="font-size:11px;color:#334155">No name cosmetics equipped</span>`;
+
+        popup.classList.add('active');
+    }
+
     async function loadLeaderboard() {
         try {
             const r = await fetch(STATS_API + '?action=leaderboard');
@@ -328,37 +390,50 @@
             if (!el) return;
 
             const medals = ['🥇','🥈','🥉'];
+            const rankColors = { gold:'#f59e0b', purple:'#a78bfa', blue:'#60a5fa', gray:'#64748b' };
+
             el.innerHTML = data.map((u, i) => {
-                const rank = i + 1;
+                const pos  = i + 1;
                 const pct  = u.xp % 100;
-                const isMe = u.is_me;
-                const nameStyle = (u.name_color_css || '') + (u.name_bg_css || '');
-                const titleHtml = u.title ? `<span style="font-size:9px;${u.title_css ?? ''}">${escHtml(u.title)}</span>` : '';
+                const nameStyle    = (u.name_color_css || '') + (u.name_bg_css || '');
+                const defaultColor = nameStyle ? '' : (u.is_me ? 'color:#818cf8;' : 'color:#e2e8f0;');
+                const titleHtml    = u.title
+                    ? `<span class="lb-row-title" style="${u.title_css ?? ''}">${escHtml(u.title)}</span>`
+                    : '';
+
                 return `
-                <div style="display:flex;align-items:center;gap:8px;padding:7px 4px;border-radius:10px;${isMe ? 'background:rgba(99,102,241,0.12);' : ''}">
-                    <div style="width:22px;text-align:center;font-size:${rank <= 3 ? '16px' : '11px'};font-weight:700;color:#475569;flex-shrink:0;">
-                        ${rank <= 3 ? medals[rank-1] : rank}
-                    </div>
-                    <div style="width:28px;height:28px;border-radius:8px;background:linear-gradient(135deg,#4f46e5,#7c3aed);display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;color:#fff;flex-shrink:0;">
-                        ${u.full_name.trim().split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase()}
-                    </div>
-                    <div style="flex:1;min-width:0;">
-                        <div style="display:flex;align-items:center;gap:4px;flex-wrap:wrap;">
-                            <span style="font-size:11px;font-weight:${isMe ? '700' : '600'};${nameStyle}white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:90px;">
-                                ${escHtml(u.full_name)}${isMe ? ' (you)' : ''}
-                            </span>
+                <div class="lb-row ${u.is_me ? 'lb-row-me' : ''}" data-idx="${i}">
+                    <div class="lb-row-pos">${pos <= 3 ? medals[pos-1] : pos}</div>
+                    <div class="lb-row-avatar">${initials(u.full_name)}</div>
+                    <div class="lb-row-info">
+                        <div class="lb-row-top">
+                            <span class="lb-row-name" style="${defaultColor}${nameStyle}">${escHtml(u.full_name)}${u.is_me ? '<span class="lb-you-tag">you</span>' : ''}</span>
                             ${titleHtml}
                         </div>
-                        <div style="height:3px;background:#0f172a;border-radius:99px;overflow:hidden;margin-top:3px;">
-                            <div style="height:100%;background:linear-gradient(90deg,#f59e0b,#f97316);border-radius:99px;width:${pct}%;"></div>
+                        <div class="lb-row-xpbar">
+                            <div class="lb-row-xpfill" style="width:${pct}%"></div>
                         </div>
                     </div>
-                    <div style="text-align:right;flex-shrink:0;">
-                        <div style="font-size:10px;font-weight:700;color:${u.rank_color==='gold'?'#f59e0b':u.rank_color==='purple'?'#a78bfa':u.rank_color==='blue'?'#60a5fa':'#94a3b8'};max-width:72px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${escHtml(u.rank)}</div>
-                        <div style="font-size:9px;color:#475569;">${u.xp} XP</div>
+                    <div class="lb-row-right">
+                        <div class="lb-row-rankname" style="color:${rankColors[u.rank_color] ?? '#64748b'}">${escHtml(u.rank)}</div>
+                        <div class="lb-row-meta">
+                            <span><i class="fas fa-star" style="color:#f59e0b;font-size:8px"></i> ${u.xp}</span>
+                            <span><i class="fas fa-coins" style="color:#fbbf24;font-size:8px"></i> ${u.coins}</span>
+                        </div>
                     </div>
+                    <button class="lb-view-btn" data-idx="${i}" title="View profile"><i class="fas fa-eye"></i></button>
                 </div>`;
             }).join('');
+
+            // Store data for popup
+            el._lbData = data;
+            el.querySelectorAll('.lb-view-btn').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    openPopup(el._lbData[+btn.dataset.idx]);
+                });
+            });
+
         } catch(e) {}
     }
 

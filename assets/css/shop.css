@@ -1,13 +1,13 @@
 /* ── Shop page background ───────────────────────────────────────────────── */
 body.shop-page {
     background-image: none;
-    background-color: #0a0500;
+    background-color: #1c0f05;
 }
 body.shop-page::before {
-    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249,115,22,0.18) 0%, rgba(10,5,0,0) 70%),
-                radial-gradient(ellipse 60% 40% at 20% 100%, rgba(239,68,68,0.12) 0%, transparent 60%),
-                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(245,158,11,0.10) 0%, transparent 60%),
-                rgba(10, 5, 0, 0.97);
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(249,115,22,0.28) 0%, rgba(28,15,5,0) 70%),
+                radial-gradient(ellipse 60% 40% at 20% 100%, rgba(239,68,68,0.18) 0%, transparent 60%),
+                radial-gradient(ellipse 60% 40% at 80% 100%, rgba(245,158,11,0.15) 0%, transparent 60%),
+                rgba(28, 15, 5, 0.93);
 }
 
 /* ── Ember particles ────────────────────────────────────────────────────── */
@@ -52,7 +52,7 @@ body.shop-page::before {
     margin-bottom: 10px;
 }
 .shop-hero-sub {
-    color: #78350f;
+    color: #c2622a;
     font-size: 14px;
     font-weight: 500;
 }
@@ -112,13 +112,13 @@ body.shop-page::before {
     display: flex;
     align-items: center;
     gap: 8px;
-    background: rgba(0,0,0,0.25);
-    border: 1px solid rgba(249,115,22,0.15);
+    background: rgba(0,0,0,0.15);
+    border: 1px solid rgba(249,115,22,0.2);
     border-radius: 10px;
     padding: 6px 14px;
     font-size: 12px;
 }
-.tier-pct  { color: #94a3b8; }
+.tier-pct  { color: #c4a882; }
 .tier-coins { color: #fbbf24; font-weight: 700; }
 .reward-tier.bonus {
     border-color: rgba(245,158,11,0.4);
@@ -137,9 +137,9 @@ body.shop-page::before {
     border-radius: 10px;
     font-size: 13px;
     font-weight: 600;
-    color: #78350f;
-    background: rgba(249,115,22,0.06);
-    border: 1px solid rgba(249,115,22,0.15);
+    color: #c2622a;
+    background: rgba(249,115,22,0.1);
+    border: 1px solid rgba(249,115,22,0.2);
     cursor: pointer;
     transition: all 0.2s;
 }
@@ -164,8 +164,8 @@ body.shop-page::before {
 
 /* ── Shop card ──────────────────────────────────────────────────────────── */
 .shop-card {
-    background: linear-gradient(160deg, rgba(30,12,0,0.9) 0%, rgba(20,8,0,0.95) 100%);
-    border: 1px solid rgba(249,115,22,0.18);
+    background: linear-gradient(160deg, rgba(60,28,8,0.75) 0%, rgba(45,18,4,0.85) 100%);
+    border: 1px solid rgba(249,115,22,0.25);
     border-radius: 18px;
     padding: 20px 16px;
     display: flex;
@@ -192,15 +192,15 @@ body.shop-page::before {
 .shop-card:hover::before { opacity: 1; }
 
 .shop-card.is-equipped {
-    border-color: rgba(249,115,22,0.55);
-    background: linear-gradient(160deg, rgba(40,16,0,0.95) 0%, rgba(30,10,0,0.98) 100%);
-    box-shadow: 0 0 24px rgba(249,115,22,0.12);
+    border-color: rgba(249,115,22,0.6);
+    background: linear-gradient(160deg, rgba(75,32,8,0.85) 0%, rgba(55,22,4,0.9) 100%);
+    box-shadow: 0 0 24px rgba(249,115,22,0.18);
 }
 
 .shop-card-type {
     font-size: 10px;
     font-weight: 700;
-    color: #92400e;
+    color: #c2622a;
     text-transform: uppercase;
     letter-spacing: 0.07em;
 }
@@ -209,8 +209,8 @@ body.shop-page::before {
     font-size: 15px;
     font-weight: 700;
     padding: 12px;
-    background: rgba(0,0,0,0.45);
-    border: 1px solid rgba(249,115,22,0.1);
+    background: rgba(0,0,0,0.28);
+    border: 1px solid rgba(249,115,22,0.18);
     border-radius: 10px;
     text-align: center;
     min-height: 46px;
@@ -227,7 +227,7 @@ body.shop-page::before {
 }
 .shop-card-desc {
     font-size: 11px;
-    color: #78350f;
+    color: #a0522d;
     flex: 1;
 }
 
@@ -253,8 +253,8 @@ body.shop-page::before {
     transform: translateY(-1px);
 }
 .shop-btn.buy.cant-afford {
-    background: rgba(255,255,255,0.05);
-    color: #44200a;
+    background: rgba(255,255,255,0.07);
+    color: #7c4a2a;
     cursor: not-allowed;
     box-shadow: none;
 }
@@ -301,15 +301,15 @@ body.shop-page::before {
 
 /* ── Nav override for fire theme ────────────────────────────────────────── */
 body.shop-page nav {
-    background: rgba(10,5,0,0.88) !important;
-    border-bottom-color: rgba(249,115,22,0.2) !important;
+    background: rgba(28,12,2,0.88) !important;
+    border-bottom-color: rgba(249,115,22,0.25) !important;
 }
 
 /* ── Section divider ────────────────────────────────────────────────────── */
 .shop-section-label {
     font-size: 11px;
     font-weight: 700;
-    color: #92400e;
+    color: #c2622a;
     text-transform: uppercase;
     letter-spacing: 0.08em;
     margin-bottom: 12px;
@@ -330,71 +330,144 @@ body.shop-page nav {
 }
 
 /* ── 🔥 Fire-themed item cards ──────────────────────────────────────────── */
-.shop-card.theme-fire {
-    background: linear-gradient(160deg, #1a0800 0%, #0f0400 100%);
-    border: 1px solid rgba(239,68,68,0.5);
-    box-shadow: 0 0 20px rgba(249,115,22,0.15), inset 0 0 30px rgba(239,68,68,0.04);
-    position: relative;
-    overflow: hidden;
-}
-
-/* Animated fire border glow */
-.shop-card.theme-fire::after {
-    content: '';
-    position: absolute;
-    inset: -1px;
-    border-radius: 18px;
-    background: linear-gradient(var(--fire-angle, 0deg),
-        #ef4444, #f97316, #fbbf24, #f97316, #ef4444, #dc2626, #ef4444);
-    z-index: -1;
-    animation: fireBorderSpin 3s linear infinite;
-    opacity: 0.7;
-}
-.shop-card.theme-fire::before {
-    content: '';
-    position: absolute;
-    inset: 1px;
-    border-radius: 17px;
-    background: linear-gradient(160deg, #1a0800 0%, #0f0400 100%);
-    z-index: 0;
-}
-/* Push all children above the pseudo-elements */
-.shop-card.theme-fire > * { position: relative; z-index: 1; }
-
-@keyframes fireBorderSpin {
-    0%   { --fire-angle: 0deg; }
-    100% { --fire-angle: 360deg; }
-}
 @property --fire-angle {
     syntax: '<angle>';
     initial-value: 0deg;
     inherits: false;
 }
-
-/* Floating flame particles inside the card */
-.fire-sparks {
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    overflow: hidden;
-    border-radius: 17px;
+@keyframes fireBorderSpin {
+    0%   { --fire-angle: 0deg; }
+    100% { --fire-angle: 360deg; }
 }
-.fire-spark {
-    position: absolute;
-    bottom: 0;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background: radial-gradient(circle, #fff7ed 0%, #f97316 50%, transparent 80%);
-    animation: sparkRise linear infinite;
-    opacity: 0;
+@keyframes firePulse {
+    0%, 100% { box-shadow: 0 0 10px rgba(249,115,22,0.6); }
+    50%       { box-shadow: 0 0 22px rgba(249,115,22,1), 0 0 40px rgba(239,68,68,0.5); }
+}
+@keyframes lavaBreath {
+    from { transform: scaleX(0.95); opacity: 0.75; }
+    to   { transform: scaleX(1.05); opacity: 1; }
+}
+@keyframes flameDance {
+    0%   { transform: scaleX(1)    scaleY(1)    skewX(0deg);  }
+    33%  { transform: scaleX(0.88) scaleY(1.1)  skewX(-5deg); }
+    66%  { transform: scaleX(1.1)  scaleY(0.93) skewX(4deg);  }
+    100% { transform: scaleX(0.95) scaleY(1.06) skewX(-2deg); }
+}
+@keyframes heatShimmer {
+    from { opacity: 0.5; }
+    to   { opacity: 1; }
 }
 @keyframes sparkRise {
-    0%   { transform: translateY(0) scale(1);   opacity: 0; }
-    15%  { opacity: 1; }
-    80%  { opacity: 0.5; }
-    100% { transform: translateY(-120px) translateX(var(--sx, 0px)) scale(0.2); opacity: 0; }
+    0%   { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
+    10%  { opacity: 1; }
+    70%  { opacity: 0.6; }
+    100% { transform: translateY(-90px) translateX(var(--sx, 0px)) scale(0.1); opacity: 0; }
+}
+
+.shop-card.theme-fire {
+    background: linear-gradient(180deg, #1a0500 0%, #2d0800 55%, #3d1000 100%);
+    border: none;
+    box-shadow:
+        0 0 0 1.5px rgba(239,68,68,0.65),
+        0 0 32px rgba(249,115,22,0.35),
+        0 0 64px rgba(239,68,68,0.15),
+        inset 0 0 40px rgba(239,68,68,0.06);
+    position: relative;
+    overflow: hidden;
+    isolation: isolate;
+    padding-bottom: 82px;
+}
+
+/* Spinning conic border */
+.shop-card.theme-fire::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 20px;
+    background: conic-gradient(from var(--fire-angle, 0deg),
+        #dc2626 0%, #f97316 15%, #fbbf24 30%, #f97316 45%,
+        #ef4444 60%, #dc2626 75%, #f97316 90%, #dc2626 100%);
+    z-index: -2;
+    animation: fireBorderSpin 2.5s linear infinite;
+}
+/* Inner bg fill */
+.shop-card.theme-fire::before {
+    content: '';
+    position: absolute;
+    inset: 2px;
+    border-radius: 17px;
+    background: linear-gradient(180deg, #1a0500 0%, #2d0800 55%, #3d1000 100%);
+    z-index: -1;
+}
+.shop-card.theme-fire > * { position: relative; z-index: 2; }
+
+/* ── Live flame at card bottom ── */
+.fire-flame-wrap {
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 72px;
+    z-index: 1;
+    pointer-events: none;
+    overflow: hidden;
+    border-radius: 0 0 17px 17px;
+}
+/* Lava base glow */
+.fire-flame-wrap::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: -10%;
+    width: 120%; height: 16px;
+    background: linear-gradient(90deg, #dc2626, #f97316, #fbbf24, #f97316, #dc2626);
+    border-radius: 50% 50% 0 0;
+    filter: blur(5px);
+    opacity: 0.95;
+    animation: lavaBreath 1.3s ease-in-out infinite alternate;
+}
+/* Flame tongues */
+.flame {
+    position: absolute;
+    bottom: 0;
+    border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+    transform-origin: bottom center;
+    animation: flameDance ease-in-out infinite alternate;
+    filter: blur(1.5px);
+}
+.flame-1 { left:6%;  width:30px; height:55px; background:linear-gradient(to top,#fbbf24,#f97316,#ef4444,transparent); animation-duration:0.85s; animation-delay:0s; }
+.flame-2 { left:20%; width:22px; height:40px; background:linear-gradient(to top,#f97316,#ef4444,#dc2626,transparent); animation-duration:1.1s;  animation-delay:0.18s; }
+.flame-3 { left:35%; width:34px; height:62px; background:linear-gradient(to top,#fbbf24,#f97316,#ef4444,transparent); animation-duration:0.78s; animation-delay:0.08s; }
+.flame-4 { left:53%; width:26px; height:48px; background:linear-gradient(to top,#f97316,#ef4444,#dc2626,transparent); animation-duration:1.0s;  animation-delay:0.32s; }
+.flame-5 { left:68%; width:30px; height:56px; background:linear-gradient(to top,#fbbf24,#f97316,#ef4444,transparent); animation-duration:0.9s;  animation-delay:0.12s; }
+.flame-6 { left:83%; width:20px; height:36px; background:linear-gradient(to top,#f97316,#ef4444,transparent);          animation-duration:1.15s; animation-delay:0.42s; }
+/* White-hot cores */
+.flame-1::after, .flame-3::after, .flame-5::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 25%;
+    width: 50%; height: 38%;
+    background: linear-gradient(to top, #fff7ed, #fbbf24, transparent);
+    border-radius: 50% 50% 20% 20% / 60% 60% 40% 40%;
+    filter: blur(1px);
+}
+/* Heat shimmer */
+.fire-shimmer {
+    position: absolute;
+    inset: 0;
+    border-radius: 17px;
+    background: linear-gradient(180deg, transparent 45%, rgba(249,115,22,0.05) 75%, rgba(239,68,68,0.1) 100%);
+    animation: heatShimmer 2s ease-in-out infinite alternate;
+    pointer-events: none;
+    z-index: 1;
+}
+/* Floating sparks */
+.fire-sparks { position:absolute; inset:0; pointer-events:none; z-index:1; overflow:hidden; border-radius:17px; }
+.fire-spark {
+    position: absolute;
+    bottom: 10px;
+    width: 2.5px; height: 2.5px;
+    border-radius: 50%;
+    background: radial-gradient(circle, #fff7ed 0%, #fbbf24 50%, transparent 80%);
+    animation: sparkRise linear infinite;
+    opacity: 0;
 }
 
 /* Fire badge */
@@ -411,57 +484,28 @@ body.shop-page nav {
     border-radius: 6px;
     padding: 2px 7px;
     margin-left: auto;
-    box-shadow: 0 0 8px rgba(249,115,22,0.5);
     animation: firePulse 1.8s ease-in-out infinite;
 }
-@keyframes firePulse {
-    0%, 100% { box-shadow: 0 0 8px rgba(249,115,22,0.5); }
-    50%       { box-shadow: 0 0 16px rgba(249,115,22,0.9), 0 0 30px rgba(239,68,68,0.4); }
-}
 
-/* Fire card type row */
-.shop-card.theme-fire .shop-card-type {
-    display: flex;
-    align-items: center;
-    color: #f97316;
-}
-
-/* Fire preview box */
+.shop-card.theme-fire .shop-card-type { display:flex; align-items:center; color:#f97316; }
 .shop-card.theme-fire .shop-preview {
-    background: rgba(0,0,0,0.6);
-    border-color: rgba(239,68,68,0.25);
-    box-shadow: 0 0 12px rgba(249,115,22,0.1) inset;
+    background: rgba(0,0,0,0.5);
+    border-color: rgba(239,68,68,0.3);
+    box-shadow: 0 0 16px rgba(249,115,22,0.14) inset;
 }
+.shop-card.theme-fire .shop-card-name { color: #fed7aa; }
+.shop-card.theme-fire .shop-card-desc { color: #a0522d; }
 
-/* Fire card name */
-.shop-card.theme-fire .shop-card-name {
-    color: #fed7aa;
-}
-.shop-card.theme-fire .shop-card-desc {
-    color: #92400e;
-}
-
-/* Fire buy button */
 .shop-card.theme-fire .shop-btn.buy {
     background: linear-gradient(135deg, #dc2626, #f97316, #fbbf24);
-    box-shadow: 0 4px 18px rgba(239,68,68,0.45);
+    box-shadow: 0 4px 18px rgba(239,68,68,0.5);
     animation: firePulse 1.8s ease-in-out infinite;
 }
-.shop-card.theme-fire .shop-btn.buy:hover {
-    box-shadow: 0 6px 28px rgba(239,68,68,0.7);
-}
-.shop-card.theme-fire .shop-btn.equip {
-    background: rgba(239,68,68,0.15);
-    color: #f97316;
-    border-color: rgba(239,68,68,0.4);
-}
+.shop-card.theme-fire .shop-btn.buy:hover { box-shadow: 0 6px 28px rgba(239,68,68,0.75); }
+.shop-card.theme-fire .shop-btn.equip { background:rgba(239,68,68,0.15); color:#f97316; border-color:rgba(239,68,68,0.4); }
 
 /* Fire filter tab */
-.shop-tab[data-filter="fire"] {
-    color: #f97316;
-    background: rgba(239,68,68,0.08);
-    border-color: rgba(239,68,68,0.25);
-}
+.shop-tab[data-filter="fire"] { color:#f97316; background:rgba(239,68,68,0.08); border-color:rgba(239,68,68,0.25); }
 .shop-tab[data-filter="fire"].active {
     color: #fff7ed;
     background: linear-gradient(135deg, rgba(239,68,68,0.35), rgba(249,115,22,0.25));

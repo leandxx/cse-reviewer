@@ -182,14 +182,25 @@ $root      = '../';
 
             // Generate spark elements for fire cards
             const sparks = isFire ? `<div class="fire-sparks">${
-                Array.from({length: 8}, (_, i) => {
-                    const left  = 10 + i * 11;
-                    const dur   = (1.5 + Math.random() * 1.5).toFixed(2);
-                    const delay = (Math.random() * 2).toFixed(2);
-                    const sx    = ((Math.random() - 0.5) * 30).toFixed(1);
+                Array.from({length: 10}, (_, i) => {
+                    const left  = 5 + i * 9;
+                    const dur   = (1.2 + Math.random() * 1.4).toFixed(2);
+                    const delay = (Math.random() * 2.5).toFixed(2);
+                    const sx    = ((Math.random() - 0.5) * 28).toFixed(1);
                     return `<div class="fire-spark" style="left:${left}%;animation-duration:${dur}s;animation-delay:${delay}s;--sx:${sx}px;"></div>`;
                 }).join('')
             }</div>` : '';
+
+            const flames = isFire ? `
+                <div class="fire-flame-wrap">
+                    <div class="flame flame-1"></div>
+                    <div class="flame flame-2"></div>
+                    <div class="flame flame-3"></div>
+                    <div class="flame flame-4"></div>
+                    <div class="flame flame-5"></div>
+                    <div class="flame flame-6"></div>
+                </div>
+                <div class="fire-shimmer"></div>` : '';
 
             let btn = '';
             if (item.owned && item.equipped) {
@@ -205,6 +216,7 @@ $root      = '../';
             return `
             <div class="shop-card ${fireClass} ${item.equipped ? 'is-equipped' : ''}">
                 ${sparks}
+                ${flames}
                 <div class="shop-card-type"><i class="fas ${typeIcon[item.type]} mr-1"></i>${typeLabel[item.type]}${fireBadge}</div>
                 <div class="shop-preview" style="${item.preview_css ?? ''}">${escHtml(item.name)}</div>
                 <div class="shop-card-name">${escHtml(item.name)}</div>
