@@ -6,30 +6,13 @@
  */
 require_once '../config/db.php';
 
-// Handle delete all + reimport (runs before any output)
+// Handle delete all
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_reset'])) {
     $pdo->exec('DELETE FROM quiz_answers');
     $pdo->exec('DELETE FROM quiz_sessions');
     $pdo->exec('DELETE FROM questions');
     $pdo->exec('ALTER TABLE questions AUTO_INCREMENT = 1');
-
-    $jsonRaw  = json_decode(file_get_contents(__DIR__ . '/cse_exam_questions.json'), true);
-    $ins = $pdo->prepare("
-        INSERT INTO questions (subject, difficulty, question, choice_a, choice_b, choice_c, choice_d, answer, hint, explanation)
-        VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-    ");
-    $saved = 0;
-    foreach ($jsonRaw as $q) {
-        try {
-            $ins->execute([
-                $q['subject'], $q['difficulty'], $q['question'],
-                $q['choice_a'], $q['choice_b'], $q['choice_c'], $q['choice_d'],
-                $q['answer'], $q['hint'] ?? '', $q['explanation'] ?? ''
-            ]);
-            $saved++;
-        } catch (PDOException $e) {}
-    }
-    header('Location: ' . $_SERVER['PHP_SELF'] . '?reset=' . $saved);
+    header('Location: ' . $_SERVER['PHP_SELF'] . '?reset=1');
     exit;
 }
 
@@ -171,16 +154,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['do_import'])) {
 
 <hr style="border-color:#45475a;margin:30px 0">
 <h3 class="err">🗑 Danger Zone</h3>
-<p class="warn">This will <strong>delete ALL questions, quiz sessions, and answers</strong> from the database, then re-import everything fresh from the JSON file.</p>
-<form method="post" onsubmit="return confirm('Delete ALL questions and reimport from JSON? This cannot be undone.')"> 
+<p class="warn">This will <strong>delete ALL questions, quiz sessions, and answers</strong> from the database. This cannot be undone.</p>
+<form method="post" onsubmit="return confirm('Delete ALL questions from the database? This cannot be undone.')"> 
   <input type="hidden" name="do_reset" value="1">
   <button type="submit" style="background:#f38ba8;color:#1e1e2e;padding:10px 24px;border:none;border-radius:6px;cursor:pointer;font-weight:bold;font-size:15px;">
-    🗑 Delete All &amp; Reimport from JSON
+    🗑 Delete All Questions
   </button>
 </form>
 
 <?php if (isset($_GET['reset'])): ?>
-  <p class="ok" style="font-size:18px">✔ Done! Deleted old data and imported <?= (int)$_GET['reset'] ?> questions from JSON.</p>
+  <p class="ok" style="font-size:18px">✔ Done! All questions deleted from the database.</p>
 <?php endif; ?>
 
 <br><p class="warn">⚠ Delete this file after testing: <code>database/test_json.php</code></p>
