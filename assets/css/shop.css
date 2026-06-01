@@ -584,3 +584,25 @@ body.shop-page nav {
     width: 100%;
 }
 .gm-user-row:hover { background: rgba(249,115,22,0.1); border-color: rgba(249,115,22,0.2); }
+
+/* ── Neon glow name color previews ──────────────────────────────────────── */
+.shop-preview[style*="text-shadow"] {
+    background: rgba(0,0,0,0.35);
+}
+
+/* ── Legendary / Diamond card ───────────────────────────────────────────── */
+@keyframes prismaticShift {
+    0%   { background-position: 0% 50%; }
+    50%  { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+.shop-card:has(.shop-preview[style*="bae6fd"]) {
+    background: rgba(14,30,50,0.7);
+    border-color: rgba(56,189,248,0.35);
+    box-shadow: 0 0 20px rgba(56,189,248,0.08);
+}
+.shop-card:has(.shop-preview[style*="prismatic"]),
+.shop-card:has(.shop-preview[style*="rgba(99,102,241,0.35)"]) {
+    background: rgba(20,10,40,0.7);
+    border-color: rgba(168,85,247,0.35);
+}

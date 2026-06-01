@@ -406,7 +406,7 @@
                 const posDisplay = u.is_gm ? '👑' : (pos <= 3 ? medals[pos-1] : pos);
 
                 return `
-                <div class="lb-row ${u.is_me ? 'lb-row-me' : ''} ${u.is_gm ? 'lb-row-gm' : ''}" data-idx="${i}">
+                <div class="lb-row ${u.is_me ? 'lb-row-me' : ''} ${u.is_gm ? 'lb-row-gm' : ''}" data-idx="${i}" data-pos="${pos}">
                     <div class="lb-row-pos">${posDisplay}</div>
                     <div class="lb-row-avatar ${u.is_gm ? 'lb-gm-avatar' : ''}">${initials(u.full_name)}</div>
                     <div class="lb-row-info">
