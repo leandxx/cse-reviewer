@@ -1261,3 +1261,72 @@
 :root {
     --sb-full: 300px;
 }
+
+/* ── Sidebar wider + leaderboard name readable final ─────────────────────── */
+:root {
+    --sb-full: 340px;
+}
+
+#sb-leaderboard {
+    padding: 4px 6px 8px;
+}
+
+.lb-row {
+    padding: 8px 10px;
+    gap: 8px;
+    margin-bottom: 5px;
+    border-radius: 11px;
+}
+
+.lb-row-pos {
+    width: 20px;
+    font-size: 13px;
+    flex-shrink: 0;
+}
+
+.lb-row-avatar {
+    width: 30px;
+    height: 30px;
+    font-size: 11px;
+    flex-shrink: 0;
+    border-radius: 9px;
+}
+
+.lb-row-info {
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+}
+
+.lb-row-name {
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 140px;
+    color: #e2e8f0;
+    text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+    line-height: 1.3;
+}
+
+.lb-row-title {
+    font-size: 9px;
+    padding: 1px 5px;
+    max-width: 140px;
+}
+
+.lb-row-right {
+    flex-shrink: 0;
+    min-width: 58px;
+    text-align: right;
+}
+
+.lb-row-rankname {
+    font-size: 9px;
+    max-width: 58px;
+}
+
+.lb-row-meta span {
+    font-size: 9px;
+}

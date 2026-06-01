@@ -89,13 +89,28 @@ $root      = '../';
         </div>
 
         <!-- Score history -->
-        <div class="card rounded-2xl p-6">
+        <div class="card rounded-2xl p-6 mb-8">
             <h2 class="text-white font-bold text-lg mb-5 flex items-center gap-2">
                 <i class="fas fa-history text-indigo-400"></i> Recent Sessions
             </h2>
             <div id="historyList">
                 <div class="text-slate-500 text-sm text-center py-6">
                     <i class="fas fa-spinner fa-spin mr-2"></i> Loading…
+                </div>
+            </div>
+        </div>
+
+        <!-- Full Leaderboard -->
+        <div class="dash-lb-card">
+            <div class="dash-lb-header">
+                <div class="dash-lb-title">
+                    <i class="fas fa-trophy"></i> Leaderboard
+                </div>
+                <span class="dash-lb-badge">Top Players</span>
+            </div>
+            <div id="dashLeaderboard" class="dash-lb-list">
+                <div style="text-align:center;padding:40px;color:#334155;">
+                    <i class="fas fa-spinner fa-spin" style="font-size:20px;"></i>
                 </div>
             </div>
         </div>
@@ -116,6 +131,54 @@ $root      = '../';
 
 <script>const ROOT = '../';</script>
 <script src="../assets/js/left-sidebar.js"></script>
+<script>
+(() => {
+    const STATS_API = ROOT + 'api/stats.php';
+    const escHtml = s => String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+    const initials = n => n.trim().split(' ').map(w=>w[0]).join('').slice(0,2).toUpperCase();
+
+    async function loadDashLeaderboard() {
+        const data = await fetch(STATS_API + '?action=leaderboard').then(r=>r.json());
+        if (!Array.isArray(data)) return;
+        const el = document.getElementById('dashLeaderboard');
+        const medals = ['🥇','🥈','🥉'];
+        const rankColors = { gold:'#f59e0b', purple:'#a78bfa', blue:'#60a5fa', gray:'#64748b' };
+
+        el.innerHTML = data.map((u, i) => {
+            const pos = i + 1;
+            const pct = u.xp % 100;
+            const nameStyle    = (u.name_color_css||'') + (u.name_bg_css||'');
+            const defaultColor = nameStyle ? '' : (u.is_me ? 'color:#818cf8;' : 'color:#e2e8f0;');
+            const posDisplay   = u.is_gm ? '👑' : (pos <= 3 ? medals[pos-1] : pos);
+            const titleHtml    = u.title ? `<span class="dlb-title" style="${u.title_css??''}">${escHtml(u.title)}</span>` : '';
+            const gmBadge      = u.is_gm ? `<span class="dlb-gm-badge"><i class="fas fa-crown"></i> GM</span>` : '';
+            const rankColor    = u.is_gm ? '#fbbf24' : (rankColors[u.rank_color] ?? '#64748b');
+
+            return `
+            <div class="dlb-row ${u.is_me?'dlb-row-me':''} ${u.is_gm?'dlb-row-gm':''} ${pos<=3&&!u.is_gm?'dlb-row-top'+pos:''}">
+                <div class="dlb-pos">${posDisplay}</div>
+                <div class="dlb-avatar ${u.is_gm?'dlb-avatar-gm':''}"><span>${initials(u.full_name)}</span></div>
+                <div class="dlb-info">
+                    <div class="dlb-name" style="${defaultColor}${nameStyle}">${escHtml(u.full_name)}${u.is_me?'<span class="dlb-you">you</span>':''}${gmBadge}</div>
+                    ${titleHtml}
+                    <div class="dlb-xpbar"><div class="dlb-xpfill ${u.is_gm?'dlb-xpfill-gm':''}" style="width:${pct}%"></div></div>
+                </div>
+                <div class="dlb-right">
+                    <div class="dlb-rank" style="color:${rankColor}">${u.is_gm?'Game Master':escHtml(u.rank)}</div>
+                    <div class="dlb-meta">
+                        <span><i class="fas fa-star" style="color:#f59e0b"></i> ${u.xp.toLocaleString()}</span>
+                        <span><i class="fas fa-coins" style="color:#fbbf24"></i> ${u.coins.toLocaleString()}</span>
+                        <span><i class="fas fa-layer-group" style="color:#818cf8"></i> Lv.${u.level}</span>
+                    </div>
+                </div>
+            </div>`;
+        }).join('');
+    }
+
+    loadDashLeaderboard();
+    setInterval(loadDashLeaderboard, 60_000);
+})();
+</script>
 <script>
 (() => {
     const subjectLabels = {
