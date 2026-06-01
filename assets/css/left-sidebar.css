@@ -1192,3 +1192,8 @@
     font-size: 9px;
     padding: 2px 6px;
 }
+
+/* ── Leaderboard wider sidebar ───────────────────────────────────────────── */
+:root {
+    --sb-full: 320px;
+}
