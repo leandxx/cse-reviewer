@@ -1197,3 +1197,18 @@
 :root {
     --sb-full: 320px;
 }
+
+/* ── Leaderboard name wrap fix ───────────────────────────────────────────── */
+.lb-row-name {
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+    max-width: 100%;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+.lb-row-info {
+    overflow: visible;
+    min-width: 0;
+}
