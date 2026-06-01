@@ -1136,3 +1136,59 @@
     padding: 1px 5px;
     margin-left: 4px;
 }
+
+/* ── Leaderboard size fix ────────────────────────────────────────────────── */
+#sb-leaderboard { padding: 6px 6px 8px; }
+
+.lb-row {
+    padding: 10px 11px;
+    margin-bottom: 7px;
+    border-radius: 13px;
+}
+
+.lb-row-pos {
+    width: 24px;
+    font-size: 15px;
+}
+
+.lb-row-avatar {
+    width: 36px;
+    height: 36px;
+    border-radius: 11px;
+    font-size: 13px;
+    font-weight: 800;
+}
+
+.lb-row-name {
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.lb-row-title {
+    font-size: 10px;
+    padding: 2px 7px;
+}
+
+.lb-row-xpbar {
+    height: 5px;
+    margin-top: 4px;
+}
+
+.lb-row-rankname {
+    font-size: 10px;
+    max-width: 72px;
+}
+
+.lb-row-meta span {
+    font-size: 10px;
+}
+
+.lb-you-tag {
+    font-size: 9px;
+    padding: 1px 5px;
+}
+
+.lb-gm-badge {
+    font-size: 9px;
+    padding: 2px 6px;
+}
